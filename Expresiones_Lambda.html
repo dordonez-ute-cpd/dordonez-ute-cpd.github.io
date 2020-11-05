@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/all.css">
+    <title>Página</title>
+</head>
+<body>
+
+<div class="container-head">
+    <div class="logos">
+        <a href="index.html" class="logo"><img src="img/logo-ute.png" alt="logo" width="90px" height="90px" ></a>
+    </div> 
+</div>
+
+      
+
+<header>
+    <div class="container-menu logo-nav-contenedor">
+        <span class="menu-icon"><i class="fas fa-bars"></i></span>
+        <nav class="navegacion">
+            <ul class="show">
+                <strong><li><a href="Presentaciones.html">Presentaciones</a></li></strong>
+                <strong><li><a href="Informes.html">Informes</a></li></strong>
+               
+            </ul>
+        </nav>
+      </div>
+</header>
+
+
+<div class="container-general">
+<main>
+<div class="container-cuerpo">
+<div class="columna_izquierda">
+    <div class="contenido_1">
+        <strong><h3>Temas</h3></strong>
+    </div>
+    <div class="contenido_2">
+        <nav class="navegacion_2">
+            <ul class="show_2">
+                <!-- <li><a href="#"><i class="fas fa-sign-in-alt"></i>Expresiones Lambda</a></li> -->
+                <li><a href="Expresiones_Lambda.html"><i class="fas fa-sign-in-alt"></i>Expresiones Lambda</a></li> 
+                <li><a href="Metodos_estaticos.html"><i class="fas fa-sign-in-alt"></i>Métodos Estáticos</a></li>
+               
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<section class="columna_derecha">
+    <h1>Expresiones Lamda</h1>
+    <p>La expresión Lambda es una nueva característica que se introduce en Java 8. Una expresión lambda es una función anónima. Una función que no tiene un nombre y no pertenece a ninguna clase. El concepto de expresión lambda se introdujo por primera vez en el lenguaje de programación LISP.
+    </p>
+    <h3>Sintaxis de expresión de Lambda de Java
+    </h3>
+    <p>Para crear una expresión lambda, especificamos los parámetros de entrada (si los hay) en el lado izquierdo del operador lambda -> y colocamos la expresión o el bloque de instrucciones en el lado derecho del operador lambda. Por ejemplo, la expresión lambda (x, y) -> x + y especifica que la expresión lambda toma dos argumentos x e y y devuelve la suma de estos.
+    </p>
+    <h3>Expresión Lambda vs método en Java
+    </h3>
+    <p> Un método (o función) en Java tiene estas partes principales: 
+        </p>
+        <ul>
+            <li> Nombre. </li>
+            <li> Lista de parámetros. </li>
+            <li> Cuerpo. </li>
+            <li> Tipo de devolución. </li>
+             
+        </ul>
+<p>Una expresión lambda en Java tiene estas partes principales: la expresión Lambda solo tiene body y parameter list.
+</p>
+        <ul>
+          
+            <li> No hay nombre – la función es anónima por lo que no nos importa el nombre.
+            </li>
+            <li> Lista de parámetros.
+            </li>
+            <li> Cuerpo – Esta es la parte principal de la función.
+            </li>
+            <li> Sin tipo de valor devuelto: el compilador java 8 puede inferir el tipo de valor devuelto comprobando el código. no es necesario mencionarlo explícitamente.
+            </li>
+             
+        </ul>
+<h3>Dónde utilizar los Lambda en Java
+</h3>
+
+<p>Para utilizar la expresión lambda, debe crear su propia interfaz funcional o utilizar la interfaz funcional predefinida proporcionada por Java. Una interfaz con un solo método abstracto se denomina interfaz funcional (o interfaz de método Single Abstract), por ejemplo: Runnable, callable, ActionListener, etc. <br><br>
+    Para utilizar la interfaz de función:Pre Java 8: Creamos clases internas anónimas.Post Java 8: Puede utilizar la expresión lambda en lugar de las clases internas anónimas.
+    </p>
+
+<h3>Tipos
+</h3>
+<p>Las expresiones lambda puede clasificarse de la siguiente manera:
+</p>
+<ul><li>Consumidores</li><li>Proveedores</li><li>Funciones: Operadores Unarios, Operadores Binarios</li><li>Predicados</li></ul>
+
+</section>
+
+<div class="container_busqueda">
+   
+    <div id="search-wrapper">
+        <input type="search" id="search" placeholder="Buscar"/>
+        <i class="fa fa-search"></i>
+      </div>
+    <ul id="resultado" class="lista_busqueda">
+        
+    </ul>
+</div>
+</div>
+</div>
+</main>
+
+
+<footer>
+    <div class="container-pie">
+        <div class="copyright">
+           <p>&copy; 2020 Página realizada por estudiantes de la Universidad UTE.</p> 
+        </div>
+    </div>
+</footer>
+</div>
+
+<script src="js/jQuery.js"></script>
+<script src="js/scripts.js"></script>
+
+
+
+<script>
+    const temas = [  /*Cargar aqui enlaces para la busqueda con el mismo formato.*/
+        {titulo: '<a href="Expresiones_Lambda.html">Expresiones Lambda</a>'},   
+        {titulo: '<a href="Metodos_estaticos.html">Métodos Estáticos</a>'},   
+        
+    ]
+    const formulario= document.querySelector('#search');
+    const boton= document.querySelector('#boton');
+    const resultado=document.querySelector('#resultado');
+
+    const filtrar = ()=>{
+       resultado.innerHTML='';
+
+       const texto = formulario.value.toLowerCase();
+       for(let tema of temas ){
+           let titulo=tema.titulo.toLowerCase();
+           if(titulo.indexOf(texto) !== -1){
+               
+                resultado.innerHTML += '<li>'+tema.titulo+'</li>'
+         }
+        }
+        if(resultado.innerHTML===''){
+            resultado.innerHTML += '<li>Enlace no Encontrado...</li>'
+        }
+    }
+    //boton.addEventListener('click',filtrar)
+    formulario.addEventListener('keyup',filtrar);
+   
+    
+</script>
+</body>
+</html>
