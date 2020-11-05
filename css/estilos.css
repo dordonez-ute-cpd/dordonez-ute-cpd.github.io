@@ -1,0 +1,351 @@
+/*Generales*/
+body{
+    background:#F6F5F2;
+    font-family: 'Roboto', sans-serif;
+}
+/*----------------------------------------------------------------------------------*/
+
+/*Containers*/
+.container-general{
+    display: block;
+    align-items: stretch;
+}
+.container-head{
+    width: 90%;
+    height: 30px;
+    margin: 0 auto; 
+    padding: 20px;
+    max-width: 1100px;
+    background:white;   
+    padding: 2rem 0;
+    /*position: relative;*/
+    border-style: solid;
+    border-color: rgb(227, 227, 227);
+    border-width: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-menu{
+    width: 90%;
+    height: 40px;
+    margin: 0 auto; 
+    padding: 20px;
+    max-width: 1100px;
+    background:white;   
+    padding: 0;
+    /*position: relative;*/
+    border-style: solid;
+    border-color: rgb(227, 227, 227);
+    border-width: 1px;
+}
+.container-cuerpo{
+    width: 90%;
+    height: 100%;
+    margin: 0 auto; 
+    max-width: 1100px;
+    background:white;   
+    border-style: solid;
+    border-color: rgb(227, 227, 227);
+    border-width: 1px;
+    display: flex;
+    border-bottom: none;
+}
+.container-pie{
+    width: 90%;
+    height: 100px;
+    max-width: 1100px;
+    margin: 0 auto;
+    background:black; 
+    border-style: solid;
+    border-color: rgb(227, 227, 227);
+    border-width: 1px; 
+    border-top: none;
+}
+.columna_izquierda{
+    width: 18%;
+    display: block;
+    height: 800px;
+    justify-content: space-between;
+    float: right;
+    padding: 0.3rem;
+    border-style: solid;
+    border-color: rgb(227, 227, 227);
+    border-width: 1px;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    font-size: 15px;
+}
+.columna_izquierda .contenido_1{
+    margin: auto;
+    margin-top: 0;
+    border-style: solid;
+    border-color: rgb(227, 227, 227);
+    border-width: 5 px;
+    display: flex;
+    height: 45px;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    width: 100%;
+    justify-content: center;
+}
+.columna_izquierda .show_2{
+    margin: auto;
+    margin-top: 0;
+}
+.columna_izquierda .contenido_2{
+    margin: auto;
+    margin-top: 0;
+    border-style: solid;
+    border-color: rgb(227, 227, 227);
+    border-width: 5 px;
+    display: flex;
+    height: 45px;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+    width: 100%;
+    justify-content: center;
+}
+.columna_derecha{
+    width: 83%;
+    display: block;
+    justify-content: space-between;
+    float: left;
+    padding: 0.3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-color: rgb(227, 227, 227);
+    border-style: solid;
+    border-width: 1px;
+    border-top: none;
+    border-right: none;
+    font-size: 14px;
+    padding-bottom: 2rem;
+}
+.container_busqueda{
+    padding-right: 0.5rem;
+    width: 18%;
+    padding-left: 0.5rem;
+    padding-top: 2rem;
+    border-style: solid;
+    border-top: none;
+    border-bottom: none;
+    border-width: 1px;
+    border-color: rgb(227, 227, 227);
+    border-right: none;
+    
+   
+}
+.lista_busqueda  {
+    font-size: 13px;
+    margin: 0;
+    padding: 0;
+    padding-top: 1rem;
+    list-style: none;
+}
+.lista_busqueda li{ padding-top: 0.4rem; padding-left: 0;}
+.lista_busqueda a{text-decoration:none;color: black;}
+.lista_busqueda a:hover{background:#ABD896;}
+
+@media  only screen and (max-width:767px){
+    .container_busqueda{display: none;}
+}
+.container_busqueda input{
+    width: 130px;
+  height: 20px;
+  background: white;
+  font-size: 10pt;
+  color: white;
+  padding-left: 1px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  color:black
+}
+.container_busqueda button{
+    padding: 4px;
+    font-weight: 600;
+    font-size: 10px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    border-radius:3px;
+    color: #ffffff;
+    background-color: #1883ba;
+}
+.div_input{padding-bottom: 0.2rem;}
+.container-menu a{ color:black ;text-decoration: none;}
+@media  only screen and (max-width:767px){
+    .columna_derecha{width: 100%; padding: 0.3rem;padding-left: 0.6rem;padding-right: 0.6rem;}
+    .columna_izquierda{display: none;}
+    .container-head{width: 100%;}
+    .container-header{width: 100%;}
+    .container-pie{width: 100%;}
+    .container-cuerpo{width: 100%; height: 100%};
+    .container_busqueda{display: none;}
+ }
+/*----------------------------------------------------------------------------------*/
+
+/*Navegación*/
+.show_2 a{
+    border-style: solid;
+    border-color: rgb(227, 227, 227);
+    border-width: 1px; 
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    font-size: 13px;
+    padding: 0px 5px;
+    width: 79%;
+    font-size: 11px;
+}
+.logo-nav-contenedor{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    background: white;
+}
+.navegacion ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.navegacion ul li{display: inline-block;}
+.navegacion ul li a{
+    display: block;
+    padding: 0.5rem 1rem;
+    transition: all 0.4s linear;
+}
+.navegacion_2 ul li a{
+    display: block;
+    padding: 0.5rem 1rem;
+    transition: all 0.4s linear;
+}
+.navegacion ul li a:hover{background: #ABD896;}
+.menu-icon {display: none;background-color: #ABD896;padding-bottom: 2rem;}
+.navegacion_2 ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+@media  only screen and (max-width:767px){ 
+    .logo-nav-contenedor{width: 100%;background: #ABD896;}
+    .menu-icon{
+        display: block;
+        cursor: pointer;
+        padding: 0.5rem 1rem;
+    }
+    .navegacion{ width: 100%; margin-top: 1rem;}
+    .navegacion ul{display: none;list-style: none;}
+    .navegacion ul.show{display: block;}
+    .navegacion ul li{display:block;}
+    .navegacion ul li a{
+        display: block;
+        padding: 0.5rem 0;
+        transition: all 0.4s linear;
+    }
+    .navegacion ul li a:hover{ background: #ccc;}
+    .menu-icon{ display:block;}
+}
+
+/*----------------------------------------------------------------------------------*/
+/*Barra de busqueda*/
+#search-wrapper {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-flex-flow: row-reverse nowrap;
+        -ms-flex-flow: row-reverse nowrap;  
+            flex-flow: row-reverse nowrap;
+            max-width: 100%;
+            width: 155px;
+  }
+  #search-wrapper #search {
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-left: 0;
+    border-radius: 0 25px 25px 0;
+    color: #444;
+    padding: 2px;
+    font-size: 11px;
+    font-weight: lighter;
+    -webkit-transition: border-color .2s ease;
+    transition: border-color .2s ease;
+    width: 100%;
+  }
+  #search-wrapper #search + i {
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 25px 0 0 25px;
+    border-right: 0;
+    color: #777;
+    padding: 4.1px;
+    -webkit-transition: border-color .2s ease;
+    transition: border-color .2s ease;
+  }
+  #search-wrapper #search:focus {
+    border-color: #999;
+    outline: none;
+  }
+  #search-wrapper #search:focus + i {
+    border-color: #999;
+  }
+/*----------------------------------------------------------------------------------*/
+/*Otros*/
+.fa {color: black;font-size: 10px;}
+.copyright p{
+    color: white;
+    font-size: 10px;
+}
+.copyright{
+   padding: 2rem;
+   display: flex;
+   justify-content: center;
+}
+.show a{
+    border-style: solid;
+    border-color: rgb(227, 227, 227);
+    border-width: 1px; 
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    height:25px;
+}
+.show_2 a{
+    text-decoration: none;
+    color: black;
+}
+.show_2 a:hover{
+    color:#4AAA54;
+}
+.show_2 i{
+    color: black;
+    padding-right: 0.3rem;
+}
+i{color: white; font-size: 13px;}
+p{text-align: justify;}
+@media  only screen and (max-width:767px){ 
+    .show li{
+     background:#ABD896;
+     text-align: center;
+     padding-top: 0.5rem;
+    }
+}
+
+
+
+/**-------------------------------------------------------------------------------------------------------------------------**/
+/*compañeros*/
