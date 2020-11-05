@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/all.css">
+    <title>Presentaciones</title>
+</head>
+<body>
+
+<div class="container-head">
+    <div class="logos">
+        <a href="index.html" class="logo"><img src="img/logo-ute.png" alt="logo" width="90px" height="90px" ></a>
+    </div> 
+</div>
+
+      
+
+<header>
+    <div class="container-menu logo-nav-contenedor">
+        <span class="menu-icon"><i class="fas fa-bars"></i></span>
+        <nav class="navegacion">
+            <ul class="show">
+                <strong><li><a href="Presentaciones.html">Presentaciones</a></li></strong>
+                <strong><li><a href="Informes.html">Informes</a></li></strong>
+               
+            </ul>
+        </nav>
+      </div>
+</header>
+
+
+<div class="container-general">
+<main>
+<div class="container-cuerpo">
+<div class="columna_izquierda">
+    <div class="contenido_1">
+        <strong><h3>Temas</h3></strong>
+    </div>
+    <div class="contenido_2">
+        <nav class="navegacion_2">
+            <ul class="show_2">
+                <!-- <li><a href="#"><i class="fas fa-sign-in-alt"></i>Expresiones Lambda</a></li> -->
+                <li><a href="Expresiones_Lambda.html"><i class="fas fa-sign-in-alt"></i>Expresiones Lambda</a></li> 
+                <li><a href="Metodos_estaticos.html"><i class="fas fa-sign-in-alt"></i>Métodos Estáticos</a></li>
+               
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<section class="columna_derecha">
+
+<div class="div-presentaciones">  
+    <iframe  src="Expresiones_lambda.pdf" width="720px" height="500px"></iframe > <br>
+    <iframe  src="grupo3.pdf" width="720px" height="500px"></iframe >
+</div>
+
+
+
+
+
+</section>
+
+<div class="container_busqueda">
+   
+    <div id="search-wrapper">
+        <input type="search" id="search" placeholder="Buscar"/>
+        <i class="fa fa-search"></i>
+      </div>
+    <ul id="resultado" class="lista_busqueda">
+        
+    </ul>
+</div>
+</div>
+</div>
+</main>
+
+
+<footer>
+    <div class="container-pie">
+        <div class="copyright">
+           <p>&copy; 2020 Página realizada por estudiantes de la Universidad UTE.</p> 
+        </div>
+    </div>
+</footer>
+</div>
+
+<script src="js/jQuery.js"></script>
+<script src="js/scripts.js"></script>
+
+
+
+<script>
+    const temas = [  /*Cargar aqui enlaces para la busqueda con el mismo formato.*/
+        {titulo: '<a href="Expresiones_Lambda.html">Expresiones Lambda</a>'},   
+        {titulo: '<a href="Metodos_estaticos.html">Métodos Estáticos</a>'},   
+       
+    ]
+    const formulario= document.querySelector('#search');
+    const boton= document.querySelector('#boton');
+    const resultado=document.querySelector('#resultado');
+
+    const filtrar = ()=>{
+       resultado.innerHTML='';
+
+       const texto = formulario.value.toLowerCase();
+       for(let tema of temas ){
+           let titulo=tema.titulo.toLowerCase();
+           if(titulo.indexOf(texto) !== -1){
+               
+                resultado.innerHTML += '<li>'+tema.titulo+'</li>'
+         }
+        }
+        if(resultado.innerHTML===''){
+            resultado.innerHTML += '<li>Enlace no Encontrado...</li>'
+        }
+    }
+    //boton.addEventListener('click',filtrar)
+    formulario.addEventListener('keyup',filtrar);
+   
+    
+</script>
+</body>
+</html>
