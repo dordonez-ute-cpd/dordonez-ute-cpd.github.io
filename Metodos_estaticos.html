@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/all.css">
+    <title>Página</title>
+</head>
+<body>
+
+<div class="container-head">
+    <div class="logos">
+        <a href="index.html" class="logo"><img src="img/logo-ute.png" alt="logo" width="90px" height="90px" ></a>
+    </div> 
+</div>
+
+      
+
+<header>
+    <div class="container-menu logo-nav-contenedor">
+        <span class="menu-icon"><i class="fas fa-bars"></i></span>
+        <nav class="navegacion">
+            <ul class="show">
+                <strong><li><a href="Presentaciones.html">Presentaciones</a></li></strong>
+                <strong><li><a href="Informes.html">Informes</a></li></strong>
+               
+            </ul>
+        </nav>
+      </div>
+</header>
+
+
+<div class="container-general">
+<main>
+<div class="container-cuerpo">
+<div class="columna_izquierda">
+    <div class="contenido_1">
+        <strong><h3>Temas</h3></strong>
+    </div>
+    <div class="contenido_2">
+        <nav class="navegacion_2">
+            <ul class="show_2">
+                <!-- <li><a href="#"><i class="fas fa-sign-in-alt"></i>Expresiones Lambda</a></li> -->
+                <li><a href="Expresiones_Lambda.html"><i class="fas fa-sign-in-alt"></i>Expresiones Lambda</a></li> 
+                <li><a href="Metodos_estaticos.html"><i class="fas fa-sign-in-alt"></i>Métodos Estáticos</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<section class="columna_derecha">
+    <h1>Métodos estáticos y por default</h1>
+    <h2>Interfaces</h2>
+    <p>Una interfaz en Java es una colección de métodos abstractos y propiedades constantes.
+        En las interfaces se especifica qué se debe hacer,pero no su implementación. 
+        Serán las clases que implementen estas interfaces las que describen la lógica del comportamiento de los métodos.
+        </p>
+<p>Podemos verlo mejor con un ejemplo: 
+    Pensemos en un interfaz que en su lista de métodos aparezcan los métodos despegar, aterrizar, servir Comida y volar. 
+    Todos pensamos en un avión, ¿verdad? El motivo es sencillamente que avión es el concepto que engloba las acciones que hemos detallado antes, 
+    a pesar de que existan muchos objetos avión diferentes entre sí, por ejemplo Boeing 747, Boeing 737, MacDonell-Douglas.</p>
+
+<p>Lo realmente interesante es que todos ellos,
+         a pesar de pertenecer a clases distintas, poseen el interfaz avión,
+          es decir poseen los métodos detallados en la lista del interfaz avión.</p>
+
+<p>Esto significa también que a cualquier avión le podemos pedir que vuele, 
+    sin importarnos a que clase real pertenezca el avión, 
+    evidentemente cada clase especificará como volará el avión (porque proporciona el código de la función volar).</p>
+ 
+    <p>En java un interfaz define la lista de métodos,
+         pero para que una clase posea un interfaz hay que indicar explícitamente que lo implementa mediante la claúsula implements. 
+         Pero veamos primero la estructura de un interfaz:</p>
+
+    <p>          [modif.visibilidad] interface nombreInterfaz [extends listaInterfaces] <br>
+        { <br>
+            prototipo método1; <br>
+            <br>
+            .. <br>
+            prototipo método1;  <br>
+        } <br>
+</p>
+
+<p>Donde modif.visibilidad puede ser public o bien sin especificar, es decir visibilidad pública (desde cualquier clase se puede emplear el interfaz) o de paquete (sólo se puede emplear desde clases del mismo paquete).
+
+    nombreInterfaz por convenio sigue las mismas reglas de nomenclatura que las clases, y en muchos casos acaba en able (que podíamos traducir como: ser capaz de).
+    <br>
+    La claúsula opcional extends se emplea para conseguir que un interfaz hereda las funciones de otro/s interfaces, simplemente listaInterfaces es una lista separaada por coma de interfaces de los que se desea heredar.
+    <br>
+    En muchas ocasiones un interfaz es empleado para definir un comportamiento, que posteriormente será implementado por diversas clases, que podrían no tener nada que ver entre ellas, pero que todas se comportarán igual de cara al interfaz. Es decir, todas tendrán las funciones indicadas por el interfaz.
+    <br>
+    Cuando varios objetos de distintas clases pueden responder al mismo mensaje (función), aun realizando cosas distintas se denomina polimorfismo.
+    </p>
+
+ <h3>Ventajas</h3>
+ <p>
+    El uso de las interfaces Java proporciona las siguientes ventajas:
+<br>
+    •	Organizar la programación. <br>
+    •	permiten declarar constantes que van a estar disponibles para todas las clases que queramos (implementando esa interfaz) <br>
+    •	Obligar a que ciertas clases utilicen los mismos métodos (nombres y parámetros). <br>
+    •	Establecer relaciones entre clases que no estén relacionadas.  <br>
+    <br>
+   </p>
+
+   <h1>Métodos Predeterminados (Por Default)</h1>
+   La posibilidad de agregar la implementación de métodos por default en una interface fue añadida <br>
+   en JDK 8 de forma que estas pueden evolucionar sin romper compatibilidad con versiones anteriores. Previamente, <br>
+   no se podía agregar un método a una interface sin requerir que se implementen todos los métodos por parte de la clase que llama a la interface.<br>
+    Una de las principales preocupaciones de Java es no romper la compatibilidad hacia atrás. Entonces, desde la versión 1.8 se puede marcar un método <br>
+    con la palabra reservada default y proporcionar la implementación correcta del método en la interface. Esto utilizado de una forma no adecuada puede <br>
+    generar código que sea difícil de entender y darle mantenimiento. Sin embargo, implementado en pequeñas dosis puede hacer a las interfaces más útiles.<br>
+    <br>
+   La regla principal para utilizar los métodos default sería no abusar de ellos y no hacer el código más desordenado de lo que sería sin él. Por ejemplo, <br>
+   si se desea agregar funcionalidad de ordenamiento a las clases Java sin contaminar la jerarquía con una clase común, considere crear una interface con este único método.<br>
+    A continuación un ejemplo de la interface Debuggable que utiliza el API reflection que accede a los atributos de los objetos y proporciona una implementación de toString()<br>
+     a fin de que el objeto imprima los valores de los campos.<br>
+
+     <h2>Estructura de un método default de Java</h2>
+
+     Los siguientes puntos son obligatorios para crear un método default en el lenguaje Java:
+     <br>
+•	Comenzará por la palabra reservada default. <br>
+•	Proporcionará una implementación al método. <br>
+•	Debe de encontrarse dentro de una interfaz. <br>
+<h2>Qué nos permite un método default en Java?</h2>
+<p>Lo que nos permite es de manera flexible modificar el patrón de abstracción que hasta ahora las interfaces proporcionaban. 
+    Podremos modificar el contrato de la interfaz y automáticamente propagarlo a todas las clases que la implementan sin tener que editarlas todas (que se hubieran roto al no contemplar el nuevo método añadido). 
+    Ahora el ejemplo.
+</p>
+   <p> Si en la actualidad tuviéramos una interfaz implementada por 20 clases en nuestra aplicación y necesitamos añadir un nuevo método a esa interfaz para que nuestro diseño siga siendo rígido,
+       tendríamos que modificar la interfaz y posteriormente modificar todas las clases que la implementan. </p>
+
+<h1>Método estático</h1>
+<p>De manera similar a los métodos predeterminados, los métodos estáticos de interfaz te proporcionan una forma de definir métodos dentro de una interfaz. Sin embargo, a diferencia de los métodos predeterminados, una clase que esté implementando no puede sobrescribir los métodos estáticos de una interfaz.  <br>
+	<br>
+    Si se tiene métodos estáticos específicos para una interfaz, entonces los métodos estáticos de interfaz de Java 8 nos proporcionan una forma de colocar estos métodos dentro de la interfaz correspondiente, en vez de tener que almacenarlos en una clase separada.
+    <br>
+    Se puede crear un método estático colocando la palabra clave static al principio de la firma del método
+    </p>
+
+    <p>Cuando se implementa una interfaz que contiene un método estático de interfaz, 
+        ese método estático aún es parte de la interfaz y no es heredado por la clase que implementa,
+         por lo que se necesitará colocar un prefijo en el método con el nombre de la interfaz</p>
+
+<p>Esto también significa que una clase y una interfaz pueden tener un método estático con la misma firma.
+     Por ejemplo, el uso de MyClass.staticMethod y MyInterface.staticMethod en la misma clase no causará un error en tiempo de compilación.</p>
+
+     <h2>Conclusiones</h2>
+<br>
+
+•	A través de la recopilación de información consolidamos nuestros conocimientos sobre el tema de métodos por default y estáticos. <br>
+ <br>
+•	Con la realización de la exposición pudimos compartir la información recopilada sobre el tema de métodos por default y estáticos a nuestros compañeros de clase. <br>
+ <br>
+
+</section>
+
+<div class="container_busqueda">
+   
+    <div id="search-wrapper">
+        <input type="search" id="search" placeholder="Buscar"/>
+        <i class="fa fa-search"></i>
+      </div>
+    <ul id="resultado" class="lista_busqueda">
+        
+    </ul>
+</div>
+</div>
+</div>
+</main>
+
+
+<footer>
+    <div class="container-pie">
+        <div class="copyright">
+           <p>&copy; 2020 Página realizada por estudiantes de la Universidad UTE.</p> 
+        </div>
+    </div>
+</footer>
+</div>
+
+<script src="js/jQuery.js"></script>
+<script src="js/scripts.js"></script>
+
+
+
+<script>
+    const temas = [  /*Cargar aqui enlaces para la busqueda con el mismo formato.*/
+        {titulo: '<a href="Expresiones_Lambda.html">Expresiones Lambda</a>'},   
+        {titulo: '<a href="Metodos_estaticos.html">Métodos Estáticos</a>'},  
+    ]
+    const formulario= document.querySelector('#search');
+    const boton= document.querySelector('#boton');
+    const resultado=document.querySelector('#resultado');
+
+    const filtrar = ()=>{
+       resultado.innerHTML='';
+
+       const texto = formulario.value.toLowerCase();
+       for(let tema of temas ){
+           let titulo=tema.titulo.toLowerCase();
+           if(titulo.indexOf(texto) !== -1){
+               
+                resultado.innerHTML += '<li>'+tema.titulo+'</li>'
+         }
+        }
+        if(resultado.innerHTML===''){
+            resultado.innerHTML += '<li>Enlace no Encontrado...</li>'
+        }
+    }
+    //boton.addEventListener('click',filtrar)
+    formulario.addEventListener('keyup',filtrar);
+   
+    
+</script>
+</body>
+</html>
