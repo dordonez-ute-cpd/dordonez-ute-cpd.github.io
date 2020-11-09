@@ -3,6 +3,7 @@ body{
     background:#F6F5F2;
     font-family: 'Roboto', sans-serif;
 }
+
 /*----------------------------------------------------------------------------------*/
 
 /*Containers*/
@@ -63,10 +64,10 @@ body{
     border-top: none;
 }
 .columna_izquierda{
-    width: 18%;
+    width: 20%;
     display: block;
     height: 800px;
-    justify-content: space-between;
+ 
     float: right;
     padding: 0.3rem;
     border-style: solid;
@@ -126,7 +127,7 @@ body{
     border-right: none;
     font-size: 14px;
     padding-bottom: 2rem;
-}
+}   
 .container_busqueda{
     padding-right: 0.5rem;
     width: 18%;
@@ -138,8 +139,10 @@ body{
     border-width: 1px;
     border-color: rgb(227, 227, 227);
     border-right: none;
-    
-   
+}
+.div-presentaciones{
+    max-width: 720px;
+    width: 100%;
 }
 .lista_busqueda  {
     font-size: 13px;
@@ -152,7 +155,7 @@ body{
 .lista_busqueda a{text-decoration:none;color: black;}
 .lista_busqueda a:hover{background:#ABD896;}
 
-@media  only screen and (max-width:767px){
+@media  only screen and (max-width:768px){
     .container_busqueda{display: none;}
 }
 .container_busqueda input{
@@ -179,8 +182,8 @@ body{
 }
 .div_input{padding-bottom: 0.2rem;}
 .container-menu a{ color:black ;text-decoration: none;}
-@media  only screen and (max-width:767px){
-    .columna_derecha{width: 100%; padding: 0.3rem;padding-left: 0.6rem;padding-right: 0.6rem;}
+@media  only screen and (max-width:768px){
+    .columna_derecha{width: 95%; padding: 0.3rem;padding-left: 0.6rem;padding-right: 0.6rem;}
     .columna_izquierda{display: none;}
     .container-head{width: 100%;}
     .container-header{width: 100%;}
@@ -236,7 +239,7 @@ body{
 }
 
 
-@media  only screen and (max-width:767px){ 
+@media  only screen and (max-width:768px){ 
     .logo-nav-contenedor{width: 100%;background: #ABD896;}
     .menu-icon{
         display: block;
@@ -337,15 +340,40 @@ body{
 }
 i{color: white; font-size: 13px;}
 p{text-align: justify;}
-@media  only screen and (max-width:767px){ 
+@media  only screen and (max-width:768px){ 
     .show li{
      background:#ABD896;
      text-align: center;
      padding-top: 0.5rem;
     }
 }
+/*CSS imágenes*/
+.imagen{
+    max-width: 83%; 
+}
+/*---------------------------------------------------------*/
+/*videos*/
+@media (min-width:768px){
+    .div-presentaciones{
 
+        max-width:95% ;
+        
+    
+    }
+}
 
+.div-presentaciones iframe{
 
-/**-------------------------------------------------------------------------------------------------------------------------**/
-/*compañeros*/
+    max-width:95% ;
+
+}
+
+    @media  only screen and (min-width:768px){  
+     .video-responsive iframe{
+        width: 600px;
+        height: 350px;
+        border-style: solid;
+        border-color: black;
+        border-width: 2px;
+     }  
+    }

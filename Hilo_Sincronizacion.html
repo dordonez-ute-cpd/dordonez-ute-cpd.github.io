@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/prism.css">
+    <link rel="stylesheet" href="css/all.css">
+    <title>Hilos y Sincronización</title>
+</head>
+<body>
+
+<div class="container-head">
+    <div class="logos">
+        <a href="index.html" class="logo"><img src="img/logo-ute.png" alt="logo" width="90px" height="90px" ></a>
+    </div> 
+</div>
+
+      
+
+<header>
+    <div class="container-menu logo-nav-contenedor">
+        <span class="menu-icon"><i class="fas fa-bars"></i></span>
+        <nav class="navegacion">
+            <ul class="show">
+                <strong><li><a href="Presentaciones.html">Presentaciones</a></li></strong>
+                <strong><li><a href="Videos.html">Videos</a></li></strong>
+               
+            </ul>
+        </nav>
+      </div>
+</header>
+
+
+<div class="container-general">
+<main>
+<div class="container-cuerpo">
+<div class="columna_izquierda">
+    <div class="contenido_1">
+        <strong><h3>Temas</h3></strong>
+    </div>
+    <div class="contenido_2">
+        <nav class="navegacion_2">
+            <ul class="show_2">
+                 <!-- <li><a href="#"><i class="fas fa-sign-in-alt"></i>Expresiones Lambda</a></li> -->
+             <li><a href="Expresiones_Lambda.html"><i class="fas fa-sign-in-alt"></i>Expresiones Lambda</a></li> 
+             <li><a href="Hilo_Sincronizacion.html"><i class="fas fa-sign-in-alt"></i>Hilos y Sincronización</a></li>
+             <li><a href="Metodos_estaticos.html"><i class="fas fa-sign-in-alt"></i>Métodos Estáticos</a></li>
+             <li><a href="ForkJoin.html"><i class="fas fa-sign-in-alt"></i>ForkJoin</a></li>
+             <li><a href="JavaStreams.html"><i class="fas fa-sign-in-alt"></i>Java Streams</a></li>
+             <li><a href="ip.html"><i class="fas fa-sign-in-alt"></i>TCP/IP, Sockets UDP</a></li>
+             <li><a href="MapReduce.html"><i class="fas fa-sign-in-alt"></i>MapReduce</a></li>
+               
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<section class="columna_derecha">
+    <div align="center"><h1>Hilos y Sincronización</h1></div>
+
+        <h2>Programación Secuencial vs. Concurrente</h2>
+        <strong><p>Secuencial</p></strong>
+        <p>La estructura secuencial es aquella en la que una acción 
+        (instrucción) sigue a otra en secuencia. 
+        Las tareas se suceden de tal modo que la 
+        salida de una es la entrada de la siguiente
+        y así sucesivamente hasta el fin del proceso.</p>
+        <ul> <li><p>Un solo <strong>hilo(thread)</strong> de ejecución.</p></li></ul>
+        <strong><p>Concurrente</p></strong>
+        <p>Varias instrucciones pueden ejecutarse exactamente al mismo tiempo.</p>
+        <ul> <li><p>Varios <strong>hilos</strong> de ejecución.</p></li></ul>
+        <h2>Conceptos</h2>
+        <strong><p>Proceso</p></strong>
+        <p>Un proceso no solamente es el código de un programa,un proceso tiene un contador de programa el cual es un registro del computador que indica la dirección de la siguiente instrucción que será ejecutada por el proceso, Pila de proceso Esta contiene datos temporales tales como: Los parametros de las funciones, direcciones de retorno, variables locales , … , Sección de datos la cual contiene datos tales como las variables locales, Heap: Cúmulo de memoria que es la memoria que se asigna dinámicamente al proceso n tiempo de ejecución</p>
+       <div align="center"><img srcset="img/img_Proceso.jpg 320w,
+        img/img_Proceso.jpg 480w,img/img_Proceso.jpg 800w"
+        sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
+        src="img/img_Proceso.jpg"  alt="Proceso" class="imagen"></div>
+        <h2>Estado del Proceso</h2>
+        <p>Cuando un proceso es ejecutado este cambia de estados, los estados que todo proceso tiene por lo general son</p> 
+        <ul>
+            <li><strong>Nuevo</strong>: El proceso se está creando.</li> <br>
+            <li><strong>Corriendo</strong>: Se están ejecutando las instrucciones.</li> <br>
+            <li><strong>Espera</strong>: El proceso está esperando que algún evento ocurra.</li><br>
+            <li><strong>Preparando</strong>: El proceso está esperando ser asignado al procesador.</li><br>
+            <li><strong>Terminado</strong>: El proceso a terminado la ejecución.</li><br>
+            <div align="center"><img srcset="img/img_estado_proceso.jpg 320w,
+                img/img_estado_proceso.jpg 480w,img/img_estado_proceso.jpg 800w"
+                sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
+                src="img/img_estado_proceso.jpg"  alt="Proceso" class="imagen"></div>
+        </ul>
+        <h2>PCB ( Bloque de control de proceso )</h2>
+        <p>Cada proceso se representa en el sistema operativo mediante el PCB, entre los elementos de información que este contiene se encuentran:</p>
+        <ul>
+            <li><strong>Estado del proceso</strong>: New, ready, running, waiting, halted, ...</li> <br>
+            <li><strong>Contador del programa</strong>: Indica la posición donde está el procesador en su secuencia de instrucciones.</li> <br>
+            <li><strong>Registros de la CPU</strong>: Estos varían en cuanto a número y tipo dependiendo de la arquitectura del procesador.</li><br>
+            <li><strong>Información de planificación de la CPU</strong>: Parametros de planificación como prioridad de procesos, punteros a las colas de planificación ...</li><br>
+            <li><strong>Información de gestión de memoria</strong>: Tablas de paginas , tablas de segmentos, dependiendo los mecanismos de gestión del S.O.</li><br>
+            
+            <div align="center"><img srcset="img/img_pcb.jpg 320w,
+                img/img_pcb.jpg 480w,img/img_pcb.jpg 800w"
+                sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
+                src="img/img_pcb.jpg"  alt="Proceso" class="imagen"></div>
+        </ul>
+
+        <h2>Hilo( thread )</h2> 
+        <p>Se puede definir como una unidad básica de ejecución del Sistema Operativo para la utilización del CPU. Este es quien va al procesador y realiza todos los cálculos para que el programa se pueda ejecutar. Es necesario, ya que debe contar con al menos un hilo para que cualquier programa sea ejecutado. Cada hilo tiene: id de hilo, contador de programa, registros, stack. Dentro de las características que se encuentran se tiene que cada hilo tiene información del código de máquina que se va a ejecutar en el procesador, sus respectivos datos, el acceso a los archivos, el registro y su respectivo stack en donde se guarda toda la información necesaria del hilo como son las variables locales, variables de retorno o algo a lo que se acceda en tiempo de ejecución. Los hilos que pertenecen a un mismo proceso comparten: sección de código, sección de datos, entre otros recursos del sistema. El multithreading es la capacidad para poder proporcionar múltiples hilos de ejecución al mismo tiempo. Una aplicación por lo general es implementada como un proceso separado con muchos hilos de control. Dentro de las semejanzas de hilo y multihilo es que poseen un solo bloque de control de proceso (PCB) y un solo espacio de direcciones de proceso. Por el contrario, en las diferencias es que mientras un hilo tiene una pila para sus registros y stack, el multihilo tiene una pila para cada hilo con subbloques de control internos, incluyendo la pila de registros y sus respectivos stacks. Se dice que los hilos de ejecución que comparten recursos agregando estos recursos da como resultado el proceso.</p>
+        
+        <div align="center"><img srcset="img/img_hilo.png 320w,
+            img/img_hilo.png 480w,img/img_hilo.png 800w"
+            sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
+            src="img/img_hilo.png"  alt="Proceso" class="imagen"></div>
+
+        <h2>Multiprogramación</h2>
+        <p>Es una técnica de multiplexación que permite de múltiples procesos en un único procesador. Es importante resaltar que los procesos nunca corren en paralelo en el procesador, ya que en cada instante de tiempo solo se ejecuta un proceso en el procesador.</p>
+        <h2>Multiproceso</h2>
+        <p>Es una técnica en la cual se hace uso de dos o más procesadores en una computadora para ejecutar uno o varios procesos.</p>
+
+        <h2>Concurrencia y Paralelismo</h2>
+        <strong><p>Programación Concurrente</p></strong>
+        <ul>
+            <li><strong>Multitarea</strong>: Ejecución de varios programas simultaneamente en un equipo.</li><br>
+            <li><strong>Multitarea basada en un proceso independiente</strong>: Cada programa es un proceso independiente.</li><br>
+            <li><strong>Multitarea basada en Hilos(threads)</strong>: Un programa ejecuta varias tareas simultaneamente.</li><br>
+        </ul>
+        <h2>Threads( Hilos )</h2>
+        <strong>Multi-threading</strong>
+        <p>Los Hilos(threads) se ejecutan de manera asíncrona en el mismo proceso además comparten el mismo 
+            espacio de memoria del proceso, lo cual requiere sincronizacón para ciertas tareas como Semáforos, Candados, Mensajes, etc..
+        </p>
+        <p><strong>La multitarea basada en procesos</strong> esta a cargo del sistema operativo y no de Java.</p>
+        <p><strong>La multitarea basada en hilos</strong> si esta a cargo de Java o del entorno de ejecución.</p>    
+        <p><strong>Java</strong> utiliza los hilos para permitir que el sistema sea asíncrono.</p>
+        
+        <h2>Hardware vs. Software threads</h2>
+        <p><strong>Hardware thread</strong>: Un núcleo(core) físico sin hyperthreading -> 1 hilo.</p>
+        <ul><li>Ej: i5 4 núcleos -> 4 Hardware threads.</li></ul>
+        <p><strong>Hardware thread</strong>: Un núcleo lógico con hyperthreading -> 1 hilo. (Un procesador i7 tiene dos hilos por cada núcleo. )</p>
+        <ul><li>Ej: i7 4 núcleos -> 8 Hardware threads.</li></ul>
+        <div align="center"><img srcset="img/img_hyper.jpg 320w,
+            img/img_hyper.jpg 480w,  img/img_hyper.jpg 800w"
+            sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
+            src="   img/img_hyper.jpg"  alt="Proceso" class="imagen"></div>
+        <p><strong>Software thread</strong></p>
+        <p>Un flujo de instrucciones secuenciales o path de ejecución indivisible espóntaneamente</p>
+        <pre class="language-java">
+            <code>
+                for(long i=0; i < Long.LONG_MAX; i++) {< hacer >}</code>
+        </pre>
+        
+        <p><strong>¿Cuántos hilos podemos tener?</strong></p>
+        <p>Depende principalmente de el sistema operativo, memoria, cuantos hilos de hardware tenemos
+            y si los hilos de software realizan tareas intensas en uso del CPU o intensas en I/O.
+        </p>
+        <p><strong>Sistema Operativo</strong>: Los hilos necesitan memoria stack, con un default de 1MB 
+        stack por thread (Java de 64 bits), y una ram de 2GB para programas; no se podrá tener mas de 2000 hilos.</p>
+        
+        <p><strong>Hilos de hardware y uso del CPU</strong>: Idealmente se debería tener un hilo de software por hilo de hardware pero dependerá realmente del usp del CPU que haga cada hilo.</p>
+       
+        <h2>Modelos de hilos Java</h2>
+        <p><strong>MODELOS SECUENCIAL</strong></p>
+        <div align="center"><img srcset=" img/img_tipos_th_1.png 320w,
+            img/img_tipos_th_1.png 480w, img/img_tipos_th_1.png 800w"
+            sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
+            src=" img/img_tipos_th_1.png"  alt="Proceso" class="imagen"></div>
+        <p><strong>MODELO PARALELO</strong></p>
+        <div align="center"><img srcset=" img/img_tipos_th_2.png 320w,
+            img/img_tipos_th_2.png 480w, img/img_tipos_th_2.png 800w"
+            sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
+            src=" img/img_tipos_th_2.png"  alt="Proceso" class="imagen"></div>            
+        <h2>El hilo principal (Main thread)</h2>
+        <p>Cuando un programa Java inicia, un hilo se ejecuta inmediatamente y automáticamente: hilo principal o main thread.</p>
+        <p>El punto de entrada de ese hilo es el método main de la clase que carga la máquina virtual.</p>
+        <pre class="language-java">
+            <code>
+                C:\dir>java mipaquete.MiClase
+                Ejecuta: public static void main(String args[]){...}
+                De la clase en cuestión</code>
+        </pre>
+        <p>El hilo principal puede ser controlado mediante el objeto thread, se debe obtener una referencia al hilo actual y permite manipularlo</p>
+        <pre class="language-java">
+            <code>
+                public static Thread currentThread()</code>
+        </pre>
+        <p>Este método devuelve una referencia al hilo actual y permite manipularlo como: getName, setName, sleep.</p>
+        <p><strong>Ejemplo:</strong></p>
+        <pre class="language-java">
+            <code>
+                package a_intro;
+                
+                /**
+                 *
+                 * @author dordonez@ute.edu.ec
+                 */
+                public class Main {
+                
+                    /**
+                     * @param args the command line arguments
+                     */
+                    public static void main(String[] args) {
+                        String name;
+                        //Recupera el nombre de la thread actual (principal)
+                        name = Thread.currentThread().getName();
+                        System.out.println("Nombre actual: " + name);
+                        
+                       
+                        
+                        //Crea nueva thread y la ejecuta
+                        NuevaThread nt = new NuevaThread();
+                        nt.start();
+                        
+                            
+                        
+                        //se detiene medio segundo en cada iteración       
+                        for(int i = 0; i < 5; i++) {
+                            System.out.println(name + " paso: " + i);
+                            try {
+                                Thread.sleep(500);
+                            } catch (InterruptedException ex) {
+                                ex.printStackTrace();
+                            }
+                        }
+                    }
+                }</code>
+        </pre>
+        
+    <h2>Crear un hilo</h2>
+    <p>Se crea un nuevo hilo, creando una instancia de un objeto Thread.En Java se proporciona dos maneras de hacerlo:</p>
+
+    <p><strong>Implementar la interfaz Runnable (Es más genérico).</strong></p>
+  
+    <pre class="language-java">
+        <code>
+            
+                package a_intro;
+
+                /**
+                *
+                * @author dordonez@ute.edu.ec
+                */
+                public class NuevaRunnable implements Runnable {
+
+                    @Override
+                    public void run() {
+                        String name = Thread.currentThread().getName();
+                        for(int i = 0; i < 5; i++) {
+                            System.out.println(name + " paso: " + i);
+                            try {
+                                Thread.sleep(700);
+                            } catch (InterruptedException ex) {
+                                ex.printStackTrace();
+                            }
+                        }
+                    }
+                }</code>
+    </pre>
+    <p><strong>Clase Main</strong></p>
+    <pre class="language-java">
+      <code> package a_intro;
+
+        /**
+        *
+        * @author dordonez@ute.edu.ec
+        */
+        public class Main {
+
+            /**
+            * @param args the command line arguments
+            */
+            public static void main(String[] args) {
+                String name;
+                //Recupera el nombre de la thread actual (principal)
+                name = Thread.currentThread().getName();
+                System.out.println("Nombre actual: " + name);
+                
+                
+                
+                //Crea nueva runnable y la ejecuta
+                Thread nr = new Thread(new NuevaRunnable());
+                nr.start();        
+                
+            
+                
+                //se detiene medio segundo en cada iteración       
+                for(int i = 0; i < 5; i++) {
+                    System.out.println(name + " paso: " + i);
+                    try {
+                        Thread.sleep(500);
+                    } catch (InterruptedException ex) {
+                        ex.printStackTrace();
+                    }
+                }
+            }
+        }</code>
+    </pre>
+    <p>Instancias de Runnable se pasan a una variedad de objetos con hilos y tareas, como: ExecutorService, EventQueue. Muchas veces se crean como clases anónimas.</p>
+   
+    <pre class="language-java">
+        <code>
+                new Thread(
+                    new Runnable(){
+                        public void run(){
+                            < código >
+                        }
+                    }
+                ) </code>
+    </pre>
+    <p><strong>Extender la clase Thread(Es más directo).</strong></p>
+    <pre class="language-java">
+       <code>
+        package a_intro;
+
+        /**
+        *
+        * @author dordonez@ute.edu.ec
+        */
+        public class NuevaThread extends Thread {
+
+            @Override
+            public void run() {
+                String name = Thread.currentThread().getName();
+                for(int i = 0; i < 5; i++) {
+                    System.out.println(name + " paso: " + i);
+                    try {
+                        Thread.sleep(600);
+                    } catch (InterruptedException ex) {
+                        ex.printStackTrace();
+                    }
+                }
+            }
+        }</code>
+    </pre>
+    <p><strong>Clase Main</strong></p>
+    <pre class="language-java">
+       <code>
+        package a_intro;
+
+        /**
+        *
+        * @author dordonez@ute.edu.ec
+        */
+        public class Main {
+
+            /**
+            * @param args the command line arguments
+            */
+            public static void main(String[] args) {
+                String name;
+                //Recupera el nombre de la thread actual (principal)
+                name = Thread.currentThread().getName();
+                System.out.println("Nombre actual: " + name);
+                
+            
+                
+                //Crea nueva thread y la ejecuta
+                NuevaThread nt = new NuevaThread();
+                nt.start();
+                
+                    
+                
+                //se detiene medio segundo en cada iteración       
+                for(int i = 0; i < 5; i++) {
+                    System.out.println(name + " paso: " + i);
+                    try {
+                        Thread.sleep(500);
+                    } catch (InterruptedException ex) {
+                        ex.printStackTrace();
+                    }
+                }
+            }
+        }</code>
+    </pre>
+    <h2>Cierre de exclusión mutua</h2>
+    <p>Los cierres de exclusión mutua o candados son un mecanismo de sincronización que limita el acceso a un recurso compartido por varios procesos o hilos en un ambiente de ejecución concurrente, permitiendo así la exclusión mutua.
+        Cuando un elemento es compartido por más de un hilo, pueden ocurrir condiciones de carrera si el mismo no es protegido adecuadamente. El mecanismo más simple para la protección es el cierre o cerrojo.</p>
+    <h3>Candado de uso exclusivo</h3>
+    <p><strong>Clase Hilo</strong></p>
+    <pre class="language-java">
+       <code>
+        package b_candado;
+
+        /**
+        * Trabajo de impresión concurrente
+        * 
+        * @author dordonez@ute.edu.ec
+        */
+        public class Hilo extends Thread {
+            private Impresora imp;
+            private String msg;
+            
+            public Hilo(Impresora imp, String msg) {
+                this.imp = imp;
+                this.msg = msg;
+            }
+        
+            @Override
+            public void run() {
+                imp.print(msg);       
+            }
+            
+        }</code>
+    </pre>
+    <p><strong>Clase Impresora</strong></p>
+    <pre class="language-java">
+       <code>
+           
+        package b_candado;
+        /**
+        * Interfaz para definir las operaciones de una impresora
+        *
+        * @author dordonez@ute.edu.ec
+        */
+        public interface Impresora {
+
+        public void print(String msg);
+        
+        } </code>
+    </pre>
+    <p><strong>Clase ImpresoraNOK</strong></p>
+    <pre class="language-java">
+       <code>
+        package b_candado;
+
+        /**
+        * Impresora sin sincronización (no es thread-safe !)
+        *
+        * @author dordonez@ute.edu.ec
+        */
+        public class ImpresoraNOK implements Impresora{
+
+            // Simula una impresora lenta que imprime caracter por caracter
+            public void print(String msg) {
+                for(int i = 0; i < msg.length(); i++) {
+                    System.out.print(msg.charAt(i));
+                    try {
+                        Thread.sleep(100);
+                    } catch (InterruptedException ex) {
+                        ex.printStackTrace();
+                    }
+                }
+                System.out.println("");
+            }
+            
+        }</code>
+    </pre>
+    <p><strong>Clase ImpresoraTS</strong></p>
+    <pre class="language-java">
+        <code>
+            package b_candado;
+
+            import java.util.concurrent.locks.Lock;
+            import java.util.concurrent.locks.ReentrantLock;
+
+            /**
+            * Impresora con sincronización (TS = thread-safe !)
+            *
+            * @author dordonez@ute.edu.ec
+            */
+            public class ImpresoraTS implements Impresora{
+                private Lock lock = new ReentrantLock();
+                
+                // Simula una impresora lenta que imprime caracter por caracter
+                public void print(String msg) {
+                    try {		
+                        lock.lock();
+                        
+                        for(int i = 0; i < msg.length(); i++) {
+                            System.out.print(msg.charAt(i));
+                            Thread.sleep(100);
+                        }
+                    } catch(Exception ex) {
+                        ex.printStackTrace();
+                    } finally { 	
+                        lock.unlock();
+                    }
+                    System.out.println("");
+                }
+                
+            }</code>
+    </pre>
+    <p><strong>Clase Main</strong></p>
+    <pre class="language-java">
+        <code>
+            
+            package b_candado;
+
+            /**
+            * https://github.com/dordonez-ute-apdist/concurrencia
+            * 
+            * @author dordonez@ute.edu.ec
+            */
+            public class Main {
+                
+                public static void main(String[] args) {
+                    //Impresora imp = new ImpresoraNOK();
+                    Impresora imp = new ImpresoraNOK();
+                    
+                    Hilo h1 = new Hilo(imp, "abcdefgh");
+                    Hilo h2 = new Hilo(imp, "ABCDEFGH");
+                    Hilo h3 = new Hilo(imp, "12345678"); 
+                    
+                    h1.start();
+                    h2.start();
+                    h3.start();
+
+                }
+                
+            }</code>
+    </pre>
+    <h3>Candado de Lectura y Escritura</h3>
+    <p><strong>Clase Cuenta</strong></p>
+    <pre class="language-java"> 
+        <code>
+            
+package c_candado_rw;
+
+import java.util.concurrent.locks.ReadWriteLock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
+
+/**
+ *
+ * @author dordonez@ute.edu.ec
+ */
+public class Cuenta {
+    private double saldo;
+    private final ReadWriteLock lock = new ReentrantReadWriteLock();
+    
+    public void operacion(double valor) {  
+        try {
+        	lock.writeLock().lock();
+            Thread.sleep(500);
+            saldo += valor;
+        } catch(Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            lock.writeLock().unlock();
+        }
+    }
+    
+    public double getSaldo() {
+        try {
+        	lock.readLock().lock();
+            Thread.sleep(500);
+            return saldo;
+        } catch(Exception ex) {
+            ex.printStackTrace();
+            return saldo;
+        } finally {
+            lock.readLock().unlock();
+        }
+    }
+}
+        </code>
+    </pre>
+    <p><strong>Clase Main</strong></p>
+    <pre class="language-java">
+        <code> 
+            
+package c_candado_rw;
+
+/**
+ * https://github.com/dordonez-ute-apdist/concurrencia
+ * 
+ * @author dordonez@ute.edu.ec
+ */
+public class Main {
+
+    private static Cuenta c = new Cuenta();
+       
+    private static class Escribe extends Thread {
+        @Override
+        public void run() {
+            c.operacion(1);
+            System.out.println("Depósito: 1");
+        }    	
+    }
+  
+    private static class Lee extends Thread {
+        @Override
+        public void run() {
+            System.out.println("Saldo: " + c.getSaldo());
+        }    	
+    }    
+    
+    public static void main(String[] args) {
+        for(int i = 0; i < 5; i++) {
+            new Escribe().start();
+        }  
+        for(int i = 0; i < 1000; i++) {
+            new Lee().start();
+        }
+        for(int i = 0; i < 5; i++) {
+            new Escribe().start();
+        }  
+    }    
+    
+}
+</code>
+    </pre>
+    
+<!---------------------------------------------------------------------------------------------------------------------------------------------------->
+   <h3>Barrera ( CountDownLatch )</h3>
+   <p>CountDownLatch es una ayuda de sincronización que permite que uno o más subprocesos esperen hasta que se complete un conjunto de operaciones que se están realizando en otros subprocesos.</p>
+    <p><strong>Clase MainTS</strong></p>
+    <pre class="language-java">
+        <code>
+package d_barrera;
+
+import java.util.Random;
+import java.util.concurrent.CountDownLatch;
+            
+/**
+* https://github.com/dordonez-ute-apdist/concurrencia
+* 
+* Envía a varios hilos a realizar un cálculo complejo,
+* recupera todos los resultados y presenta el total.
+* 
+* Este ejemplo está sincronizado (thread-safe) y da el
+* resultado total correcto
+* 
+* @author dordonez@ute.edu.ec
+*/
+public class MainTS {
+
+public static void main(String[] args) {
+    int NUM_THREADS = 4;
+    Operacion[] oper = new Operacion[NUM_THREADS];
+    double resultado = 0;
+    
+    CountDownLatch barrera = new CountDownLatch(NUM_THREADS);
+    
+    for (int i = 0; i < NUM_THREADS; i++) {
+        oper[i] = new Operacion(barrera);
+    }
+    for (int i = 0; i < NUM_THREADS; i++) {
+        oper[i].start();
+    }
+    
+    try {
+        barrera.await();
+    } catch (InterruptedException e) {
+        e.printStackTrace();
+    }
+    
+    for (int i = 0; i < NUM_THREADS; i++) {
+        resultado += oper[i].getValue();
+    }
+    System.out.println("TOTAL: " + resultado);
+}
+
+//Simplemente una operación de cálculo intensivo
+private static class Operacion extends Thread {
+    private double value = 0;
+    
+    private CountDownLatch barrera;
+
+    Operacion(CountDownLatch barrera) {
+        this.barrera = barrera;
+    }
+                    
+                   
+        </code>
+<code>
+@Override
+public void run() {
+    Random rnd = new Random();
+    for (int i = 0; i < 10000000; i++) {
+        double tmpVal = rnd.nextDouble();
+        tmpVal = tan(atan(tan(atan(tan(atan(tan(atan(tan(atan(tmpVal))))))))));
+        value += cbrt(tmpVal);
+    }
+    System.out.println(Thread.currentThread().getName() + ": " + getValue());		
+
+    barrera.countDown();
+}
+
+public double getValue() {
+    return value;
+}
+
+private double atan(double value) {
+    return Math.atan(value);
+}
+private double tan(double value) {
+    return Math.tan(value);
+}
+private double cbrt(double value) {
+    return Math.cbrt(value);
+}
+}
+    
+} </code>
+    </pre>
+<h3>Colas ( BlockingQueue )</h3>
+<p>Un BlockingQueue es una interfaz, que es una cola que se bloquea cuando intenta salir de la cola y la cola está vacía, o si intenta poner en cola elementos en ella y la cola ya está llena. Se bloquea un subproceso que intenta salir de una cola vacía hasta que otro subproceso inserta un elemento en la cola.</p>
+<p><strong>Clase Consumidores</strong></p>
+<pre class="language-java">
+    <code>
+        
+package e_cola;
+
+import java.util.Queue;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.TimeUnit;
+
+/**
+ *
+ * @author dordonez@ute.edu.ec
+ */
+public class Consumidor extends Thread {
+private BlockingQueue<Integer> cola;
+private int total = 0;
+
+Consumidor(BlockingQueue<Integer> cola) {
+    this.cola = cola;
+}
+
+@Override
+public void run() {
+    Integer value;
+    try {
+        while( (value = cola.poll(1, TimeUnit.SECONDS)) != null) {
+            total += value;
+        }
+    } catch(Exception ex) {
+        ex.printStackTrace();
+    }
+    System.out.println(Thread.currentThread().getName() + " : " + getTotal());
+}
+
+public int getTotal() {
+    return total;
+}
+
+}
+
+    </code>
+</pre>
+
+    <p><strong>Clase Productor</strong></p>
+    <pre class="language-java"><code>
+        
+package e_cola;
+
+import java.util.concurrent.BlockingQueue;
+
+/**
+ *
+ * @author dordonez@ute.edu.ec
+ */
+public class Productor extends Thread {
+private BlockingQueue<Integer> cola;
+private int cuantos;
+
+Productor(BlockingQueue<Integer> cola, int cuantos) {
+this.cola = cola;
+this.cuantos = cuantos;
+}
+
+@Override
+public void run() {
+for(int i = 0; i < cuantos; i++) {
+try {
+    cola.put(1);
+} catch (InterruptedException e) {
+    e.printStackTrace();
+}
+}
+}
+    
+}
+
+    </code></pre>
+<p><strong>Clase Main</strong></p>
+<pre class="language-java"><code>   
+    
+package e_cola;
+
+import java.util.concurrent.BlockingQueue;
+
+/**
+*
+* @author dordonez@ute.edu.ec
+*/
+public class Productor extends Thread {
+private BlockingQueue<Integer> cola;
+private int cuantos;
+
+Productor(BlockingQueue<Integer> cola, int cuantos) {
+    this.cola = cola;
+    this.cuantos = cuantos;
+}
+
+@Override
+public void run() {
+    for(int i = 0; i < cuantos; i++) {
+        try {
+            cola.put(1);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+}
+
+</code></pre>
+
+    <h3>Deadlock</h3>
+    <p>Se da una situación de “deadlock” cuando dos o más threads se bloquean mutuamente, esperando el uno al otro, sin progresar ninguno de ellos.</p>
+    <p><strong>Clase CuentaTS</strong></p>
+    <pre class="language-java"><code>
+
+package f_deadlock;
+
+import java.util.concurrent.locks.ReadWriteLock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
+
+/**
+ *
+ * @author dordonez@ute.edu.ec
+ */
+public class CuentaTS {
+    
+protected final int id;
+protected double saldo;
+protected final ReadWriteLock lock = new ReentrantReadWriteLock();
+
+public CuentaTS(int id, double saldo) {
+this.id = id;
+this.saldo = saldo;
+}   
+
+public boolean transferencia(double valor, CuentaTS hacia) {
+if(valor <= 0) return false;       
+try {
+    if(id < hacia.id) {
+        lock.writeLock().lock();
+        hacia.lock.writeLock().lock();
+    } else {
+        hacia.lock.writeLock().lock();
+        lock.writeLock().lock();           
+    }
+    if(saldo >= valor) {
+        saldo -= valor;
+        hacia.saldo += valor;               
+        return true;
+    } else {
+        return false;
+    }
+} finally {
+    lock.writeLock().unlock();
+    hacia.lock.writeLock().unlock();            
+}
+}
+}
+
+    </code></pre>
+   <p><strong>Clase Main</strong></p>
+   <pre class="language-java"><code>
+
+package f_deadlock;
+
+import java.util.concurrent.locks.ReadWriteLock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
+
+/**
+*
+* @author dordonez@ute.edu.ec
+*/
+public class CuentaTS {
+
+protected final int id;
+protected double saldo;
+protected final ReadWriteLock lock = new ReentrantReadWriteLock();
+
+public CuentaTS(int id, double saldo) {
+    this.id = id;
+    this.saldo = saldo;
+}   
+
+public boolean transferencia(double valor, CuentaTS hacia) {
+    if(valor <= 0) return false;       
+    try {
+        if(id < hacia.id) {
+            lock.writeLock().lock();
+            hacia.lock.writeLock().lock();
+        } else {
+            hacia.lock.writeLock().lock();
+            lock.writeLock().lock();           
+        }
+        if(saldo >= valor) {
+            saldo -= valor;
+            hacia.saldo += valor;               
+            return true;
+        } else {
+            return false;
+        }
+    } finally {
+        lock.writeLock().unlock();
+        hacia.lock.writeLock().unlock();            
+    }
+}
+}
+
+   </code></pre>
+   
+    <!---------------------------------------------------------------------------------------------------------------------------------------------------->
+        </section>
+
+<div class="container_busqueda">
+   
+    <div id="search-wrapper">
+        <input type="search" id="search" placeholder="Buscar"/>
+        <i class="fa fa-search"></i>
+      </div>
+    <ul id="resultado" class="lista_busqueda">
+        
+    </ul>
+</div>
+</div>
+</div>
+</main>
+
+
+<footer>
+    <div class="container-pie">
+        <div class="copyright">
+           <p>&copy; 2020 Página realizada por estudiantes de la Universidad UTE.</p> 
+        </div>
+    </div>
+</footer>
+</div>
+
+<script src="js/jQuery.js"></script>
+<script src="js/scripts.js"></script>
+<script>
+    const temas = [  /*Cargar aqui enlaces para la busqueda con el mismo formato.*/
+    {titulo: '<a href="Expresiones_Lambda.html">Expresiones Lambda</a>'},   
+        {titulo: '<a href="Metodos_estaticos.html">Métodos Estáticos</a>'},   
+        {titulo: '<a href="ForkJoin.html">ForkJoin</a>'}, 
+        {titulo: '<a href="Hilo_Sincronizacion.html">Hilos y Sincronización</a>'},
+        {titulo: '<a href="JavaStreams.html">Java Streams</a>'},    
+        {titulo: '<a href="ip.html">TCP/IP, Sockets UDP</a>'}, 
+        {titulo: '<a href="MapReduce.html">MapReduce</a>'}, 
+    ]
+    const formulario= document.querySelector('#search');
+    const boton= document.querySelector('#boton');
+    const resultado=document.querySelector('#resultado');
+
+    const filtrar = ()=>{
+       resultado.innerHTML='';
+
+       const texto = formulario.value.toLowerCase();
+       for(let tema of temas ){
+           let titulo=tema.titulo.toLowerCase();
+           if(titulo.indexOf(texto) !== -1){
+               
+                resultado.innerHTML += '<li>'+tema.titulo+'</li>'
+         }
+        }
+        if(resultado.innerHTML===''){
+            resultado.innerHTML += '<li>Enlace no Encontrado...</li>'
+        }
+    }
+    //boton.addEventListener('click',filtrar)
+    formulario.addEventListener('keyup',filtrar);
+</script>
+
+
+<script src="js/prism.js"></script>
+</body>
+</html>

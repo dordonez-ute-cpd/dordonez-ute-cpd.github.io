@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/all.css">
+    <title>TCP/IP, Sockets UDP</title>
+</head>
+<body>
+
+<div class="container-head">
+    <div class="logos">
+        <a href="index.html" class="logo"><img src="img/logo-ute.png" alt="logo" width="90px" height="90px" ></a>
+    </div> 
+</div>
+
+      
+
+<header>
+    <div class="container-menu logo-nav-contenedor">
+        <span class="menu-icon"><i class="fas fa-bars"></i></span>
+        <nav class="navegacion">
+            <ul class="show">
+                <strong><li><a href="Presentaciones.html">Presentaciones</a></li></strong>
+                <strong><li><a href="Informes.html">Informes</a></li></strong>
+               
+            </ul>
+        </nav>
+      </div>
+</header>
+
+<div class="container-general">
+    <main>
+    <div class="container-cuerpo">
+    <div class="columna_izquierda">
+        <div class="contenido_1">
+            <strong><h3>Temas</h3></strong>
+        </div>
+        <div class="contenido_2">
+            <nav class="navegacion_2">
+                <ul class="show_2">
+                   <!-- <li><a href="#"><i class="fas fa-sign-in-alt"></i>Expresiones Lambda</a></li> -->
+              <!-- <li><a href="#"><i class="fas fa-sign-in-alt"></i>Expresiones Lambda</a></li> -->
+              <li><a href="Expresiones_Lambda.html"><i class="fas fa-sign-in-alt"></i>Expresiones Lambda</a></li> 
+              <li><a href="Hilo_Sincronizacion.html"><i class="fas fa-sign-in-alt"></i>Hilos y Sincronización</a></li>
+              <li><a href="Metodos_estaticos.html"><i class="fas fa-sign-in-alt"></i>Métodos Estáticos</a></li>
+              <li><a href="ForkJoin.html"><i class="fas fa-sign-in-alt"></i>ForkJoin</a></li>
+              <li><a href="JavaStreams.html"><i class="fas fa-sign-in-alt"></i>Java Streams</a></li>
+              <li><a href="ip.html"><i class="fas fa-sign-in-alt"></i>TCP/IP, Sockets UDP</a></li>
+              <li><a href="MapReduce.html"><i class="fas fa-sign-in-alt"></i>MapReduce</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <section class="columna_derecha">
+        <div text align="center"><h2>Map Reduce</h2></div>
+        <p> El algoritmo MapReduce contiene dos tareas importantes, a saber Mapa y reducir. Mapa toma un conjunto de datos y se convierte en otro conjunto de datos,
+             en el que los elementos se dividen en tuplas (pares clave/valor). En segundo lugar, reducir tarea, que toma la salida de un mapa como entrada y combina 
+             los datos tuplas en un conjunto más pequeño de tuplas. Como la secuencia de MapReduce el nombre implica, la reducción se realiza siempre después de que el mapa.</p>
+    
+    <p>Una de las ventajas de MapReduce es facilitar el escalar de procesamiento de datos en múltiples nodos, el procesamiento de datos primitivos son llamados mapas y reductores, 
+        la descomposición de una aplicación de procesamiento de datos reductores a veces es no trivial. Pero una vez que escribir una aplicación el MapReduce forma, la escala de la 
+        aplicación que se ejecuta en cientos, miles o incluso decenas de miles de máquinas en un clúster es simplemente un cambio de configuración. Esta escalabilidad sencilla es lo 
+        que ha atraído a muchos programadores a usar el modelo MapReduce.</p>
+    
+        <h2>Que es MapReduce?</h2>
+        <p><li>Modelo de programación Corazón de Hadoop</li></p>
+        <p><li>Problemas que pueden ser paralelizados</li></p>
+        <p><li>Resolver problemas con conjuntos de datos de gran tamaño</li><p>
+        <p><li>Se programa en Java </li><p>
+        <p><li> Es un Framework </li><p>
+       
+
+        <p>Los componentes principales del Framework, donde se aprecia que las funciones de map son ejecutadas por los TaskTrackers mientras que las funciones de Reduce es ejecutada por el JobTracker.</p>
+        <p>El Framework MapReduce tiene una arquitectura maestro / esclavo.</p>
+        <p>Cuenta con un servidor maestro o JobTracker y varios servidores esclavos o TaskTrackers, uno por cada nodo del clúster.</p>
+        <p>El JobTracker es el punto de interacción entre los usuarios y el framework MapReduce. Los usuarios envían trabajos MapReduce al JobTracker, que los pone en una cola de trabajos pendientes y los ejecuta en el orden de llegada.</p>
+        <p> El JobTracker gestiona la asignación de tareas y delega las tareas a los TaskTrackers.
+        Los TaskTrackers ejecutan tareas bajo la orden del JobTracker y también manejan el movimiento de datos entre la fase Map y Reduce.
+        Diferencias entre JobTracker y TaskTracker vamos a ver las características de cada uno</p>
+        <p>JobTracker:</p>
+        <p>Servidor esclavo de MapReduce
+            Ejecuta las solicitudes de trabajo de JobTrackers
+            Obtiene el código que se ejecutará
+            Aplica la configuración especifica del trabajo
+            Comunicación con el JobTracker:
+            Envíos de la salida, finalizar tareas, actualización de tareas, etc.</p>
+
+         <p>Map</p>   
+         <p>La función Map recibe como parámetros un par de (clave, valor) y devuelve una lista de pares.
+            <p>*Esta función se encarga del mapeo y se aplica a cada elemento de la entrada de datos, por lo que se obtendrá una lista de pares por cada llamada a la función Map</p>
+            <p>*Después se agrupan todos los pares con la misma clave de todas las listas, creando un grupo por cada una de las diferentes claves generadas.</p>
+            <p>*No hay requisito de que el tipo de datos para la entrada coincida con la salida y no es necesario que las claves de salida sean únicas. Map (clave1, valor1) –> lista (clave2, valor2)</p>
+            -La operación de Map se paraleliza, el conjunto de archivos de entrada se divide en varias tareas llamado FileSplit, ver como se muestra la figura el tamaño típico de bloque es de 128MB. Las tareas se distribuyen a los nodos TaskTrackers, y estos se pueden realizar la misma tarea si hiciera falta.
+            Reduce
+            <p>*La función Reduce se aplica en paralelo para cada grupo creado por la función Map().</p>
+            <p>*La función Reduce se llama una vez para cada clave única de la salida de la función Map. Junto con esta clave, se pasa una lista de todos los valores asociados con la clave para que pueda realizar alguna fusión para producir un conjunto más pequeño de los valores.
+            <p>-Reduce (clave2, lista(valor2)) –> lista(valor2)</p>
+            <p>*Cuando se inicia la tarea reduce, la entrada se encuentra dispersa en varios archivos a través de los nodos en las tareas de Map.</p>
+            <p>*Los datos obteni0dos de la fase Map se ordenan para que los pares clave-valor sean contiguos ,esto hace que la operación Reduce se simplifique ya que el archivo se lee secuencialmente.
+            <p>*Si se ejecuta el modo distribuido estos necesitan ser primero copiados al filesystem local en la fase de copia.
+            <p>*Al final, la salida consistirá en un archivo de salida por tarea reduce ejecutada.</p>
+            Por lo tanto, N archivos de entrada generará M mapas de tareas para ser ejecutados y cada mapa de tareas generará tantos archivos de salida como tareas Reduce hayan configuradas en el sistema.</p>
+
+            <img src="img/making-sense-of-big-data-with-hadoop-26-728.jpg" alt="">
+
+
+
+            
+         
+         <p> Fuente: tutorialspoint.com/java8/java8_streams.htm</p> 
+        
+      </section>
+  
+
+<div class="container_busqueda">
+   
+    <div id="search-wrapper">
+        <input type="search" id="search" placeholder="Buscar"/>
+        <i class="fa fa-search"></i>
+      </div>
+    <ul id="resultado" class="lista_busqueda">
+        
+    </ul>
+</div>
+</div>
+</div>
+</main>
+
+
+<footer>
+    <div class="container-pie">
+        <div class="copyright">
+           <p>&copy; 2020 Página realizada por estudiantes de la Universidad UTE.</p> 
+        </div>
+    </div>
+</footer>
+</div>
+
+<script src="js/jQuery.js"></script>
+<script src="js/scripts.js"></script>
+
+
+
+<script>
+    const temas = [  /*Cargar aqui enlaces para la busqueda con el mismo formato.*/
+    {titulo: '<a href="Expresiones_Lambda.html">Expresiones Lambda</a>'},   
+        {titulo: '<a href="Metodos_estaticos.html">Métodos Estáticos</a>'},   
+        {titulo: '<a href="ForkJoin.html">ForkJoin</a>'}, 
+        {titulo: '<a href="Hilo_Sincronizacion.html">Hilos y Sincronización</a>'},
+        {titulo: '<a href="JavaStreams.html">Java Streams</a>'},    
+        {titulo: '<a href="ip.html">TCP/IP, Sockets UDP</a>'}, 
+        {titulo: '<a href="MapReduce.html">MapReduce</a>'}, 
+    ]
+    const formulario= document.querySelector('#search');
+    const boton= document.querySelector('#boton');
+    const resultado=document.querySelector('#resultado');
+
+    const filtrar = ()=>{
+       resultado.innerHTML='';
+
+       const texto = formulario.value.toLowerCase();
+       for(let tema of temas ){
+           let titulo=tema.titulo.toLowerCase();
+           if(titulo.indexOf(texto) !== -1){
+               
+                resultado.innerHTML += '<li>'+tema.titulo+'</li>'
+         }
+        }
+        if(resultado.innerHTML===''){
+            resultado.innerHTML += '<li>Enlace no Encontrado...</li>'
+        }
+    }
+    //boton.addEventListener('click',filtrar)
+    formulario.addEventListener('keyup',filtrar);
+   
+    
+</script>
+</body>
+</html>

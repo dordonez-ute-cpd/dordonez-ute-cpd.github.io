@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/prism.css">
+    <link rel="stylesheet" href="css/all.css">
+    <title>Java Streams</title>
+</head>
+<body>
+
+<div class="container-head">
+    <div class="logos">
+        <a href="index.html" class="logo"><img src="img/logo-ute.png" alt="logo" width="90px" height="90px" ></a>
+    </div> 
+</div>
+
+      
+
+<header>
+    <div class="container-menu logo-nav-contenedor">
+        <span class="menu-icon"><i class="fas fa-bars"></i></span>
+        <nav class="navegacion">
+            <ul class="show">
+                <strong><li><a href="Presentaciones.html">Presentaciones</a></li></strong>
+                <strong><li><a href="Videos.html">Videos</a></li></strong>
+               
+            </ul>
+        </nav>
+      </div>
+</header>
+
+
+<div class="container-general">
+<main>
+<div class="container-cuerpo">
+<div class="columna_izquierda">
+    <div class="contenido_1">
+        <strong><h3>Temas</h3></strong>
+    </div>
+    <div class="contenido_2">
+        <nav class="navegacion_2">
+            <ul class="show_2">
+                 <!-- <li><a href="#"><i class="fas fa-sign-in-alt"></i>Expresiones Lambda</a></li> -->
+             <li><a href="Expresiones_Lambda.html"><i class="fas fa-sign-in-alt"></i>Expresiones Lambda</a></li> 
+             <li><a href="Hilo_Sincronizacion.html"><i class="fas fa-sign-in-alt"></i>Hilos y Sincronización</a></li>
+             <li><a href="Metodos_estaticos.html"><i class="fas fa-sign-in-alt"></i>Métodos Estáticos</a></li>
+             <li><a href="ForkJoin.html"><i class="fas fa-sign-in-alt"></i>ForkJoin</a></li>
+             <li><a href="JavaStreams.html"><i class="fas fa-sign-in-alt"></i>Java Streams</a></li>
+             <li><a href="ip.html"><i class="fas fa-sign-in-alt"></i>TCP/IP, Sockets UDP</a></li>
+             <li><a href="MapReduce.html"><i class="fas fa-sign-in-alt"></i>MapReduce</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<section class="columna_derecha">
+    <div text align="center"><h2>Java Streams</h2></div>
+    <p> Stream es una nueva capa abstracta introducida en Java 8. Con stream, puede procesar datos de forma declarativa similar a las 
+        sentencias SQL. Por ejemplo, considere la siguiente declaración SQL.
+        </p>
+<p>La expresión SQL anterior devuelve automáticamente los detalles máximos del empleado asalariado, sin realizar ningún cálculo por 
+    parte del desarrollador. Usando el marco de colecciones en Java, un desarrollador tiene que usar bucles y realizar comprobaciones 
+    repetidas. Otra preocupación es la eficiencia; Como los procesadores de múltiples núcleos están disponibles con facilidad, un desarrollador
+     de Java tiene que escribir un procesamiento de código paralelo que puede ser bastante propenso a errores.</p>
+
+<p>Para resolver estos problemas, Java 8 introdujo el concepto de flujo que permite al desarrollador procesar datos de forma declarativa y aprovechar 
+    la arquitectura multinúcleo sin la necesidad de escribir ningún código específico para ello.</p>
+
+    <h3>¿Qué es Stream?</h3>
+    <p>Stream representa una secuencia de objetos de una fuente, que admite operaciones agregadas. Las siguientes son las características de una corriente:</p>
+    <p>Secuencia de elementos : una secuencia proporciona un conjunto de elementos de un tipo específico de manera secuencial. Una secuencia obtiene /
+         calcula elementos a pedido. Nunca almacena los elementos.</p>
+    <p><strong>Fuente :</strong> Stream toma colecciones, matrices o recursos de E / S como fuente de entrada.</p>
+    <p><strong>Operaciones agregadas:</strong> Stream admite operaciones agregadas como filtrar, mapear, limitar, 
+        reducir, buscar, emparejar, etc.</p>
+    <p><strong>Canalización:</strong> la mayoría de las operaciones de flujo devuelven el flujo en sí para que su resultado se pueda canalizar. Estas operaciones se denominan operaciones intermedias 
+        y su función es tomar entradas, procesarlas y devolver la salida al objetivo. El método collect () es una operación de terminal que normalmente está 
+        presente al final de la operación de canalización para marcar el final de la secuencia.</p>
+    <p><strong>Iteraciones automáticas:</strong> las operaciones de transmisión realizan las iteraciones internamente sobre los elementos de origen proporcionados, a diferencia de las colecciones, 
+        donde se requiere una iteración explícita.</p>
+    <p>Ejemplo de archivo:</p>
+    File archivo = new File ("un_path/un_fichero.txt");</p>
+    File archivo = new File(C://Usuarios//XXXX//Mis Documentos//MiArchivo.txt”);
+    File archivo = new File (“MiArchivo.txt/MiAnimacion.gif”); // Carpeta Raiz : en mi caso NetBeans Proyects
+
+    <p>Ejemplo de directorio:</p>
+    <p>File directorio = new File(“Carpeta Nueva”);</p>
+    <p>directorio.mkdir();//Se crea el directorio en la carpeta raíz: en mi caso NetBeans Proyects </p>
+
+    <p><h4>Lectura de un Archivo de Texto</h4></p>
+    <p>   La clase FileReader es una clase concreta utilizada para generar streams orientados a carácter, y es la encargada de realizar la lectura de archivos en forma de texto. Para su instanciación se deberá importar java.io.FileReader y se deberán tratar las excepciones chequeadas IOException y FileNotFoundException.
+        A continuación se presenta un ejemplo de lectura de un archivo llamado fuente.txt:</p>
+
+        <h3>Algoritmo de lectura</h3>
+        <p>Para obtener información, un programa debere abrir un stream sobre una fuente y leer la información de forma secuencial.
+            Independientemente del tipo de información, el algoritmo de lectura es siempre el mismo.</p>
+
+        <p>Abrir un Stream
+
+            Mientras haya mas información
+            {
+                            Leer información
+            }
+            Cerrar Stream</p>
+
+        <h3>Algoritmo de escritura</h3>
+        <p>Para escribir información, un programa deberá abrir un stream sobre un destino y escribir la información de forma secuencial.
+            Independientemente del tipo de información, el algoritmo de escritura es siempre el mismo.</p>
+
+            <p>Abrir un Stream
+
+                Mientras haya mas información
+                {
+                                Escribir información
+                }
+                
+                Cerrar Stream</p>
+
+        <h3>Tipos de Streams</h3>
+
+        <p>Organización</p>
+        <p> La tecnología Java contiene distintos tipos de Streams, lo cual están organizados en dos grandes grupos:</p>
+        <p><li>Streams orientados a Carácter(Character Streams)</li></p>
+        <p><li>Streams orientados a Byte(Byte Streams)</li></p>
+
+        <h4>Streams orientados a Carácter</h4>
+        <p> Los Streams orientados a Carácter operan con caracteres como unidad de trabajo. Los caracteres a leer están formados por 
+            2 bytes(es decir 16 bits por carácter).</p>
+
+        <p>Son utilizados para leer y escribir información que esta almacenada en forma de texto, como por ejemplo archivos de 
+            extensión txt, ini, csv, etc.</p>
+
+        <p> La Superclase utilizada para leer streams orientados a carácter es la clase Reader. A partir de esta clase - la cual es
+             abstracta – heredan todas las clases concretas que se utilizan para leer información en forma textual.</p>
+
+        <p>Por otra parte, la Superclase utilizada para escribir streams orientados a carácter es la clase Writer. A partir de esta 
+            clase - la cual es abstracta – heredan todas las clases concretas que se utilizan para escribir información en forma textual.</p>
+
+        <h4>Streams orientados a Byte</h4>
+        <p>  Los Streams orientados a Byte operan con bytes como unidad de trabajo. Los bytes a leer se leer en forma unitaria(es decir 8 bits por byte).</p>
+        <p>Son utilizados para leer y escribir información que esta almacenada en forma binaria, como por ejemplo archivos de extensión jpeg, png, xls, etc.</p>
+        <p>La Superclase utilizada para leer streams orientados a byte es la clase InputStream.  A partir de esta clase - la cual es abstracta – heredan todas las 
+            clases concretas que se utilizan para leer información en forma binaria.</p>
+        <p> Por otra parte, la superclase utilizada para escribir streams orientados a byte es la clase OutputStream. A partir de esta clase - la cual es abstracta
+             – heredan todas las clases concretas que se utilizan para escribir información en forma binaria.</p>
+        
+        <p><h3>File Stream</h3></p>
+        <p> Los File Stream son los streams utilizados para lectura y escritura de (particularmente) archivos, es una categoría que agrupa tanto a los streams orientados
+             a carácter como a los streams orientados a byte.</p>
+         <p>En general se utilizan en conjunto con un objeto del tipo File, que es una representación abstracta de un archivo. La clase File modela tanto archivos como 
+             directorios. Para su instanciación se deberá importar java.io.File.</p>   
+             <pre class="language-java"><code>
+Ejemplo de archivo:
+File archivo = new File ("un_path/un_fichero.txt");
+File archivo = new File(C://Usuarios//XXXX//Mis Documentos//MiArchivo.txt”);
+File archivo = new File (“MiArchivo.txt/MiAnimacion.gif”); 
+Ejemplo de directorio
+File directorio = new File(“Carpeta Nueva”);
+directorio.mkdir();//Se crea el directorio en la carpeta raíz
+             </code></pre>
+             
+             
+            <h4>Lectura de un Archivo de Texto</h4>
+            <p>La clase FileReader es una clase concreta utilizada para generar streams orientados a carácter, y es la encargada de realizar la lectura de archivos en forma de texto. Para su instanciación se deberá importar java.io.FileReader y se deberán tratar las excepciones chequeadas IOException y FileNotFoundException.
+                A continuación se presenta un ejemplo de lectura de un archivo llamado fuente.txt:</p>    
+             
+             <p>  /*
+            Para que funcione correctamente deberá:
+           · tener un archivo  fuente.txt  en la carpeta raiz
+        */
+            </p>
+            <pre class="language-java"><code>
+// Define el archivo a usar
+File archivoEntrada = new File("fuente.txt");
+
+// Instancia un FileReader que se encargara de leer del archivo
+FileReader lector = new FileReader(archivoEntrada);
+
+// Declara una variable que contendrá el caracter a leer
+int unCaracter;
+
+// Lee el archivo e informa
+while ( (unCaracter = lector.read()) != -1)
+System.out.print((char)unCaracter);
+
+// Cierra el archivo
+lector.close();
+            </code></pre>
+            
+        <p>Escritura de un Archivo de Texto</p>
+        <p>  La clase FileWriter es una clase concreta utilizada para generar streams orientados a
+             carácter, y es la encargada de realizar la escritura de archivos en forma de texto. Para su instanciación se deberá importar java.io.FileWriter y se deberá tratar la excepción chequeada IOException.</p>
+        <p>ejemplo de escritura de un archivo llamado destino.txt:</p>
+
+        <pre class="language-java"><code>
+// Instancia un objeto File de salida
+File archivoSalida = new File("destino.txt");
+
+// Instancia un FileWriter que se encargara de escribir
+FileWriter escritor = new FileWriter(archivoSalida);
+// Construye una cadena de caracteres a ser guardada en el archivo
+String info = "Soy la informacion!";
+
+// Escribe el archivo con la informacion
+for (int i=0; i< info.length(); i++)
+    escritor.write(info.charAt(i));
+    
+// Cierra el stream
+escritor.close();
+
+// Informa que el archivo ha sido escrito
+System.out.println("El archivo ha sido escrito...");
+        </code></pre>
+       
+    
+            <h4>Lectura y Escritura de Archivos Binarios</h4>
+            <p>  La clase FileInputStream es una clase concreta utilizada para generar streams orientados a byte y es la encargada de realizar la lectura de archivos en forma binaria.
+                La clase FileOutputStream es una clase concreta utilizada para generar streams orientados a byte, y es la encargada de realizar la escritura de archivos en forma binaria.</p>
+            <p>Para su instanciación se deberá importar java.io. FileInputStream y java.io.FileOutputStream y se deberá tratar las excepciónes chequeadas IOException y FileNotFoundException.
+                A continuación se presenta un ejemplo de lectura de un archivo llamado fuente.gif y la escritura de dicho contenido es un archivo llamado destino.gif. La clase Copiador presentada a continuación lee la imagen, y genera un duplicado de la misma:</p>
+            <p>import java.io.File;<br>
+
+                import java.io.FileInputStream;<br>
+                import java.io.FileOutputStream;<br>
+                import java.io.IOException;<br>
+                
+                public class Copiador {
+                <br>
+                <pre class="language-java"><code> 
+public static void main(String[] args) throws IOException
+{
+    /*
+        Para que funcione correctamente deberá:
+        · tener un archivo logo.gif en la carpeta raiz
+    */
+    
+    // Instancia un objeto File de entrada y otro de salida
+    File archivoEntrada = new File("logo.gif");
+            File archivoSalida = new File("destino.gif");
+
+    // Instancia un   FileInputStream  y un  FileOutputStream  
+    FileInputStream lector = new FileInputStream(archivoEntrada);
+    FileOutputStream escritor = new FileOutputStream(archivoSalida);
+    
+    // Instancia una variable que contendrá el byte a leer
+    int unByte;
+    
+    // Informa que se está copiando el archivo
+    System.out.println("\n\tEl archivo está siendo copiado....");
+
+    // Lee el archivoEntrada y guarda la informacion en el archivoSalida
+    while ( (unByte = lector.read()) != -1)
+        escritor.write(unByte);
+        
+    // Cierra los archivos
+    lector.close();
+    escritor.close();
+    
+    // Informa que se ha copiado el archivo
+    System.out.println("\tEl archivo ha sido copiado con éxito....\n");
+    } 
+                }</code></pre>
+                   
+
+            </p>
+    
+            <p> Fuente: tutorialspoint.com/java8/java8_streams.htm</p> 
+    
+            </section>
+
+<div class="container_busqueda">
+   
+    <div id="search-wrapper">
+        <input type="search" id="search" placeholder="Buscar"/>
+        <i class="fa fa-search"></i>
+      </div>
+    <ul id="resultado" class="lista_busqueda">
+        
+    </ul>
+</div>
+</div>
+</div>
+</main>
+
+
+<footer>
+    <div class="container-pie">
+        <div class="copyright">
+           <p>&copy; 2020 Página realizada por estudiantes de la Universidad UTE.</p> 
+        </div>
+    </div>
+</footer>
+</div>
+
+<script src="js/jQuery.js"></script>
+<script src="js/scripts.js"></script>
+<script src="js/prism.js"></script>
+
+
+
+<script>
+    const temas = [  /*Cargar aqui enlaces para la busqueda con el mismo formato.*/
+    {titulo: '<a href="Expresiones_Lambda.html">Expresiones Lambda</a>'},   
+        {titulo: '<a href="Metodos_estaticos.html">Métodos Estáticos</a>'},   
+        {titulo: '<a href="ForkJoin.html">ForkJoin</a>'}, 
+        {titulo: '<a href="Hilo_Sincronizacion.html">Hilos y Sincronización</a>'},
+        {titulo: '<a href="JavaStreams.html">Java Streams</a>'},    
+        {titulo: '<a href="ip.html">TCP/IP, Sockets UDP</a>'}, 
+        {titulo: '<a href="MapReduce.html">MapReduce</a>'}, 
+    ]
+    const formulario= document.querySelector('#search');
+    const boton= document.querySelector('#boton');
+    const resultado=document.querySelector('#resultado');
+
+    const filtrar = ()=>{
+       resultado.innerHTML='';
+
+       const texto = formulario.value.toLowerCase();
+       for(let tema of temas ){
+           let titulo=tema.titulo.toLowerCase();
+           if(titulo.indexOf(texto) !== -1){
+               
+                resultado.innerHTML += '<li>'+tema.titulo+'</li>'
+         }
+        }
+        if(resultado.innerHTML===''){
+            resultado.innerHTML += '<li>Enlace no Encontrado...</li>'
+        }
+    }
+    //boton.addEventListener('click',filtrar)
+    formulario.addEventListener('keyup',filtrar);
+   
+    
+</script>
+</body>
+</html>

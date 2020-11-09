@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/all.css">
+    <title>TCP/IP, Sockets UDP</title>
+</head>
+<body>
+
+<div class="container-head">
+    <div class="logos">
+        <a href="index.html" class="logo"><img src="img/logo-ute.png" alt="logo" width="90px" height="90px" ></a>
+    </div> 
+</div>
+
+      
+
+<header>
+    <div class="container-menu logo-nav-contenedor">
+        <span class="menu-icon"><i class="fas fa-bars"></i></span>
+        <nav class="navegacion">
+            <ul class="show">
+                <strong><li><a href="Presentaciones.html">Presentaciones</a></li></strong>
+                <strong><li><a href="Videos.html">Videos</a></li></strong>
+               
+            </ul>
+        </nav>
+      </div>
+</header>
+
+<div class="container-general">
+    <main>
+    <div class="container-cuerpo">
+    <div class="columna_izquierda">
+        <div class="contenido_1">
+            <strong><h3>Temas</h3></strong>
+        </div>
+        <div class="contenido_2">
+            <nav class="navegacion_2">
+                <ul class="show_2">
+                 <!-- <li><a href="#"><i class="fas fa-sign-in-alt"></i>Expresiones Lambda</a></li> -->
+              <!-- <li><a href="#"><i class="fas fa-sign-in-alt"></i>Expresiones Lambda</a></li> -->
+              <li><a href="Expresiones_Lambda.html"><i class="fas fa-sign-in-alt"></i>Expresiones Lambda</a></li> 
+              <li><a href="Hilo_Sincronizacion.html"><i class="fas fa-sign-in-alt"></i>Hilos y Sincronización</a></li>
+              <li><a href="Metodos_estaticos.html"><i class="fas fa-sign-in-alt"></i>Métodos Estáticos</a></li>
+              <li><a href="ForkJoin.html"><i class="fas fa-sign-in-alt"></i>ForkJoin</a></li>
+              <li><a href="JavaStreams.html"><i class="fas fa-sign-in-alt"></i>Java Streams</a></li>
+              <li><a href="ip.html"><i class="fas fa-sign-in-alt"></i>TCP/IP, Sockets UDP</a></li>
+              <li><a href="MapReduce.html"><i class="fas fa-sign-in-alt"></i>MapReduce</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <section class="columna_derecha">
+        <div text align="center"><h2>TCP/IP, Sockets UDP</h2></div>
+        <p> Actualmente la mayoría de ordenadores están conectados a alguna red (internet, intranet, etc.) y casi todos lo hacen utilizando
+             el modelo TCP/IP. Este modelo es un protocolo para comunicación en redes que permite que un equipo pueda comunicarse
+              dentro de una red. Está basado en el modelo teórico OSI de capas con la que comparte 4 de ellas; sin embargo,
+              ofrece muchas más opciones y es un modelo práctico.</p>
+    
+    <p>A día de hoy no podemos concebir el mundo de la informática sin Internet, ya que las redes son uno de los componentes básicos sobre
+         los que se sostiene la sociedad actual. Por eso hoy hablaremos de los que seguramente son los dos protocolos más importantes en las redes actuales,
+          el protocolo TCP/IP, del cual hablaremos más detalladamente.</p>
+    
+    <p>Por fortuna o desgracia dependemos casi totalmente de Internet. Por ahí compramos, consumimos contenido, entablamos “amistad” con otras personas, e 
+        incluso muchos vivimos de ello. Un componente que sin embargo es también intrusivo en la vida personal necesita de protocolos e infraestructuras que nos protejan a los usuarios en la medida de lo posible.</p>
+    
+       <p>Qué es TCP/IP</p>
+    
+       <p>Cuando hablamos de TCP/IP normalmente nos estamos refiriendo al modelo TCP/IP, un modelo que describe y de alguna forma clasifica los protocolos de red al igual que hace el modelo OSI. Pero también se trata 
+           de dos protocolos de red que operan a distintos niveles o capas y cuya existencia es imprescindible en lo que hoy se conoce como red de intercambio de paquetes.</p>
+        
+        <div text align="center"><img src="img/protocolo-TCP-IP-03.png" alt="" height="350" width="350"></div>
+
+        <p>Modelo de red TCP/IP</p>
+    
+        <p>TCP/IP significa Protocolo de Control de Transmisión/Protocolo de Internet en español. Hablamos de TCP/IP unidos para referirnos a un modelo de red el cual fue desarrollado por Vinton Cerf y Robert E. Kahn en 1970.
+             Fueron dos de los pesos pesados que trabajaron sobre la red ARPANET, la primera red de intercambio de datos de área amplia o WAN que fue un encargo del Departamento de Defensa de los estados Unidos.</p>
+           
+        <p>TCP/IP identifica los protocolos utilizamos en las redes y describe el conjunto de guías y reglas generales que hacen posible que un equipo sea capaz de intercambiar información en una red. El modelo asegura una
+        conexión punto a punto y define como deben ser formateados, direccionados transmitidos y enrutados los datos.</p>
+        
+        <div text align="center"><img src="img/protocolo tcp ip 2.png" alt="" height="350" width="350"></div>
+
+        <p>El modelo TCP/IP se divide en 4 capas distintas que se definen así:</p>
+        
+        <p><li>Capa 1 o de acceso al medio</li></p>
+        <p>Esta capa define el acceso físico de los equipos conectados a la red y los protocolos que en él intervienen. También se denomina capa de enlace de red porque incluye todos los hosts accesibles en una red de área local. 
+            Esta también define la topología de la red, estrella, malla, anillo, etc, y como se mueven los paquetes entre las interfaces de la capa de Internet.</p>
+        
+        <p>A pesar de que está definido sobre una red de área local, TCP/IP es extensible a toda la red global, por estar diseñado de forma independiente del hardware que compone la red. Por ello redes de cables de pares trenzados, 
+            coaxiales, fibra óptica o incluso redes inalámbricas entran dentro de este modelo y utilizando estos protocolos.</p>
+       
+        <p>Esta capa de enlace tiene las mismas funciones que la capa 2 o capa de enlace del modelo OSI, no por anda se llaman igual.</p>
+        
+        <p><li>Capa 2 o de Internet</li></p>
+        <p>Una de las capas más importantes en el modelo por ocuparse de la estructura del paquete de datos básico que circula por la red y de cómo enviarlos a través de la red. La capa de Internet define entonces cómo será el
+             enrutamiento de los datagramas a partir de la administración de las direcciones IP.</p>
+
+        <p>Por esto la otra función básica de la capa es la identificación del host en la red mediante una dirección y el direccionamiento de estos datagramas dando saltos entre enrutadores hasta llegar al destino. Es aquí en donde 
+            trabaja el protocolo IP, así como otros protocolos muy conocidos como IGMP, ICMP o ARP.</p>
+       
+         <p>Esta capa hace las mismas funciones que la capa 3 del modelo OSI, también llamada capa de red.</p>   
+
+        <p><li>Capa 3 o de transporte</li></p>
+        <p>En la capa de transporte es donde tienen protagonismo los puertos lógicos de un router, ya que es la capa que establece los canales básicos que utilizarán las aplicaciones para intercambiar información entre dos puntos. 
+            Por tanto, la capa define como será la conexión de un host a otro, asociando un puerto a un tipo de aplicación a su vez con un tipo de datos.</p>
+
+         <p>En esta capa hay protocolos que se encargan de la segmentación de paquetes, del control de errores y el control de flujo de estos. El protocolo TCP opera en esta capa, siendo un de tipo orientado a conexión, mientras que el
+              otro quizás más importante es el UDP que no es orientado a conexión. Veremos luego sus diferencias.</p>   
+         
+         
+        <p>Esta capa de transporte hace más o menos las mismas funciones que la capa de transporte del modelo OSI.</p> 
+
+        <p><li>Capa 4 o de aplicación</li></p>
+        <p>Esta es la capa más cercana al usuario, y la que define los protocolos que usarán las aplicaciones que proporcionan servicios al usuario. Estas aplicaciones se comunican entre ellas con la estructura definida en las 3 capas
+             inferiores, proporcionando su propio encapsulamiento según tipo de aplicación que sea y el tipo de dato con el que trabaja.</p>
+         
+        <p>En esta capa es donde encontramos algunos protocolos muy famosos como son el HTTP de las páginas web, el FTP para la transferencia de archivos, DHCP como protocolo de configuración dinámica de host o el SMTP para la transferencia de correos.</p>
+
+        <p>Corresponde a las capas 5, 6 y 7 del modelo OSI.</p>
+       
+        <h3>Sockets datagram (UDP)</h3>
+
+        <p>Los sockets datagram se basan en el protocolo UDP y ofrecen un servicio de transporte sin conexión. Es decir, podemos mandar información a un destino sin necesidad de realizar una conexión previa. El protocolo UDP es más eficiente que el TCP,
+             pero tiene el inconveniente de que no se garantiza la fiabilidad. Además, los datos se envían y reciben en datagramas (paquetes de información) de tamaño limitado. La entrega de un 
+             datagrama no está garantizada: estos pueden duplicarse, perderse o llegar en un orden diferente del que se envió.</p>
+
+        <p>La gran ventaja de este tipo de sockets es que apenas introducen sobrecarga sobre la información transmitida. Además, los retrasos introducidos son mínimos, lo cual los hace especialmente interesantes para aplicaciones en tiempo real, como la transmisión
+             de audio y vídeo sobre Internet. Sin embargo, presentan muchos inconvenientes para el programador: cuando transmitimos un datagrama no tenemos la certeza de que este llegue a su destino, por lo que, si fuera necesario, tendríamos que implementar nuestro
+              propio mecanismo de control de errores. Otro inconveniente es el hecho de que existe un tamaño máximo de datagrama: unos 1500 bytes dependiendo de la implementación. Si la información a enviar es mayor, tendremos que fraccionarla y enviar varios datagramas
+               independientes. En el destino tendremos que concatenarlos en el orden correcto.</p>
+         
+         <p> Fuente: tutorialspoint.com/java8/java8_streams.htm</p> 
+        
+      </section>
+    
+
+<div class="container_busqueda">
+   
+    <div id="search-wrapper">
+        <input type="search" id="search" placeholder="Buscar"/>
+        <i class="fa fa-search"></i>
+      </div>
+    <ul id="resultado" class="lista_busqueda">
+        
+    </ul>
+</div>
+</div>
+</div>
+</main>
+
+
+<footer>
+    <div class="container-pie">
+        <div class="copyright">
+           <p>&copy; 2020 Página realizada por estudiantes de la Universidad UTE.</p> 
+        </div>
+    </div>
+</footer>
+</div>
+
+<script src="js/jQuery.js"></script>
+<script src="js/scripts.js"></script>
+
+
+
+<script>
+    const temas = [  /*Cargar aqui enlaces para la busqueda con el mismo formato.*/
+    {titulo: '<a href="Expresiones_Lambda.html">Expresiones Lambda</a>'},   
+        {titulo: '<a href="Metodos_estaticos.html">Métodos Estáticos</a>'},   
+        {titulo: '<a href="ForkJoin.html">ForkJoin</a>'}, 
+        {titulo: '<a href="Hilo_Sincronizacion.html">Hilos y Sincronización</a>'},
+        {titulo: '<a href="JavaStreams.html">Java Streams</a>'},    
+        {titulo: '<a href="ip.html">TCP/IP, Sockets UDP</a>'}, 
+        {titulo: '<a href="MapReduce.html">MapReduce</a>'}, 
+    ]
+    const formulario= document.querySelector('#search');
+    const boton= document.querySelector('#boton');
+    const resultado=document.querySelector('#resultado');
+
+    const filtrar = ()=>{
+       resultado.innerHTML='';
+
+       const texto = formulario.value.toLowerCase();
+       for(let tema of temas ){
+           let titulo=tema.titulo.toLowerCase();
+           if(titulo.indexOf(texto) !== -1){
+               
+                resultado.innerHTML += '<li>'+tema.titulo+'</li>'
+         }
+        }
+        if(resultado.innerHTML===''){
+            resultado.innerHTML += '<li>Enlace no Encontrado...</li>'
+        }
+    }
+    //boton.addEventListener('click',filtrar)
+    formulario.addEventListener('keyup',filtrar);
+   
+    
+</script>
+</body>
+</html>
