@@ -111,7 +111,95 @@
         Los sistemas distribuidos son extensibles al crecimiento creciente. 
         Proporciona escalabilidad y es fácil compartir recursos. 
         Algunas desventajas son que puede haber problemas de red y es difícil desarrollar software distribuido.
-</section>
+        <h3>Procesamiento Serial</h3>
+        <p>El procesamiento en serie requiere una técnica en la que los datos se ordenan secuencialmente y después son calculados por un procesador individual. Esta técnica funciona muy bien con listas ordenadas que usan contracciones parecidas. El mayor problema con esto es que sólo se puede procesar un bit de datos cada vez y los programas complejos no se pueden dividir en segmentos menores.</p>
+        <div align="center"><img src="img/serialp.jpg" alt="Flynn" class="imagen"></div>
+        <h3>Procesamiento Concurrente o Paralelo</h3>
+        <p>Dos o más procesos decimos que son concurrentes, paralelos, o que se ejecutan concurrentemente, cuando son procesados almismo tiempo, es decir, que para ejecutar uno de ellos, no hace falta que se haya ejecutado otro.En sistemas multiprocesador, esta ejecución simultánea podría conseguirse completamente, puesto que podremos asignarle, porejemplo, un proceso A al procesador A y un proceso B al procesador B y cada procesador realizaran la ejecución de su proceso.</p>
+        <div align="center"><img src="img/concup.jpg" alt="Flynn" class="imagen"></div>
+        <h3>Modelos de Computación</h3>
+
+        <h3>Taxonomía de Flynn</h3>
+        <p><strong>Una instrucción, un dato (SISD)</strong></p>
+        <p>Computador secuencial que no explota el paralelismo en las instrucciones ni en flujos de datos. Es la Arquitectura Von-Neumann. Un único procesador ejecuta un solo flujo de instrucciones para operar datos en una única memoria. Se ejecuta una única instrucción y un dato en cada ciclo de reloj.</p>
+        <p><strong>Una instrucción, múltiples datos (SIMD)</strong></p>
+        <p>Todas las unidades ejecutan la misma instrucción sincronizadamente, pero con datos distintos. Es un computador que explota varios flujos de datos dentro de un único flujo de instrucciones para realizar operaciones que pueden ser paralelizadas de manera natural.</p>
+        <p><strong>Múltiples instrucciones, un dato (MISD)</strong></p>
+        <p>Poco común debido al hecho de que la efectividad de los múltiples flujos de instrucciones suele precisar de múltiples flujos de datos. Sin embargo, este tipo se usa en situaciones de paralelismo redundante, como por ejemplo en navegación aérea, donde se necesitan varios sistemas de respaldo en caso de que uno falle.</p>
+        <p><strong>Múltiples instrucciones, múltiples datos (MIMD)</strong></p>
+        <p>Varios procesadores autónomos que ejecutan simultáneamente instrucciones diferentes sobre datos diferentes. Los sistemas distribuidos suelen clasificarse como arquitecturas MIMD; bien sea explotando un único espacio compartido de memoria, o uno distribuido.</p>
+
+        <h3>Diagrama de comparación de las clasificaciones de la Taxonomía de Flynn</h3>
+        <p>Esas cuatro arquitecturas son mostradas visualmente a continuación en donde cada "PU" (processing unit) es una unidad de procesamiento:</p>
+        <div align="center"><img src="img/Flyyn.jpg" alt="Flynn" class="imagen"></div>
+        <h3>Modelos de Algoritmos Paralelos</h3>
+        <p>El modelo de un algoritmo paralelo se escoge considerando una estrategia apropaida para:</p>
+        <ul>
+        <li>El Método de procesamiento.</li>
+        <li>Dividir Datos.</li>
+        <li>Para Reducir al máximo las interacciones entre procesos</li></ul>
+
+        <h3>Modelos de hilos</h3>
+        <p><strong>Capacidad	de	respuesta</strong>: Mayor	interactividad	al	separar	las	interacciones	con	el	usuario	
+            de	las	tareas	de	procesamiento	en	distintos	hilos. </p>
+        <p><strong>Compartición de recursos</strong>: Los	hilos	comparten	la	mayor	parte	de	los	recursos	de	forma	
+            automática.	</p>    
+        <p><strong>UBlización	sobre	arquitecturas	multiprocesador</strong>: Mayor	nivel	de	concurrencia	asignando	distintos	hilos	a	
+            distintos	procesadores. La	mayoría	de	los	sistemas	operativos	modernos	usan	el	hilo	
+            como	unidad	de	planificación.		</p>    
+        <p><strong>Modelo Muchos a uno</strong></p>    
+        <p>Hace	corresponder	
+            múltiples	hilos	de	usuario	
+            a	un	único	hilo	del	núcleo.	</p>
+        <div align="center"><img src="img/hilos_1.jpg" alt="Flynn" class="imagen"></div>
+    
+        <p><strong>Modelo Uno a uno</strong></p>    
+        <p>Hace	corresponder	un	hilo	
+            del	kernel	a	cada	hilo	de	
+            usuario.		</p>
+        <div align="center"><img src="img/hilos_2.jpg" alt="Flynn" class="imagen"></div>
+        
+        <p><strong>Modelo Muchos a muchos</strong></p>    
+        <p>Este	modelo	multiplexa
+            los	threads	de	usuario	en	
+            un	número	determinado	
+            de	threads	en	el	kernel.		</p>
+        <div align="center"><img src="img/hilos_3.jpg" alt="Flynn" class="imagen"></div>
+    
+
+        <h3>Modelos de datos paralelos</h3>
+        <p>En el modelo paralelo de datos, las tareas se asignan a procesos y cada tarea realiza tipos similares de operaciones en diferentes datos. El modelo paralelo de datos se pueden trabajar con paradigmas de memoria compartida y paradigmas de paso de mensajes.</p>
+        <p>Ejemplo: Multiplicación de una matriz densa</p>
+        <div align="center"><img src="img/paralelo_1.jpg" alt="Flynn" class="imagen"></div>
+
+        <h3>Modelo de grafo de tareas</h3>
+        <p>Aquí, los problemas se dividen en tareas atómicas y se implementa como un grafo, cada tarea es una unidad de trabajo independiente que depende de una o más tareas anteriores, después de completar una tarea, el resultado de una tarea antecedente se pasa a la tarea dependiente. Una tarea con tarea antecedente comienza a ejecutarse solo cuando se completa toda su tarea antecedente; la salida final delgrafo se recibe cuando se completa la última tarea dependiente.</p>
+        <p>Ejemplo: Ordenación de datos en paralelo, se le puede llamar el enfoque de divide y vencerás.</p>
+        <div align="center"><img src="img/grafo.jpg" alt="Flynn" class="imagen"></div>
+    
+        <h3>Modelo de Grupo de Trabajo</h3>
+        <p>En el modelo de grupo de trabajo, las tareas se asignan dinámicamente sin preasignación, a los procesos para equilibrar la carga,por lo tanto,cualquier proceso puede potencialmente ejecutar cualquier tarea. La asignación de tareas puede ser centralizada por un proceso o descentralizada en varioas procesos. </p>
+        <p>Ejemplos: Búsqueda en árbol paralelo y ejecutores java</p>
+        <div align="center"><img src="img/modelo_1.jpg" alt="Flynn" class="imagen"></div>
+    
+        <h3>Modelos maestro-esclavo</h3>   
+        <p>En el modelo maestro-esclavo, uno o más procesos maestros generan tareas y las asignan a procesos esclavos, este modelos suele ser igualmente adecuado para paradigmas de espacio de direcciones compartidas o de paso de mensajes. En algunos casos, puede ser necesario 
+            completarse antes de que se pueda realizar una parte de la tarea misma.
+        </p>
+        <p>Ejemplo: Filtros de imágenes</p>
+        <div align="center"><img src="img/maestro.jpg" alt="Flynn" class="imagen"></div>
+    
+        <h3>Modelo de Segmentación ( Pipeline )</h3>
+        <p>Es una técnica de implementación por medio
+            de la cual se puede traslapar la ejecución de
+            instrucciones.
+         En la actualidad la segmentación es una de las
+            tecnologías utilizadas para hacer procesadores
+            más rápidos.</p>
+        <p>Ejemplo: Filtros de imágenes</p>
+        <div align="center"><img src="img/modelo_2.jpg" alt="Flynn" class="imagen"></div>
+        
+    </section>
 
 <div class="container_busqueda">
    
