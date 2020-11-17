@@ -83,7 +83,7 @@ body{
     margin: auto;
     margin-top: 0;
     border-style: solid;
-    border-color: rgb(227, 227, 227);
+    border-color: #275E8E;
     border-width: 5 px;
     display: flex;
     height: 45px;
@@ -325,7 +325,11 @@ body{
     border-top: none;
     border-bottom: none;
     border-left: none;
+    border-right: none;
     height:25px;
+    border-radius: 5px;
+    padding:4px;
+    padding-left: 2rem;
 }
 .show_2 a{
     text-decoration: none;
@@ -377,3 +381,6 @@ p{text-align: justify;}
         border-width: 2px;
      }  
     }
+
+   
+    
