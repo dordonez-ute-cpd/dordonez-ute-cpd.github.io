@@ -249,7 +249,7 @@ body{
         padding: 0.5rem 1rem;
     }
     .navegacion{ width: 100%; margin-top: 1rem;}
-    .navegacion ul{display: none;list-style: none;}
+    .navegacion ul{display: none;list-style: none; padding-left: 0;padding-right: 0;}
     .navegacion ul.show{display: block;}
     .navegacion ul li{display:block;}
     .navegacion ul li a{
@@ -259,6 +259,7 @@ body{
     }
     .navegacion ul li a:hover{ background: #ccc;}
     .menu-icon{ display:block;}
+    .navegacion ul li a:hover{background: #ABD896;}
 }
 
 /*----------------------------------------------------------------------------------*/
