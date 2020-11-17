@@ -218,6 +218,8 @@ body{
     margin: 0;
     padding: 0;
     list-style: none;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 .navegacion ul li{display: inline-block;}
 .navegacion ul li a{
@@ -230,7 +232,7 @@ body{
     padding: 0.5rem 1rem;
     transition: all 0.4s linear;
 }
-.navegacion ul li a:hover{background: #ABD896;}
+.navegacion ul li a:hover{background: #ABD896; padding: 0.6ch;}
 .menu-icon {display: none;background-color: #ABD896;padding-bottom: 2rem;}
 .navegacion_2 ul {
     margin: 0;
