@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/prism.css">
+    <link rel="stylesheet" href="css/all.css">
+    <link  rel="icon"   href="img/favicon.png" type="image/png" />
+    <title>Contenedores</title>
+</head>
+<body>
+
+<div class="container-head">
+    <div class="logos">
+        <a href="index.html" class="logo"><img src="img/logo-utet.png" alt="logo" width="100px" height="84px" ></a>
+    </div> 
+</div>
+
+      
+
+<header>
+    <div class="container-menu logo-nav-contenedor">
+        <span class="menu-icon"><i class="fas fa-bars"></i></span>
+        <nav class="navegacion">
+            <ul class="show">
+                <strong><li><a href="index.html">Inicio</a></li></strong>
+                <strong><li><a href="Presentaciones.html">Presentaciones</a></li></strong>
+                <strong><li><a href="Videos.html">Videos</a></li></strong>
+               
+            </ul>
+        </nav>
+      </div>
+</header>
+
+
+<div class="container-general">
+<main>
+<div class="container-cuerpo">
+<div class="columna_izquierda">
+    <div class="contenido_1">
+        <strong><h3>Temas</h3></strong>
+    </div>
+    <div class="contenido_2">
+        <nav class="navegacion_2">
+            <ul class="show_2">
+                 <!-- <li><a href="#"><i class="fas fa-sign-in-alt"></i>Expresiones Lambda</a></li> -->
+             <li><a href="Expresiones_Lambda.html"><i class="fas fa-sign-in-alt"></i>Expresiones Lambda</a></li> 
+             <li><a href="Hilo_Sincronizacion.html"><i class="fas fa-sign-in-alt"></i>Hilos y Sincronización</a></li>
+             <li><a href="Metodos_estaticos.html"><i class="fas fa-sign-in-alt"></i>Métodos Estáticos</a></li>
+             <li><a href="ForkJoin.html"><i class="fas fa-sign-in-alt"></i>ForkJoin</a></li>
+             <li><a href="JavaStreams.html"><i class="fas fa-sign-in-alt"></i>Java Streams</a></li>
+             <li><a href="ip.html"><i class="fas fa-sign-in-alt"></i>TCP/IP, Sockets UDP</a></li>
+             <li><a href="MapReduce.html"><i class="fas fa-sign-in-alt"></i>MapReduce</a></li>
+             <li><a href="TCP.html"><i class="fas fa-sign-in-alt"></i>Sockets TCP</a></li>
+             <li><a href="Contenedores.html"><i class="fas fa-sign-in-alt"></i>Contenedores</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<section class="columna_derecha">
+    <div text align="center"><h2>Contenedores</h2></div>
+
+    <p>Los contenedores son la solución al problema habitual, por ejemplo,
+         de moverse entre entornos de desarrollo como puede ser una máquina local o en 
+         un entorno real de producción. Podemos probar de forma segura una aplicación sin preocuparnos de que nuestro código 
+         se comporte de forma distinta. Esto es debido a que, como nos referíamos antes, 
+         todo lo que necesitamos está dentro de ese contenedor.
+   </p>
+   <p>
+    Solomon Hykes, creador de Docker, lo explicaba del siguiente modo:
+     “utilizando contenedores para ejecutar tu código solventamos el típico quebradero de cabeza de que estés usando una versión de 
+     Python 2.7 diferente en local o en el entorno de pruebas, 
+     pero en producción la versión sea totalmente distinta como Python 3 u 
+     otras dependencias propias del entorno de ejecución, incluso el sistema operativo. 
+    Todo lo que necesitas está dentro del propio contenedor y es invariable”.
+</p>
+<p>
+    En definitiva, los contenedores representan un mecanismo de empaquetado
+     lógico donde las aplicaciones tienen todo lo que necesitan para ejecutarse. 
+     Describiéndolo en un pequeño archivo de configuración. 
+     Con la ventaja de poder ser versionado, reutilizado y replicado fácilmente p
+     or otros desarrolladores o por los administradores de sistemas que tenga que escalar 
+     esas aplicaciones sin necesidad de conocer internamente cómo funciona nuestra aplicación.
+      El fichero de Docker bastará para adecuar el entorno de ejecución y configurar el 
+      servidor dónde va a ser escalado. A partir de ese 
+    fichero se puede generar una imagen que puede ser desplegada en un servidor en segundos.
+
+</p>
+<h3>Contenedores versus Virtualización</h3>
+
+
+
+<p>Una de las principales dudas es en qué se diferencia entonces un contenedor software y una máquina virtual. De hecho, este concepto es mucho más anterior que el de los propios contenedores.</p>
+<p>Gracias a la virtualización somos capaces, usando un mismo ordenador, de tener distintas máquinas virtuales con su propio sistema operativo invitado, Linux o Windows. Todo ello ejecutándose en un sistema operativo anfitrión y con acceso virtualizado al hardware.</p>
+<p>La virtualización es una práctica habitual en servidores para alojar diferentes aplicaciones o en nuestro propio entorno de trabajo para ejecutar distintos sistemas operativos, por ejemplo. Muchos alojamientos de hosting tradicionales se han basado en crear máquinas virtuales limitadas sobre el mismo servidor para alojar nuestros servidores web de forma aislada, siendo compartido por una decena de clientes.</p>
+
+<h1>Imagen</h1>
+<div align="center"><img srcset="img/contenedor1.png 320w,
+    img/img_Proceso.jpg 480w,img/contenedor1.png 800w"
+    sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
+    src="img/contenedor1.png"  alt="Proceso" class="imagen"></div>
+
+<p>
+    En contraposición a las máquinas virtuales, los contenedores se ejecutan sobre el mismo sistema operativo anfitrión de forma aislada también, pero sin necesidad un sistema operativo propio, ya que comparten el mismo Kernel, lo que los hace mucho más ligeros. De donde sacamos 3 máquinas virtuales probablemente podemos multiplicarlo por un gran número de contenedores software.
+Básicamente, los contenedores se basan en dos mecanismos para aislar procesos en un mismo sistema operativo. El primero de ellos, se trata de los namespace que provee Linux, lo que permite que cada proceso solamente sea capaz de ver su propio sistema “virtual” (ficheros, procesos, interfaces de red, hostname o lo que sea). El segundo concepto son los CGroups, por el cual somos capaces de limitar los recursos que puede consumir (CPU, memoria, ancho de banda, etc).
+
+</p>
+
+<h3>Beneficios </h3>
+
+<p>
+    Un contenedor puede tener solo decenas de megabytes de tamaño, mientras que una máquina virtual con su propio sistema operativo completo puede tener varios gigabytes de tamaño. Debido a esto, un solo servidor puede albergar muchos más contenedores que máquinas virtuales.
+</p>
+
+<p>
+    Otro beneficio importante es que las máquinas virtuales pueden tardar varios minutos en arrancar sus sistemas operativos y comenzar a ejecutar las aplicaciones que alojan, mientras que las aplicaciones en contenedores se pueden iniciar casi instantáneamente. Eso significa que se pueden crear instancias de contenedores de manera "justo a tiempo" cuando se necesitan y pueden desaparecer cuando ya no se necesitan, liberando recursos en sus hosts.  
+</p>
+Un tercer beneficio es que la contenerización permite una mayor modularidad. En lugar de ejecutar una aplicación compleja completa dentro de un solo contenedor, la aplicación se puede dividir en módulos (como la base de datos, el front-end de la aplicación, etc.). Este es el llamado enfoque de microservicios. Las aplicaciones creadas de esta manera son más fáciles de administrar porque cada módulo es relativamente simple y se pueden realizar cambios en los módulos sin tener que reconstruir toda la aplicación. Debido a que los contenedores son tan livianos, los módulos individuales (o microservicios) se pueden instanciar solo cuando son necesarios y están disponibles casi de inmediato.
+<p>
+
+    <h3>Diferencia entre Docker y contenedor</h3>
+
+<p>Docker se ha convertido en sinónimo de tecnología de contenedores porque ha tenido más éxito en popularizarla. Pero la tecnología de contenedores no es nueva; se ha integrado en Linux en forma de LXC durante más de 10 años, y las cárceles FreeBSD, las particiones de carga de trabajo AIX y los contenedores Solaris también han ofrecido virtualización a nivel de sistema operativo similar.</p>
+
+<h3>Seguridad</h3>
+
+
+<p>Mucha gente cree que los contenedores son menos seguros que las máquinas virtuales porque si hay una vulnerabilidad en el kernel del host del contenedor, podría proporcionar una vía hacia los contenedores que lo comparten. Eso también es cierto con un hipervisor, pero dado que un hipervisor proporciona mucha menos funcionalidad que un kernel de Linux (que generalmente implementa sistemas de archivos, redes, controles de procesos de aplicaciones, etc.), presenta una superficie de ataque mucho más pequeña.</p>
+<p>Pero en los últimos años se ha dedicado un gran esfuerzo al desarrollo de software para mejorar la seguridad de los contenedores.</p>
+<p>Por ejemplo, Docker (y otros sistemas de contenedores) ahora incluyen una infraestructura de firma que permite a los administradores firmar imágenes de contenedores para evitar que se implementen contenedores que no son de confianza.</p>
+<p>Sin embargo, no es necesariamente el caso de que un contenedor firmado y confiable sea seguro de ejecutar, ya que se pueden descubrir vulnerabilidades en parte del software del contenedor una vez firmado. Por esa razón, Docker y otros ofrecen soluciones de escaneo de seguridad de contenedores que pueden notificar a los administradores si alguna de las imágenes de contenedor tiene vulnerabilidades que podrían explotarse.</p>
+<p>También se ha desarrollado un software de seguridad de contenedores más especializado. Por ejemplo, Twistlock ofrece software que perfila el comportamiento esperado de un contenedor y procesos de "listas blancas", actividades de red (como direcciones IP y puertos de origen y destino) e incluso ciertas prácticas de almacenamiento para que se pueda marcar cualquier comportamiento malicioso o inesperado.</p>
+<p>Otra empresa especializada en seguridad de contenedores llamada Polyverse adopta un enfoque diferente. Aprovecha el hecho de que los contenedores se pueden iniciar en una fracción de segundo para relanzar aplicaciones en contenedores en un buen estado conocido cada pocos segundos para minimizar el tiempo que un hacker tiene para explotar una aplicación que se ejecuta en un contenedor.</p>
+
+<h3>Distribuciones Linux</h3>
+
+<p>La mayoría de las distribuciones de Linux tienen muchas funciones innecesarias si su uso previsto es simplemente actuar como un host contenedor para ejecutar contenedores. Por esa razón, se han diseñado varias distribuciones de Linux específicamente para ejecutar contenedores.</p>
+<p>Algunos ejemplos incluyen:</p>
+<p>Container Linux (anteriormente CoreOS Linux): uno de los primeros sistemas operativos de contenedores ligeros creados para contenedores
+    <br>  <br>RancherOS: Una distribución de Linux simplificada construida a partir de contenedores, específicamente para ejecutar contenedores.
+    <br>   <br> Photon OS: un host contenedor de Linux mínimo, optimizado para ejecutarse en plataformas VMware.
+    <br>  <br> Project Atomic Host: el sistema operativo de contenedor liviano de Red Hat tiene versiones que se basan en CentOS y Fedora, y también hay una versión empresarial posterior en Red Hat Enterprise Linux.  
+    <br>  <br> Ubuntu Core: la versión más pequeña de Ubuntu, Ubuntu Core está diseñado como un sistema operativo host para dispositivos IoT e implementaciones de contenedores en la nube a gran escala.
+    </p>
+<h3>Windows</h3>
+<p>Además de ejecutarse en cualquier distribución de Linux que ejecute la versión 3.10 (o posterior) del kernel de Linux, Docker también se ejecuta en Windows.</p>
+<p>Esto se debe a que en 2016 Microsoft introdujo la capacidad de ejecutar contenedores de Windows en Windows Server 2016 y Windows 10. Estos son contenedores Docker diseñados para Windows y se pueden administrar desde cualquier cliente Docker o desde PowerShell de Microsoft</p>
+<p>(Microsoft también presentó los contenedores Hyper-V, que son contenedores de Windows que se ejecutan en una máquina virtual Hyper-V para mayor aislamiento).</p>
+<p>Los contenedores de Windows se pueden implementar en una instalación estándar de Windows Server 2016, la instalación optimizada de Server Core o la opción de instalación de Nano Server , que está diseñada específicamente para ejecutar aplicaciones dentro de contenedores o máquinas virtuales.</p>
+<p>Además de Linux y Windows, Docker también se ejecuta en plataformas en la nube populares, como Amazon EC2, Google Compute Engine, Microsoft Azure y Rackspace.</p>
+<h4>¿Los contenedores eventualmente reemplazarán la virtualización de servidores en toda regla?</h4>
+<p>Eso es poco probable en el futuro previsible por varias razones importantes.</p>
+<p>En primer lugar, todavía existe una opinión generalizada de que las máquinas virtuales ofrecen mejor seguridad que los contenedores debido al mayor nivel de aislamiento que proporcionan.</p>
+<p>En segundo lugar, las herramientas de administración que están disponibles para organizar una gran cantidad de contenedores tampoco son tan completas como el software para administrar la infraestructura virtualizada, como vCenter de VMware o System Center de Microsoft. Es poco probable que las empresas que han realizado inversiones significativas en este tipo de software quieran abandonar su infraestructura virtualizada sin una muy buena razón.</p>
+<p>Quizás lo más importante es que la virtualización y los contenedores también se están convirtiendo en tecnologías complementarias en lugar de competidoras. Esto se debe a que los contenedores se pueden ejecutar en máquinas virtuales livianas para aumentar el aislamiento y, por lo tanto, la seguridad, y porque la virtualización de hardware facilita la administración de la infraestructura de hardware (redes, servidores y almacenamiento) que se necesitan para admitir contenedores.</p>
+<p>VMware alienta a los clientes que han invertido en su infraestructura de administración de máquinas virtuales a ejecutar contenedores en su distribución de Linux de contenedores Photon OS dentro de máquinas virtuales livianas que luego se pueden administrar desde vCenter. Esta es la estrategia de "contenedor en una máquina virtual" de VMware.</p>
+<p>Pero VMware también ha introducido lo que llama vSphere Integrated Containers (VIC). Estos contenedores se pueden implementar directamente en un host ESXi independiente o en vCenter Server como si fueran máquinas virtuales. Esta es la estrategia de "contenedor como máquina virtual" de VMware.</p>
+<p>Ambos enfoques tienen sus ventajas, pero lo importante es que, en lugar de reemplazar las máquinas virtuales, a menudo puede ser útil poder usar contenedores dentro de una infraestructura virtualizada.</p>
+<h3>Caso de uso: </h3>
+
+<p>Aplicaciones nativas de la nube:<br>
+    Las aplicaciones nativas de la nube se basan en contenedores para lograr un modelo operativo común entre entornos, incluidos los públicos, privados e híbridos. La baja sobrecarga y la alta densidad de los contenedores permiten hospedar muchos de ellos en la misma máquina virtual y hacen que sean ideales para la entrega de aplicaciones nativas de la nube.
+    </p>
+<h1>Imagennnn</h1>
+  <div align="center"><img srcset="img/contenedor2.jpg 320w,
+        img/img_Proceso.jpg 480w,img/contenedor2.jpg 800w"
+        sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
+        src="img/contenedor2.jpg"  alt="Proceso" class="imagen"></div>
+<h3>Conclusiones</h3>
+<ol>
+    <li>	A través de la recopilación de información consolidamos nuestros conocimientos sobre el tema de contenedores de software.</li>
+    <li> 	Aprendimos que hoy en día se puede gestionar nubes privadas con OpenStack y Linux para comenzar de manera segura, confiable y escalable implementando Contenedores Informáticos, con Red Hat Enterpride Linux y Red Hat Open Shift.</li>
+    <li> Con la realización de la exposición pudimos compartir la información recopilada sobre el tema de métodos por default y estáticos a nuestros compañeros de clase.</li>
+    
+</ol>
+
+
+
+</section>
+
+<div class="container_busqueda">
+   
+    <div id="search-wrapper">
+        <input type="search" id="search" placeholder="Buscar"/>
+        <i class="fa fa-search"></i>
+      </div>
+    <ul id="resultado" class="lista_busqueda">
+        
+    </ul>
+</div>
+</div>
+</div>
+</main>
+
+
+<footer>
+    <div class="container-pie">
+        <div class="copyright">
+           <p>&copy; 2020 Página realizada por estudiantes de la Universidad UTE.</p> 
+        </div>
+    </div>
+</footer>
+</div>
+
+<script src="js/jQuery.js"></script>
+<script src="js/scripts.js"></script>
+<script src="js/prism.js"></script>
+
+
+
+<script>
+    const temas = [  /*Cargar aqui enlaces para la busqueda con el mismo formato.*/
+        {titulo: '<a href="Expresiones_Lambda.html">Expresiones Lambda</a>'},   
+        {titulo: '<a href="Metodos_estaticos.html">Métodos Estáticos</a>'},   
+        {titulo: '<a href="ForkJoin.html">ForkJoin</a>'}, 
+        {titulo: '<a href="Hilo_Sincronizacion.html">Hilos y Sincronización</a>'},
+        {titulo: '<a href="JavaStreams.html">Java Streams</a>'},    
+        {titulo: '<a href="ip.html">TCP/IP, Sockets UDP</a>'}, 
+        {titulo: '<a href="MapReduce.html">MapReduce</a>'}, 
+        {titulo: '<a href="TCP.html">Sockets UTP</a>'}, 
+    ]
+    const formulario= document.querySelector('#search');
+    const boton= document.querySelector('#boton');
+    const resultado=document.querySelector('#resultado');
+
+    const filtrar = ()=>{
+       resultado.innerHTML='';
+
+       const texto = formulario.value.toLowerCase();
+       for(let tema of temas ){
+           let titulo=tema.titulo.toLowerCase();
+           if(titulo.indexOf(texto) !== -1){
+               
+                resultado.innerHTML += '<li>'+tema.titulo+'</li>'
+         }
+        }
+        if(resultado.innerHTML===''){
+            resultado.innerHTML += '<li>Enlace no Encontrado...</li>'
+        }
+    }
+    //boton.addEventListener('click',filtrar)
+    formulario.addEventListener('keyup',filtrar);
+   
+    
+</script>
+</body>
+</html>
