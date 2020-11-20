@@ -1,17 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/prism.css">
     <link rel="stylesheet" href="css/all.css">
     <link  rel="icon"   href="img/favicon.png" type="image/png" />
-    <title>Presentaciones</title>
+<title>VirtualBox</title>
 </head>
-<body>
 
-<div class="container-head">
+<body>
+	<div class="container-head">
     <div class="logos">
         <a href="index.html" class="logo"><img src="img/logo-utet.png" alt="logo" width="100px" height="84px" ></a>
     </div> 
@@ -60,20 +61,52 @@
 </div>
 
 <section class="columna_derecha">
-
-<div class="div-presentaciones">  
-<div align="center"><iframe  src="pdf/Expresiones_lambda.pdf" width="720px" height="500px"></iframe ></div>
-<div align="center"><iframe  src="pdf/grupo3.pdf" width="720px" height="500px"></iframe ></div>
-<div align="center"><iframe  src="pdf/MapReduc.pdf" width="720px" height="500px"></iframe ></div>
-<div align="center"><iframe  src="pdf/ForkJoin.pdf" width="720px" height="500px"></iframe ></div>
-<div align="center"><iframe  src="pdf/Contenedores.pdf" width="720px" height="500px"></iframe ></div>
-<div align="center"><iframe  src="pdf/VirtualBox.pdf" width="720px" height="500px"></iframe ></div>
-</div>
-
-
-
-
-
+    <div text align="center"><h2>VirtualBox</h2></div>
+		<h4>Concepto y Características</h4>
+		<ul>
+		<li>Es un software para virtualización, también conocido como hipervisor de tipo 2, que se utiliza para virtualizar sistemas operativos dentro de nuestro ordenador existente, creando lo que se conoce como máquina virtual.</li>
+		<li>Es un potente producto de virtualización x86 y AMD64 / Intel64 para uso empresarial y doméstico.</li>
+		<li>Es un producto extremadamente rico en funciones y de alto rendimiento para clientes empresariales.</li>
+		<li>Se ejecuta en hosts Windows, Linux, Macintosh y Solaris y es compatible con una gran cantidad de sistemas operativos invitados.</li>
+		<li>Es un esfuerzo comunitario respaldado por una empresa dedicada: se anima a todos a contribuir, mientras que Oracle garantiza que el producto siempre cumpla con los criterios de calidad profesional.</li>
+		</ul>
+		<p>¿Para qué sirve?</p>
+		<ul>
+			<li>Sirve principalmente para virtualizar sistemas operativos que no podamos o no queramos ejecutar de forma nativa en nuestro equipo.</li>
+			<li>Una de las principales virtudes de una máquina virtual es el aislamiento que ello proporciona.</li>
+			<li>Espacio de ejecución aislado donde podemos ejecutar aplicaciones de fuentes sin verificar o sospechosas</li>
+		</ul>
+		<p>Ventajas</p>
+		<p>Soporte del sistema operativo. Con un virtualizador como VirtualBox, uno puede ejecutar software escrito para un sistema operativo en otro (digamos, software de Windows en Linux) sin tener que reiniciar.</p>
+		<p>Consolidación de infraestructura. Dado que el rendimiento completo de las computadoras de hoy en día rara vez se necesita a tiempo completo, en lugar de ejecutar muchas de estas computadoras físicas, se pueden "empaquetar" muchas máquinas virtuales en unos pocos hosts potentes y equilibrar las cargas entre ellos.</p>
+		<p>Pruebas y recuperación ante desastres. uno puede meterse con un entorno informático ejecutándolo como una máquina virtual. Si algo sale mal, se puede volver fácilmente a una instantánea anterior y evitar la necesidad de realizar copias de seguridad y restauraciones frecuentes.</p>
+		<h3>Algunos términos relacionados</h3>
+		<p>Virtualización: permite que un sistema operativo sin modificar con todo su software instalado se ejecute en un entorno especial, además de su sistema operativo existente.</p>
+		<p>Maquina virtual: es un software que crea una capa independiente donde se emula el funcionamiento de un ordenador real con todos los componentes de hardware que necesita para funcionar y que puede ejecutar cualquier sistema operativo o programa, tal y como lo haría un ordenador real.</p>
+		<p>¿Por qué usar Virtualización?</p>
+		<ul>
+		<li>Aprovechamiento de recursos.</li>
+		<li>Reducción de costes.</li>
+		<li>Flexibilidad.</li>
+		<li>Uso de múltiples tecnologías, simultáneamente.</li>
+		<li>Realizar pruebas.</li>
+		</ul>
+		<p>Creación de una máquina virtual</p>
+		<ul>
+			<li>Escoger nombre y sistema operativo.</li>
+			<li>Cantidad de RAM(1024 MB).</li>
+			<li>Disco duro(VDI dinámico de 30Gb).</li>
+			<li>Selección de ISO para instalación.</li>
+			<li>Red(Adaptador Puente).</li>
+		</ul>
+	    <p>Fuente: <a href="https://www.virtualbox.org/">VirtualBox</a></p>
+	
+	
+	<div align="center"><img srcset="img/virtualbox.png"
+    sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
+    src="img/contenedor1.png"  alt="Proceso" class="imagen"></div>
+		
+	
 </section>
 
 <div class="container_busqueda">
@@ -102,12 +135,13 @@
 
 <script src="js/jQuery.js"></script>
 <script src="js/scripts.js"></script>
+<script src="js/prism.js"></script>
 
 
 
 <script>
     const temas = [  /*Cargar aqui enlaces para la busqueda con el mismo formato.*/
-    {titulo: '<a href="Expresiones_Lambda.html">Expresiones Lambda</a>'},   
+        {titulo: '<a href="Expresiones_Lambda.html">Expresiones Lambda</a>'},   
         {titulo: '<a href="Metodos_estaticos.html">Métodos Estáticos</a>'},   
         {titulo: '<a href="ForkJoin.html">ForkJoin</a>'}, 
         {titulo: '<a href="Hilo_Sincronizacion.html">Hilos y Sincronización</a>'},
@@ -117,7 +151,6 @@
         {titulo: '<a href="TCP.html">Sockets UTP</a>'}, 
         {titulo: '<a href="Contenedores.html">Contenedores</a>'}, 
 		{titulo: '<a href="VirtualBox.html">VirtualBox</a>'}, 
-       
     ]
     const formulario= document.querySelector('#search');
     const boton= document.querySelector('#boton');
@@ -143,5 +176,8 @@
    
     
 </script>
+</body>
+</html>
+
 </body>
 </html>
