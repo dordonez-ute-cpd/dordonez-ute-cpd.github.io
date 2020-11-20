@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/all.css">
+    <title>Máquina Virtual</title>
+</head>
+<body>
+
+<div class="container-head">
+    <div class="logos">
+        <a href="index.html" class="logo"><img src="img/logo-ute.png" alt="logo" width="90px" height="90px" ></a>
+    </div> 
+</div>
+
+      
+
+<header>
+    <div class="container-menu logo-nav-contenedor">
+        <span class="menu-icon"><i class="fas fa-bars"></i></span>
+        <nav class="navegacion">
+            <ul class="show">
+                <strong><li><a href="index.html">Inicio</a></li></strong>
+                <strong><li><a href="Presentaciones.html">Presentaciones</a></li></strong>
+                <strong><li><a href="Videos.html">Videos</a></li></strong>
+               
+            </ul>
+        </nav>
+      </div>
+</header>
+
+<div class="container-general">
+    <main>
+    <div class="container-cuerpo">
+    <div class="columna_izquierda">
+        <div class="contenido_1">
+            <strong><h3>Temas</h3></strong>
+        </div>
+        <div class="contenido_2">
+            <nav class="navegacion_2">
+                <ul class="show_2">
+                   <!-- <li><a href="#"><i class="fas fa-sign-in-alt"></i>Expresiones Lambda</a></li> -->
+                   <li><a href="Expresiones_Lambda.html"><i class="fas fa-sign-in-alt"></i>Expresiones Lambda</a></li> 
+                   <li><a href="Hilo_Sincronizacion.html"><i class="fas fa-sign-in-alt"></i>Hilos y Sincronización</a></li>
+                   <li><a href="Metodos_estaticos.html"><i class="fas fa-sign-in-alt"></i>Métodos Estáticos</a></li>
+                   <li><a href="ForkJoin.html"><i class="fas fa-sign-in-alt"></i>ForkJoin</a></li>
+                   <li><a href="JavaStreams.html"><i class="fas fa-sign-in-alt"></i>Java Streams</a></li>
+                   <li><a href="ip.html"><i class="fas fa-sign-in-alt"></i>TCP/IP, Sockets UDP</a></li>
+                   <li><a href="MapReduce.html"><i class="fas fa-sign-in-alt"></i>MapReduce</a></li>
+                   <li><a href="TCP.html"><i class="fas fa-sign-in-alt"></i>Sockets TCP</a></li>
+                   <li><a href="Contenedores.html"><i class="fas fa-sign-in-alt"></i>Contenedores</a></li>
+                   <li><a href="MaquinaVirtual.html"><i class="fas fa-sign-in-alt"></i>Maquina virtual</a></li>
+                   <li><a href="VirtualBox.html"><i class="fas fa-sign-in-alt"></i>Virtual Box</a></li>
+                   <li><a href="Docker.html"><i class="fas fa-sign-in-alt"></i>Docker</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <section class="columna_derecha">
+        <div text align="center"><h2>Maquina Virtual</h2></div>
+        <p>En informática, una máquina virtual ( VM ) es una emulación de un sistema informático. Las máquinas virtuales se basan en arquitecturas informáticas y proporcionan la funcionalidad de una computadora física. Sus implementaciones pueden involucrar hardware, software o una combinación de ellos.
+
+            <p> Existen diferentes tipos de máquinas virtuales, cada una con diferentes funciones:</p>
+            
+            <p> <strong>Las máquinas virtuales del sistema</strong>strong (también denominadasmáquinas virtuales de virtualización completa ) proporcionan un sustituto de una máquina real. 
+             Proporcionan la funcionalidad necesaria para ejecutar sistemas operativos completos . Un hipervisor utiliza
+             la ejecución nativa para compartir y administrar hardware, lo que permite múltiples entornos que están aislados entre sí, 
+             pero que existen en la misma máquina física. Los hipervisores modernos utilizan virtualización asistida por hardware, 
+             hardware específico de virtualización, principalmente de las CPU del host.</p>
+            <p><strong>Las máquinas virtuales de proceso</strong> están diseñadas para ejecutar programas informáticos en un entorno independiente de la plataforma.
+            Algunas máquinas virtuales, como QEMU , están diseñadas para emular también diferentes arquitecturas y
+             permitir la ejecución de aplicaciones de software y sistemas operativos escritos para otra CPU o arquitectura.
+              La virtualización a nivel de sistema operativo permite particionar los recursos de una computadora a través del kernel . 
+              Los términos no son universalmente intercambiables.</p>
+              </p>
+        <div text align="center"><img src="img/maquina-virtual.jpg" alt="" height="350" width="350" class="imagen"></div>
+
+      
+        
+        
+        <strong><p>Historia</p></strong>
+        <p> Una "máquina virtual" fue definida originalmente por Popek y Goldberg como "un duplicado eficiente y aislado de una máquina de computadora real". [1] El uso actual incluye máquinas virtuales que no tienen correspondencia directa con ningún hardware real. [2] El hardware físico del "mundo real" que ejecuta la máquina virtual generalmente se conoce como el "host", y la máquina virtual emulada en esa máquina generalmente se conoce como el "invitado". Un host puede emular varios invitados, 
+            cada uno de los cuales puede emular diferentes sistemas operativos y plataformas de hardware.</p>
+        <p>Tanto las máquinas virtuales del sistema como las máquinas virtuales de proceso datan de la década de 1960 y 
+            continúan siendo áreas de desarrollo activo.</p>
+            
+           <p> Las máquinas virtuales del sistema surgieron del tiempo compartido , como se implementó notablemente en el Sistema 
+               de tiempo compartido compatible (CTSS). El tiempo compartido permitió que varios usuarios usaran una computadora al
+                mismo tiempo: cada programa parecía tener acceso completo a la máquina, pero solo se ejecutaba un programa en ese momento, 
+                y el sistema cambiaba entre programas en intervalos de tiempo, guardando y restaurando el estado cada vez.
+                 <p>Esto se convirtió en máquinas virtuales, especialmente a través de los sistemas de investigación de IBM: el M44 / 44X , 
+                    que usaba virtualización parcial , y el CP-40 y SIMMON , que usaban virtualización completa , y fueron los primeros 
+                    ejemplos de hipervisores.. La primera arquitectura de máquina virtual ampliamente disponible fue la CP-67 / CMS 
+                    (consulte Historial de CP / CMS para obtener más detalles). </p>
+                 <p>Una distinción importante fue entre el uso de varias máquinas virtuales en un sistema host para compartir el tiempo, 
+                 como en M44 / 44X y CP-40, y el uso de una máquina virtual en un sistema host para la creación de prototipos, como en SIMMON
+                 . Los emuladores , con emulación de hardware de sistemas anteriores para compatibilidad, se remontan al IBM System / 360 
+                 en 1963,mientras que la emulación de software (entonces llamada "simulación") es anterior. </p>
+           
+        <div text align="center"><img src="img/ventajas.png" alt="" height="350" width="350" class="imagen"></div>
+
+
+        <strong><p>Ventajas/Desventajas</p></strong>
+        <div text align="center"><img src="img/venta.png" alt="" height="350" width="350" class="imagen"></div>
+       <strong><p><li>Ventajas-Maquinas-virtuales </li></p></strong> 
+        <p>Las principales ventajas de las máquinas virtuales:</p>
+           <p> Múltiples entornos de SO pueden existir simultáneamente en la misma máquina, aislados unos de otros.
+           </p>
+        <p>La máquina virtual puede ofrecer una arquitectura de conjunto de instrucciones que difiere de la computadora real.</p>
+        <p>Mantenimiento sencillo, aprovisionamiento de aplicaciones, disponibilidad y recuperación conveniente.</p>
+        
+        <div text align="center"><img src="img/desventajas.png" alt="" height="350" width="350" class="imagen"></div>
+        
+       <strong><p><li>Desventajas-Maquinas-virtuales</li></p></strong> 
+        <p>Las principales desventajas:</p>
+            <p> Cuando varias máquinas virtuales se ejecutan simultáneamente en una computadora host, cada máquina virtual 
+                puede presentar un rendimiento inestable, que depende de la carga de trabajo en el sistema por parte de otras
+                 máquinas virtuales en ejecución.</p> 
+            <p>  La máquina virtual no es tan eficiente como una verdadera cuando se accede al hardware.</p> 
+        </p>
+
+        <p>La virtualización ofrece una serie de ventajas
+            centralizar la administración de red, reducir la dependencia de hardware y software adicional, etc. 
+            Pero como siempre ocurre, también presenta ciertas deficiencias</p>
+       
+            <strong><p></p>¿Por qué elegir máquinas virtuales?</p></strong>
+            
+<p>Las máquinas virtuales se crean para realizar tareas específicas cuya ejecución en un entorno host presentaría ciertos riesgos, tales como el acceso a datos infectados por virus y la prueba de sistemas operativos. 
+    Dado que la máquina virtual está aislada del resto del sistema, el software que hay en su interior no puede modificar el ordenador host.
+     Las máquinas virtuales también pueden usarse para otros propósitos, como la virtualización de servidores.
+    </p>
+       <p>Una máquina virtual de proceso, a veces llamada "máquina virtual de aplicación", se ejecuta como un proceso normal dentro de un sistema operativo y soporta un solo proceso. La máquina se inicia automáticamente cuando se lanza el proceso que se desea ejecutar y se detiene para cuando éste finaliza
+    </p>
+    <div text align="center"><img src="img/porque.jpg" alt="" height="350" width="350" class="imagen"></div>
+         <p> <strong> Fuente: </strong>tutorialspoint.com/java8/java8_streams.htm</p> 
+        
+      </section>
+    
+
+<div class="container_busqueda">
+   
+    <div id="search-wrapper">
+        <input type="search" id="search" placeholder="Buscar"/>
+        <i class="fa fa-search"></i>
+      </div>
+    <ul id="resultado" class="lista_busqueda">
+        
+    </ul>
+</div>
+</div>
+</div>
+</main>
+
+
+<footer>
+    <div class="container-pie">
+        <div class="copyright">
+           <p>&copy; 2020 Página realizada por estudiantes de la Universidad UTE.</p> 
+        </div>
+    </div>
+</footer>
+</div>
+
+<script src="js/jQuery.js"></script>
+<script src="js/scripts.js"></script>
+
+
+
+<script>
+    const temas = [  /*Cargar aqui enlaces para la busqueda con el mismo formato.*/
+    {titulo: '<a href="Expresiones_Lambda.html">Expresiones Lambda</a>'},   
+        {titulo: '<a href="Metodos_estaticos.html">Métodos Estáticos</a>'},   
+        {titulo: '<a href="ForkJoin.html">ForkJoin</a>'}, 
+        {titulo: '<a href="Hilo_Sincronizacion.html">Hilos y Sincronización</a>'},
+        {titulo: '<a href="JavaStreams.html">Java Streams</a>'},    
+        {titulo: '<a href="ip.html">TCP/IP, Sockets UDP</a>'}, 
+        {titulo: '<a href="MapReduce.html">MapReduce</a>'}, 
+        {titulo: '<a href="TCP.html">Sockets UTP</a>'}, 
+        {titulo: '<a href="Contenedores.html">Contenedores</a>'}, 
+		{titulo: '<a href="VirtualBox.html">VirtualBox</a>'}, 
+        {titulo: '<a href="Docker.html">Docker</a>'}, 
+        {titulo: '<a href="MaquinaVirtual.html">Máquina Virtual </a>'}, 
+    ]
+    const formulario= document.querySelector('#search');
+    const boton= document.querySelector('#boton');
+    const resultado=document.querySelector('#resultado');
+
+    const filtrar = ()=>{
+       resultado.innerHTML='';
+
+       const texto = formulario.value.toLowerCase();
+       for(let tema of temas ){
+           let titulo=tema.titulo.toLowerCase();
+           if(titulo.indexOf(texto) !== -1){
+               
+                resultado.innerHTML += '<li>'+tema.titulo+'</li>'
+         }
+        }
+        if(resultado.innerHTML===''){
+            resultado.innerHTML += '<li>Enlace no Encontrado...</li>'
+        }
+    }
+    //boton.addEventListener('click',filtrar)
+    formulario.addEventListener('keyup',filtrar);
+   
+    
+</script>
+</body>
+</html>
