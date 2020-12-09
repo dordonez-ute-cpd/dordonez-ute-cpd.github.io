@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/all.css">
+    <link  rel="icon"   href="img/favicon.png" type="image/png" />
+    <title>Computación Paralela y Distribuida</title>
+</head>
+<body>
+
+<div class="container-head">
+    <div class="logos">
+        <a href="index.html" class="logo"><img src="img/logo-utet.png" alt="logo" width="100px" height="84px" ></a>
+    </div> 
+</div>
+
+      
+
+<header>
+    <div class="container-menu logo-nav-contenedor">
+        <span class="menu-icon"><i class="fas fa-bars"></i></span>
+        <nav class="navegacion">
+            <ul class="show">
+                <strong><li><a href="index.html">Inicio</a></li></strong>
+                <strong><li><a href="Presentaciones.html">Presentaciones</a></li></strong>
+                <strong><li><a href="Videos.html">Videos</a></li></strong>
+               
+            </ul>
+        </nav>
+      </div>
+</header>
+
+
+<div class="container-general">
+<main>
+<div class="container-cuerpo">
+<div class="columna_izquierda">
+    <div class="contenido_1">
+        <strong><h3>Temas</h3></strong>
+    </div>
+    <div class="contenido_2">
+        <nav class="navegacion_2">
+            <ul class="show_2">
+             <!-- <li><a href="#"><i class="fas fa-sign-in-alt"></i>Expresiones Lambda</a></li> -->
+             <li><a href="Expresiones_Lambda.html"><i class="fas fa-sign-in-alt"></i>Expresiones Lambda</a></li> 
+             <li><a href="Hilo_Sincronizacion.html"><i class="fas fa-sign-in-alt"></i>Hilos y Sincronización</a></li>
+             <li><a href="Metodos_estaticos.html"><i class="fas fa-sign-in-alt"></i>Métodos Estáticos</a></li>
+             <li><a href="ForkJoin.html"><i class="fas fa-sign-in-alt"></i>ForkJoin</a></li>
+             <li><a href="JavaStreams.html"><i class="fas fa-sign-in-alt"></i>Java Streams</a></li>
+             <li><a href="ip.html"><i class="fas fa-sign-in-alt"></i>TCP/IP, Sockets UDP</a></li>
+             <li><a href="MapReduce.html"><i class="fas fa-sign-in-alt"></i>MapReduce</a></li>
+             <li><a href="TCP.html"><i class="fas fa-sign-in-alt"></i>Sockets TCP</a></li>
+             <li><a href="Contenedores.html"><i class="fas fa-sign-in-alt"></i>Contenedores</a></li>
+             <li><a href="MaquinaVirtual.html"><i class="fas fa-sign-in-alt"></i>Maquina virtual</a></li>
+             <li><a href="VirtualBox.html"><i class="fas fa-sign-in-alt"></i>Virtual Box</a></li>
+             <li><a href="Docker.html"><i class="fas fa-sign-in-alt"></i>Docker</a></li>
+             <li><a href="InyeccionDependencia.html"><i class="fas fa-sign-in-alt"></i>InyeccionDependencia</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<section class="columna_derecha">
+    <div align="center"><h1>Computación Paralela y Distribuida</h1></div>
+    <p>Una computadora realiza tareas de acuerdo con las instrucciones proporcionadas por el ser humano. 
+        La computación paralela y la computación distribuida son dos tipos de computación.
+        La computación paralela se usa en computación de alto rendimiento, como el desarrollo de supercomputadoras. La informática distribuida proporciona escalabilidad y coherencia de datos.
+         Google y Facebook utilizan la informática distribuida para el almacenamiento de datos. <br> <br> 
+         La diferencia clave entre la computación paralela y distribuida es que la computación paralela es ejecutar múltiples tareas usando múltiples procesadores simultáneamente, mientras que en la computación distribuida, 
+         varias computadoras están interconectadas a través de una red para comunicarse y colaborar con el fin de lograr un objetivo común. 
+         Cada computadora en el sistema distribuido tiene sus propios usuarios y ayuda a compartir recursos.</p>
+
+    <h3>¿Qué es la computación paralela?</h3> 
+        Una computadora es una máquina que puede realizar tareas de acuerdo con las instrucciones proporcionadas por los humanos. 
+        La arquitectura de la computadora define cómo ejecutar las instrucciones proporcionadas a la computadora. 
+        Los sistemas informáticos anteriores tenían un procesador. 
+        El problema que debe resolverse se dividió en una serie de instrucciones. Esas instrucciones fueron dadas al procesador una tras otra. 
+        En cada momento, solo se ejecuta una instrucción. Luego, el procesador procesó esas instrucciones y dio salida. Este no era un mecanismo eficiente. 
+        La velocidad puede mejorarse aumentando la frecuencia, pero también aumenta la temperatura. Eso causa más disipación de calor. 
+        Por lo tanto, no es fácil aumentar la velocidad del procesador. Como resultado de esta computación paralela se introdujo. <br> <br>
+
+        La computación paralela también se conoce como procesamiento paralelo. 
+        Es una forma de cálculo que puede llevar múltiples cálculos simultáneamente. 
+        La computación paralela utiliza muchos procesadores. 
+        El problema a resolver se divide en partes discretas. 
+        Cada parte se desglosa en instrucciones. Estas instrucciones se dividen entre procesadores. 
+        Por lo tanto, múltiples procesadores están ejecutando instrucciones simultáneamente. 
+        La computación paralela es útil para realizar un cálculo complejo ya que los procesadores dividen la carga de trabajo entre ellos. También ahorra tiempo. <br><br>
+
+        Puede haber pocas desventajas de los sistemas paralelos. 
+        La instrucción ejecutada por un procesador podría ser necesaria por otro procesador. 
+        Esto puede causar latencia. 
+        El número creciente de procesadores también es costoso. 
+        Estos hechos deben considerarse al desarrollar sistemas paralelos. 
+        En general, la computación paralela ayuda a ejecutar múltiples instrucciones al mismo tiempo para completar las tareas. <br><br>    
+
+        <h3>¿Qué es la computación distribuida?</h3>
+        En la vida diaria, un individuo puede usar una computadora para trabajar con aplicaciones como Microsoft Word, Microsoft PowerPoint. 
+        Los problemas complejos pueden no lograrse utilizando una sola computadora. 
+        Por lo tanto, el único problema puede dividirse en múltiples tareas y distribuirse a muchas computadoras. 
+        Estas computadoras pueden comunicarse con otras computadoras a través de la red. 
+        Todos se desempeñan de manera similar a una sola entidad. 
+        El proceso de dividir una sola tarea entre varias computadoras se conoce como computación distribuida. 
+        Cada computadora en un sistema distribuido se conoce como un nodo. 
+        Un conjunto de nodos es un clúster. <br><br>
+
+        La informática distribuida se usa en muchas aplicaciones hoy en día. 
+        Algunos ejemplos son Facebook y Google. 
+        Se componen de millones y millones de usuarios. 
+        Todos los usuarios se comunican con otros, comparten fotografías, etc. 
+        Esta gran cantidad de datos se almacena mediante la informática distribuida. 
+        Los cajeros automáticos en bancos, redes telefónicas, redes celulares, bases de datos distribuidas también usan computación distribuida. <br><br>
+
+        La informática distribuida ofrece múltiples ventajas. 
+        Los sistemas distribuidos son extensibles al crecimiento creciente. 
+        Proporciona escalabilidad y es fácil compartir recursos. 
+        Algunas desventajas son que puede haber problemas de red y es difícil desarrollar software distribuido.
+        <h3>Procesamiento Serial</h3>
+        <p>El procesamiento en serie requiere una técnica en la que los datos se ordenan secuencialmente y después son calculados por un procesador individual. Esta técnica funciona muy bien con listas ordenadas que usan contracciones parecidas. El mayor problema con esto es que sólo se puede procesar un bit de datos cada vez y los programas complejos no se pueden dividir en segmentos menores.</p>
+        <div align="center"><img src="img/serialp.jpg" alt="Flynn" class="imagen"></div>
+        <h3>Procesamiento Concurrente o Paralelo</h3>
+        <p>Dos o más procesos decimos que son concurrentes, paralelos, o que se ejecutan concurrentemente, cuando son procesados almismo tiempo, es decir, que para ejecutar uno de ellos, no hace falta que se haya ejecutado otro.En sistemas multiprocesador, esta ejecución simultánea podría conseguirse completamente, puesto que podremos asignarle, porejemplo, un proceso A al procesador A y un proceso B al procesador B y cada procesador realizaran la ejecución de su proceso.</p>
+        <div align="center"><img src="img/concup.jpg" alt="Flynn" class="imagen"></div>
+        <h3>Modelos de Computación</h3>
+
+        <h3>Taxonomía de Flynn</h3>
+        <p><strong>Una instrucción, un dato (SISD)</strong></p>
+        <p>Computador secuencial que no explota el paralelismo en las instrucciones ni en flujos de datos. Es la Arquitectura Von-Neumann. Un único procesador ejecuta un solo flujo de instrucciones para operar datos en una única memoria. Se ejecuta una única instrucción y un dato en cada ciclo de reloj.</p>
+        <p><strong>Una instrucción, múltiples datos (SIMD)</strong></p>
+        <p>Todas las unidades ejecutan la misma instrucción sincronizadamente, pero con datos distintos. Es un computador que explota varios flujos de datos dentro de un único flujo de instrucciones para realizar operaciones que pueden ser paralelizadas de manera natural.</p>
+        <p><strong>Múltiples instrucciones, un dato (MISD)</strong></p>
+        <p>Poco común debido al hecho de que la efectividad de los múltiples flujos de instrucciones suele precisar de múltiples flujos de datos. Sin embargo, este tipo se usa en situaciones de paralelismo redundante, como por ejemplo en navegación aérea, donde se necesitan varios sistemas de respaldo en caso de que uno falle.</p>
+        <p><strong>Múltiples instrucciones, múltiples datos (MIMD)</strong></p>
+        <p>Varios procesadores autónomos que ejecutan simultáneamente instrucciones diferentes sobre datos diferentes. Los sistemas distribuidos suelen clasificarse como arquitecturas MIMD; bien sea explotando un único espacio compartido de memoria, o uno distribuido.</p>
+
+        <h3>Diagrama de comparación de las clasificaciones de la Taxonomía de Flynn</h3>
+        <p>Esas cuatro arquitecturas son mostradas visualmente a continuación en donde cada "PU" (processing unit) es una unidad de procesamiento:</p>
+        <div align="center"><img src="img/Flyyn.jpg" alt="Flynn" class="imagen"></div>
+        <h3>Modelos de Algoritmos Paralelos</h3>
+        <p>El modelo de un algoritmo paralelo se escoge considerando una estrategia apropaida para:</p>
+        <ul>
+        <li>El Método de procesamiento.</li>
+        <li>Dividir Datos.</li>
+        <li>Para Reducir al máximo las interacciones entre procesos</li></ul>
+
+        <h3>Modelos de hilos</h3>
+        <p><strong>Capacidad	de	respuesta</strong>: Mayor	interactividad	al	separar	las	interacciones	con	el	usuario	
+            de	las	tareas	de	procesamiento	en	distintos	hilos. </p>
+        <p><strong>Compartición de recursos</strong>: Los	hilos	comparten	la	mayor	parte	de	los	recursos	de	forma	
+            automática.	</p>    
+        <p><strong>UBlización	sobre	arquitecturas	multiprocesador</strong>: Mayor	nivel	de	concurrencia	asignando	distintos	hilos	a	
+            distintos	procesadores. La	mayoría	de	los	sistemas	operativos	modernos	usan	el	hilo	
+            como	unidad	de	planificación.		</p>    
+        <p><strong>Modelo Muchos a uno</strong></p>    
+        <p>Hace	corresponder	
+            múltiples	hilos	de	usuario	
+            a	un	único	hilo	del	núcleo.	</p>
+        <div align="center"><img src="img/hilos_1.jpg" alt="Flynn" class="imagen"></div>
+    
+        <p><strong>Modelo Uno a uno</strong></p>    
+        <p>Hace	corresponder	un	hilo	
+            del	kernel	a	cada	hilo	de	
+            usuario.		</p>
+        <div align="center"><img src="img/hilos_2.jpg" alt="Flynn" class="imagen"></div>
+        
+        <p><strong>Modelo Muchos a muchos</strong></p>    
+        <p>Este	modelo	multiplexa
+            los	threads	de	usuario	en	
+            un	número	determinado	
+            de	threads	en	el	kernel.		</p>
+        <div align="center"><img src="img/hilos_3.jpg" alt="Flynn" class="imagen"></div>
+    
+
+        <h3>Modelos de datos paralelos</h3>
+        <p>En el modelo paralelo de datos, las tareas se asignan a procesos y cada tarea realiza tipos similares de operaciones en diferentes datos. El modelo paralelo de datos se pueden trabajar con paradigmas de memoria compartida y paradigmas de paso de mensajes.</p>
+        <p>Ejemplo: Multiplicación de una matriz densa</p>
+        <div align="center"><img src="img/paralelo_1.jpg" alt="Flynn" class="imagen"></div>
+
+        <h3>Modelo de grafo de tareas</h3>
+        <p>Aquí, los problemas se dividen en tareas atómicas y se implementa como un grafo, cada tarea es una unidad de trabajo independiente que depende de una o más tareas anteriores, después de completar una tarea, el resultado de una tarea antecedente se pasa a la tarea dependiente. Una tarea con tarea antecedente comienza a ejecutarse solo cuando se completa toda su tarea antecedente; la salida final delgrafo se recibe cuando se completa la última tarea dependiente.</p>
+        <p>Ejemplo: Ordenación de datos en paralelo, se le puede llamar el enfoque de divide y vencerás.</p>
+        <div align="center"><img src="img/grafo.jpg" alt="Flynn" class="imagen"></div>
+    
+        <h3>Modelo de Grupo de Trabajo</h3>
+        <p>En el modelo de grupo de trabajo, las tareas se asignan dinámicamente sin preasignación, a los procesos para equilibrar la carga,por lo tanto,cualquier proceso puede potencialmente ejecutar cualquier tarea. La asignación de tareas puede ser centralizada por un proceso o descentralizada en varioas procesos. </p>
+        <p>Ejemplos: Búsqueda en árbol paralelo y ejecutores java</p>
+        <div align="center"><img src="img/modelo_1.jpg" alt="Flynn" class="imagen"></div>
+    
+        <h3>Modelos maestro-esclavo</h3>   
+        <p>En el modelo maestro-esclavo, uno o más procesos maestros generan tareas y las asignan a procesos esclavos, este modelos suele ser igualmente adecuado para paradigmas de espacio de direcciones compartidas o de paso de mensajes. En algunos casos, puede ser necesario 
+            completarse antes de que se pueda realizar una parte de la tarea misma.
+        </p>
+        <p>Ejemplo: Filtros de imágenes</p>
+        <div align="center"><img src="img/maestro.jpg" alt="Flynn" class="imagen"></div>
+    
+        <h3>Modelo de Segmentación ( Pipeline )</h3>
+        <p>Es una técnica de implementación por medio
+            de la cual se puede traslapar la ejecución de
+            instrucciones.
+         En la actualidad la segmentación es una de las
+            tecnologías utilizadas para hacer procesadores
+            más rápidos.</p>
+        <p>Ejemplo: Filtros de imágenes</p>
+        <div align="center"><img src="img/modelo_2.jpg" alt="Flynn" class="imagen"></div>
+        
+    </section>
+
+<div class="container_busqueda">
+   
+    <div id="search-wrapper">
+        <input type="search" id="search" placeholder="Buscar"/>
+        <i class="fa fa-search"></i>
+      </div>
+    <ul id="resultado" class="lista_busqueda">
+        
+    </ul>
+</div>
+</div>
+</div>
+</main>
+
+
+<footer>
+    <div class="container-pie">
+        <div class="copyright">
+           <p>&copy; 2020 Página realizada por estudiantes de la Universidad UTE.</p> 
+        </div>
+    </div>
+</footer>
+</div>
+
+<script src="js/jQuery.js"></script>
+<script src="js/scripts.js"></script>
+
+
+
+<script>
+    const temas = [  /*Cargar aqui enlaces para la busqueda con el mismo formato.*/
+    {titulo: '<a href="Expresiones_Lambda.html">Expresiones Lambda</a>'},   
+        {titulo: '<a href="Metodos_estaticos.html">Métodos Estáticos</a>'},   
+        {titulo: '<a href="ForkJoin.html">ForkJoin</a>'}, 
+        {titulo: '<a href="Hilo_Sincronizacion.html">Hilos y Sincronización</a>'},
+        {titulo: '<a href="JavaStreams.html">Java Streams</a>'},    
+        {titulo: '<a href="ip.html">TCP/IP, Sockets UDP</a>'}, 
+        {titulo: '<a href="MapReduce.html">MapReduce</a>'}, 
+        {titulo: '<a href="TCP.html">Sockets UTP</a>'}, 
+        {titulo: '<a href="Contenedores.html">Contenedores</a>'}, 
+		{titulo: '<a href="VirtualBox.html">VirtualBox</a>'}, 
+        {titulo: '<a href="Docker.html">Docker</a>'}, 
+        {titulo: '<a href="MaquinaVirtual.html">Máquina Virtual </a>'}, 
+        {titulo: '<a href="InyeccionDependencia.html">Inyeccion de Dependencias </a>'}, 
+    ]
+    const formulario= document.querySelector('#search');
+    const boton= document.querySelector('#boton');
+    const resultado=document.querySelector('#resultado');
+
+    const filtrar = ()=>{
+       resultado.innerHTML='';
+
+       const texto = formulario.value.toLowerCase();
+       for(let tema of temas ){
+           let titulo=tema.titulo.toLowerCase();
+           if(titulo.indexOf(texto) !== -1){
+               
+                resultado.innerHTML += '<li>'+tema.titulo+'</li>'
+         }
+        }
+        if(resultado.innerHTML===''){
+            resultado.innerHTML += '<li>Enlace no Encontrado...</li>'
+        }
+    }
+    //boton.addEventListener('click',filtrar)
+    formulario.addEventListener('keyup',filtrar);
+   
+    
+</script>
+</body>
+</html>

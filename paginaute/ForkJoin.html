@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/prism.css">
+    <link rel="stylesheet" href="css/all.css">
+    <link  rel="icon"   href="img/favicon.png" type="image/png" />
+    <title>ForkJoin</title>
+</head>
+<body>
+
+<div class="container-head">
+    <div class="logos">
+        <a href="index.html" class="logo"><img src="img/logo-utet.png" alt="logo" width="100px" height="84px" ></a>
+    </div> 
+</div>
+
+      
+
+<header>
+    <div class="container-menu logo-nav-contenedor">
+        <span class="menu-icon"><i class="fas fa-bars"></i></span>
+        <nav class="navegacion">
+            <ul class="show">
+                <strong><li><a href="index.html">Inicio</a></li></strong>
+                <strong><li><a href="Presentaciones.html">Presentaciones</a></li></strong>
+                <strong><li><a href="Videos.html">Videos</a></li></strong>
+               
+            </ul>
+        </nav>
+      </div>
+</header>
+
+
+<div class="container-general">
+<main>
+<div class="container-cuerpo">
+<div class="columna_izquierda">
+    <div class="contenido_1">
+        <strong><h3>Temas</h3></strong>
+    </div>
+    <div class="contenido_2">
+        <nav class="navegacion_2">
+            <ul class="show_2">
+             <!-- <li><a href="#"><i class="fas fa-sign-in-alt"></i>Expresiones Lambda</a></li> -->
+             <li><a href="Expresiones_Lambda.html"><i class="fas fa-sign-in-alt"></i>Expresiones Lambda</a></li> 
+             <li><a href="Hilo_Sincronizacion.html"><i class="fas fa-sign-in-alt"></i>Hilos y Sincronización</a></li>
+             <li><a href="Metodos_estaticos.html"><i class="fas fa-sign-in-alt"></i>Métodos Estáticos</a></li>
+             <li><a href="ForkJoin.html"><i class="fas fa-sign-in-alt"></i>ForkJoin</a></li>
+             <li><a href="JavaStreams.html"><i class="fas fa-sign-in-alt"></i>Java Streams</a></li>
+             <li><a href="ip.html"><i class="fas fa-sign-in-alt"></i>TCP/IP, Sockets UDP</a></li>
+             <li><a href="MapReduce.html"><i class="fas fa-sign-in-alt"></i>MapReduce</a></li>
+             <li><a href="TCP.html"><i class="fas fa-sign-in-alt"></i>Sockets TCP</a></li>
+             <li><a href="Contenedores.html"><i class="fas fa-sign-in-alt"></i>Contenedores</a></li>
+             <li><a href="MaquinaVirtual.html"><i class="fas fa-sign-in-alt"></i>Maquina virtual</a></li>
+             <li><a href="VirtualBox.html"><i class="fas fa-sign-in-alt"></i>Virtual Box</a></li>
+             <li><a href="Docker.html"><i class="fas fa-sign-in-alt"></i>Docker</a></li>
+             <li><a href="InyeccionDependencia.html"><i class="fas fa-sign-in-alt"></i>InyeccionDependencia</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<section class="columna_derecha">
+    <div align="center"><h1>ForkJoin</h1></div>
+
+    <p>El framework Fork/Join está disponible en la versión 7 de Java. Fue diseñado para la
+        ejecución de tareas que pueden dividirse en otras subtareas más pequeñas, ejecutándose
+        estas en paralelo y combinando posteriormente sus resultados para obtener el resultado de la
+        tarea única. Las subtareas deberán ser independientes unas de otras, y no contendrán estado.
+    </p>
+
+    <p>Este framework realiza la paralelización de tareas de forma recursiva, aplicando el principio
+        Divide y Vencerás. Existirá un umbral bajo el cual una tarea será indivisible, definido por el
+        tamaño de la misma. Una vez el tamaño de las subtareas llegue al umbral, el rendimiento de
+        las mismas disminuirá en caso de seguir dividiéndolas.<br><br>
+
+        Técnicamente lo que hace es generar peticiones en paralelo y esperar hasta que terminen todas para mostrar un resultado.
+        A continuación podemos ver el pseudocódigo:
+    </p>
+
+    <pre class="language-java"><code>
+>Result solve (Problem problem) { 
+    if problem.size < SEQUENTIAL_THRESHOLD
+        return solveSequentially(problem);
+    else 
+        Result left, right;
+        INVOKE-IN-PARALLEL {
+            left = solve(extractLeftHalf(problem));
+            right = solve(extractRightHalf(problem));
+        }
+        return combine(left, right);
+    }
+}
+    </code></pre>
+       
+
+<p>Fork/Join se encuentra en la librería java.util.concurrent. Esta librería contiene una serie de
+interfaces y clases con las que poder implantar concurrencia o paralelismo en nuestros
+desarrollos. Entre otros mecanismos, encontramos los semáforos, los tipos atómicos, las
+barreras o los cerrojos.<br><br>
+La implementación de Fork/Join toma forma a través de las clases ForkJoinTask y
+ForkJoinPool. La clase ForkJoinPool invoca a una tarea de tipo ForkJoinTask pero, para poder
+invocar múltiples subtareas en paralelo de forma recursiva, invocará a una tarea de tipo
+RecursiveAction, que extiende de ForkJoinTask.
+</p>
+<div align="center"><img srcset="img/forkJoin.jpeg 320w,
+    img/forkJoin.jpeg 480w,img/forkJoin.jpeg 800w"
+    sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
+    src="img/forkJoin.jpeg"  alt="Proceso" class="imagen"></div>
+    
+<h2>¿Por qué usar ForkJoin?</h2>
+<p>
+    Este operador se usa mejor cuando tiene un grupo de observables y solo le importa el valor 
+    emitido final de cada uno. Un caso de uso común para esto es si desea emitir múltiples 
+    solicitudes al cargar la página (o algún otro evento) y solo desea tomar medidas cuando se haya
+    recibido una respuesta para todos.<br>
+
+    De esta manera, es similar a cómo podría usar <code>Promise.all</code>.<br>
+
+    Tenga en cuenta que si alguno de los observables internos suministrados a forkJoin error, 
+    perderá el valor de cualquier otro observable que se haya completado o ya 
+    se haya completado si no lo detecta.
+</p>
+
+<h2>ForkJoinPool</h2>
+<p>El ForkJoinPool es el corazón del marco. Es una implementación del <code>ExecutorService</code>
+    que administra los subprocesos de trabajo y nos proporciona herramientas para
+    obtener información sobre el estado y el rendimiento del grupo de subprocesos.
+<br><br>
+    ForkJoinPool no crea un subproceso separado para cada subtarea
+    Esta arquitectura es vital para equilibrar la carga de trabajo del hilo con la ayuda del algoritmo de robo de trabajo.
+</p> 
+<br>
+<h2>Algoritmo de robo de trabajo</h2>
+<p>En pocas palabras, los hilos libres intentan "robar" el trabajo de los deques de hilos ocupados.<br><br>
+    Un hilo de trabajo obtiene tareas del jefe de su propio deque, cuando está vacío, el subproceso
+    oma una tarea de la cola de la cola de otro subproceso ocupado o de la cola de entrada global,
+    aquí es donde es probable que se ubiquen las piezas de trabajo más grandes.
+</p>
+<br>
+<h2>Creación de instancias ForkJoinPool</h2>
+<p>En Java 8 obtener acceso a la instancia de ForkJoinPool es usar su método estático <code>commonPool(). </code>
+    Esto proporcionará una referencia al grupo común, que es un grupo de subprocesos predeterminado para cada ForkJoinTask
+    <code>ForkJoinPool commonPool = ForkJoinPool.commonPool();</code> <br><br>
+    En Java 7 creando un ForkJoinPool y asignándolo a un campo estático público de una clase de utilidad:<br>
+    <code>public static ForkJoinPool forkJoinPool = new ForkJoinPool(2);</code><br>
+    Ahora se puede acceder fácilmente:<br>
+    <code>ForkJoinPool forkJoinPool = PoolUtil.forkJoinPool;</code>
+</p>
+<h2><code>RecursiveTask -V-</code></h2>
+<p>Para las tareas que devuelven un valor, la lógica aquí es similar, excepto que el resultado
+    de cada subtarea se une en un solo resultado:<br>
+    <pre class="language-java"> <code>public class CustomRecursiveTask extends RecursiveTask<Integer> {
+        private int[] arr;
+     
+        private static final int THRESHOLD = 20;
+     
+        public CustomRecursiveTask(int[] arr) {
+            this.arr = arr;
+        }
+     
+        @Override
+        protected Integer compute() {
+            if (arr.length > THRESHOLD) {
+                return ForkJoinTask.invokeAll(createSubtasks())
+                  .stream()
+                  .mapToInt(ForkJoinTask::join)
+                  .sum();
+            } else {
+                return processing(arr);
+            }
+        }
+     
+        private Collection<CustomRecursiveTask> createSubtasks() {
+            List<CustomRecursiveTask> dividedTasks = new ArrayList<>();
+            dividedTasks.add(new CustomRecursiveTask(
+              Arrays.copyOfRange(arr, 0, arr.length / 2)));
+            dividedTasks.add(new CustomRecursiveTask(
+              Arrays.copyOfRange(arr, arr.length / 2, arr.length)));
+            return dividedTasks;
+        }
+     
+        private Integer processing(int[] arr) {
+            return Arrays.stream(arr)
+              .filter(a -> a > 10 && a < 27)
+              .map(a -> a * 10)
+              .sum();
+        }
+    }</code></pre>
+    <p>En este ejemplo, el trabajo está representado por una matriz almacenada en el campo arr de la clase CustomRecursiveTask.<br>
+        <code>createSubtasks()</code>divide de forma recursiva la tarea en piezas de trabajo más pequeñas 
+        hasta que cada pieza es más pequeña que el umbral. <br><br>
+        <code>invokeAll()</code>envía las subtareas al fondo común y devuelve una lista de Future.
+    </p> 
+
+    <h2>Envío de tareas a ForkJoinPool</h2>
+    <p>Para enviar tareas al grupo de subprocesos, se pueden utilizar pocos enfoques.<br>
+       El método <code>submit()</code> o <code>execute()</code> (sus casos de uso son los mismos):</p>
+       <pre class="language-java"> <code>forkJoinPool.execute(customRecursiveTask);
+        int result = customRecursiveTask.join();</code></pre>
+        El método <code>invoke()</code>bifurca la tarea y espera el resultado, y no necesita ninguna unión manual:
+        <pre class="language-java"> <code>int result = forkJoinPool.invoke(customRecursiveTask);</code></pre>
+        <code>invokeAll()</code> es la forma más conveniente de enviar una secuencia de ForkJoinTasks a ForkJoinPool. <br><br>
+        Alternativamente, puede usar métodos fork () y join () separados.<br>
+        <code>fork()</code>envía una tarea a un grupo, pero no activa su ejecución.<br>
+        <code>join()</code> debe usarse para este propósito.<br>
+        <pre class="language-java"> <code>
+            customRecursiveTaskFirst.fork();
+            result = customRecursiveTaskLast.join(); </code></pre><br>
+            Para evitar confusiones, generalmente es una buena idea usar el método invokeAll () para enviar más de una tarea a ForkJoinPool.
+</p>
+
+<div align="center"><img srcset="img/forkJoin1.png 320w,
+    img/forkJoin1.png 480w,img/forkJoin1.png 800w"
+    sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
+    src="img/forkJoin1.png"  alt="Proceso" class="imagen"></div>
+<h2>Conclusiones</h2>
+
+
+<p>El uso del marco ForkJoin puede acelerar el procesamiento de tareas grandes, pero para lograr este
+    resultado, se deben seguir algunas pautas:<br>
+    -Utilice la menor cantidad de grupos de subprocesos posible ; en la mayoría de los casos, la
+    mejor decisión es utilizar un grupo de subprocesos por aplicación o sistema<br>
+    -Utilice el grupo de subprocesos comunes predeterminado, si no se necesita un ajuste específico<br>
+    -Utilice un umbral razonable para dividir ForkJoinTask en subtareas<br>
+    -Evite cualquier bloqueo en su ForkJoinTasks
+</p>
+
+
+
+
+</section>
+
+<div class="container_busqueda">
+   
+    <div id="search-wrapper">
+        <input type="search" id="search" placeholder="Buscar"/>
+        <i class="fa fa-search"></i>
+      </div>
+    <ul id="resultado" class="lista_busqueda">
+        
+    </ul>
+</div>
+</div>
+</div>
+</main>
+
+
+<footer>
+    <div class="container-pie">
+        <div class="copyright">
+           <p>&copy; 2020 Página realizada por estudiantes de la Universidad UTE.</p> 
+        </div>
+    </div>
+</footer>
+</div>
+
+<script src="js/jQuery.js"></script>
+<script src="js/scripts.js"></script>
+<script src="js/prism.js"></script>
+
+
+
+<script>
+    const temas = [  /*Cargar aqui enlaces para la busqueda con el mismo formato.*/
+    {titulo: '<a href="Expresiones_Lambda.html">Expresiones Lambda</a>'},   
+        {titulo: '<a href="Metodos_estaticos.html">Métodos Estáticos</a>'},   
+        {titulo: '<a href="ForkJoin.html">ForkJoin</a>'}, 
+        {titulo: '<a href="Hilo_Sincronizacion.html">Hilos y Sincronización</a>'},
+        {titulo: '<a href="JavaStreams.html">Java Streams</a>'},    
+        {titulo: '<a href="ip.html">TCP/IP, Sockets UDP</a>'}, 
+        {titulo: '<a href="MapReduce.html">MapReduce</a>'}, 
+        {titulo: '<a href="TCP.html">Sockets UTP</a>'}, 
+        {titulo: '<a href="Contenedores.html">Contenedores</a>'}, 
+		{titulo: '<a href="VirtualBox.html">VirtualBox</a>'}, 
+        {titulo: '<a href="Docker.html">Docker</a>'}, 
+        {titulo: '<a href="MaquinaVirtual.html">Máquina Virtual </a>'}, 
+        {titulo: '<a href="InyeccionDependencia.html">Inyeccion de Dependencias </a>'}, 
+    ]
+    const formulario= document.querySelector('#search');
+    const boton= document.querySelector('#boton');
+    const resultado=document.querySelector('#resultado');
+
+    const filtrar = ()=>{
+       resultado.innerHTML='';
+
+       const texto = formulario.value.toLowerCase();
+       for(let tema of temas ){
+           let titulo=tema.titulo.toLowerCase();
+           if(titulo.indexOf(texto) !== -1){
+               
+                resultado.innerHTML += '<li>'+tema.titulo+'</li>'
+         }
+        }
+        if(resultado.innerHTML===''){
+            resultado.innerHTML += '<li>Enlace no Encontrado...</li>'
+        }
+    }
+    //boton.addEventListener('click',filtrar)
+    formulario.addEventListener('keyup',filtrar);
+   
+    
+</script>
+</body>
+</html>

@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/prism.css">
+    <link rel="stylesheet" href="css/all.css">
+    <link  rel="icon"   href="img/favicon.png" type="image/png" />
+    <title>Sockets TCP</title>
+</head>
+<body>
+
+<div class="container-head">
+    <div class="logos">
+        <a href="index.html" class="logo"><img src="img/logo-utet.png" alt="logo" width="100px" height="84px" ></a>
+    </div> 
+</div>
+
+      
+
+<header>
+    <div class="container-menu logo-nav-contenedor">
+        <span class="menu-icon"><i class="fas fa-bars"></i></span>
+        <nav class="navegacion">
+            <ul class="show">
+                <strong><li><a href="index.html">Inicio</a></li></strong>
+                <strong><li><a href="Presentaciones.html">Presentaciones</a></li></strong>
+                <strong><li><a href="Videos.html">Videos</a></li></strong>
+               
+            </ul>
+        </nav>
+      </div>
+</header>
+
+
+<div class="container-general">
+<main>
+<div class="container-cuerpo">
+<div class="columna_izquierda">
+    <div class="contenido_1">
+        <strong><h3>Temas</h3></strong>
+    </div>
+    <div class="contenido_2">
+        <nav class="navegacion_2">
+            <ul class="show_2">
+             <!-- <li><a href="#"><i class="fas fa-sign-in-alt"></i>Expresiones Lambda</a></li> -->
+             <li><a href="Expresiones_Lambda.html"><i class="fas fa-sign-in-alt"></i>Expresiones Lambda</a></li> 
+             <li><a href="Hilo_Sincronizacion.html"><i class="fas fa-sign-in-alt"></i>Hilos y Sincronización</a></li>
+             <li><a href="Metodos_estaticos.html"><i class="fas fa-sign-in-alt"></i>Métodos Estáticos</a></li>
+             <li><a href="ForkJoin.html"><i class="fas fa-sign-in-alt"></i>ForkJoin</a></li>
+             <li><a href="JavaStreams.html"><i class="fas fa-sign-in-alt"></i>Java Streams</a></li>
+             <li><a href="ip.html"><i class="fas fa-sign-in-alt"></i>TCP/IP, Sockets UDP</a></li>
+             <li><a href="MapReduce.html"><i class="fas fa-sign-in-alt"></i>MapReduce</a></li>
+             <li><a href="TCP.html"><i class="fas fa-sign-in-alt"></i>Sockets TCP</a></li>
+             <li><a href="Contenedores.html"><i class="fas fa-sign-in-alt"></i>Contenedores</a></li>
+             <li><a href="MaquinaVirtual.html"><i class="fas fa-sign-in-alt"></i>Maquina virtual</a></li>
+             <li><a href="VirtualBox.html"><i class="fas fa-sign-in-alt"></i>Virtual Box</a></li>
+             <li><a href="Docker.html"><i class="fas fa-sign-in-alt"></i>Docker</a></li>
+             <li><a href="InyeccionDependencia.html"><i class="fas fa-sign-in-alt"></i>InyeccionDependencia</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<section class="columna_derecha">
+    <div text align="center"><h2>Sockets TCP</h2></div>
+    <p>El interfaz Java que da soporte a sockets TCP está constituida por las clases ServerSocket y Socket.</p>
+    <p><strong>ServerSocket:</strong> es utilizada por un servidor para crear un socket en el puerto en el que escucha las peticiones de conexión de los clientes. Su método accept toma una petición de conexión de la cola, o si la cola está vacía, se bloquea hasta que llega una petición. El resultado de ejecutar accept es una instancia de Socket, a través del cual el servidor tiene acceso a los datos enviados por el cliente.
+        <br><br><strong>Socket:</strong>  es utilizada tanto por el cliente como por el servidor. El cliente crea un socket especificando el nombre DNS del host y el puerto del servidor, así se crea el socket local y además se conecta con el servicio.
+        Esta clase proporciona los métodos getInputStream y getOutputStream para acceder a los dos streams asociados a un socket (recordemos que son bidireccionales), y devuelve tipos de datos InputStream y OutputStream, respectivamente, a partir de los cuales podemos construir BufferedReader y PrintWriter, respectivamente, para poder procesar los datos de forma más sencilla.</p>
+    <p>Si nos centramos en la parte de comunicaciones, la forma general de implementar un cliente será:</p>
+    <ol>
+        <li>Crear un objeto de la clase Socket, indicando host y puerto donde corre el servicio.</li>
+        <li>Obtener las referencias al stream de entrada y al de salida al socket.</li>
+        <li>Leer desde y escribir en el stream de acuerdo al protocolo del servicio. Para ello se implementa alguna de las facilidades del paquete java.io.</li>
+        <li>Cerrar los streams.</li>
+        <li>Cerrar el socket.</li>
+    </ol>
+
+    <p>La forma de implementar un servidor será:</p>
+    <ol>
+        <li>Crear un objeto de la clase ServerSocket para escuchar peticiones en el puerto asignado al servicio.</li>
+        <li>Esperar solicitudes de clientes</li>
+        <li>Cuando se produce una solicitud:</li>
+        <ul>
+            <li>Aceptar la conexión obteniendo un objeto de la clase Socket</li>
+            <li>Obtener las referencias al stream de entrada y al de salida al socket anterior.</li>
+            <li>Leer datos del socket, procesarlos y enviar respuestas al cliente, escribiendo en el stream del socket.Para ello emplear alguna de las facilidades del paquete java.io.</li>
+        </ul>
+        <li>Cerrar los streams.</li>
+        <li>Cerrar los sockets.
+        </li>
+    </ol>
+    <p>Vamos a ver todo esto con un sencillo ejemplo: una aplicación cliente/servidor de eco, es decir, el servidor repite lo mismo que le envía el cliente, hasta que el cliente quiere finalizar el servicio, para lo cual envía la palabra "Adios" al servidor.</p>
+    <h><strong>Clase EcoCliente</strong></p>
+    <pre class="language-java">
+        <code>
+import java.net.*;
+import java.io.*;
+
+public class EcoCliente {
+public static void main(String[] args)  throws IOException {
+Socket socketCliente = null;
+BufferedReader entrada = null;
+PrintWriter salida = null;
+
+// Creamos un socket en el lado cliente, enlazado con un
+// servidor que está en la misma máquina que el cliente
+// y que escucha en el puerto 4444
+try {
+socketCliente = new Socket("localhost", 4444);
+// Obtenemos el canal de entrada
+entrada = new BufferedReader(new InputStreamReader(socketCliente.getInputStream()));
+// Obtenemos el canal de salida
+salida = new PrintWriter(new BufferedWriter(new 
+OutputStreamWriter(socketCliente.getOutputStream())),true);
+} catch (IOException e) {
+System.err.println("No puede establer canales de E/S para la conexión");
+System.exit(-1);
+}
+BufferedReader stdIn =
+new BufferedReader(new InputStreamReader(System.in));
+
+String linea;
+
+// El programa cliente no analiza los mensajes enviados por el
+// usario, simplemente los reenvía al servidor hasta que este
+// se despide con "Adios"
+try {
+while (true) {
+// Leo la entrada del usuario
+linea = stdIn.readLine();
+// La envia al servidor
+salida.println(linea);
+// Envía a la salida estándar la respuesta del servidor
+linea = entrada.readLine();
+System.out.println("Respuesta servidor: " + linea);
+// Si es "Adios" es que finaliza la comunicación
+if (linea.equals("Adios")) break;
+}
+} catch (IOException e) {
+System.out.println("IOException: " + e.getMessage());
+}
+
+// Libera recursos
+salida.close();
+entrada.close();
+stdIn.close();
+socketCliente.close();
+}
+}
+</code></pre>
+<p><strong>Clase EcoServidor</strong></p>
+
+<pre class="language-java"><code>
+    import java.io.*;
+import java.net.*;
+
+public class EcoServidor {  
+public static final int PORT = 4444;
+public static void main(String[] args) throws IOException {
+// Establece el puerto en el que escucha peticiones
+ServerSocket socketServidor = null;
+try {
+socketServidor = new ServerSocket(PORT);
+} catch (IOException e) {
+System.out.println("No puede escuchar en el puerto: " + PORT);
+System.exit(-1);
+}
+
+Socket socketCliente = null;
+BufferedReader entrada = null;
+PrintWriter salida = null;
+
+System.out.println("Escuchando: " + socketServidor);
+try {
+// Se bloquea hasta que recibe alguna petición de un cliente
+// abriendo un socket para el cliente
+socketCliente = socketServidor.accept();
+System.out.println("Connexión acceptada: "+ socketCliente);
+// Establece canal de entrada
+entrada = new BufferedReader(new InputStreamReader(socketCliente.getInputStream()));
+// Establece canal de salida
+salida = new PrintWriter(new BufferedWriter(new 
+OutputStreamWriter(socketCliente.getOutputStream())),true);
+
+// Hace eco de lo que le proporciona el cliente, hasta que recibe "Adios"
+while (true) {  
+String str = entrada.readLine();
+System.out.println("Cliente: " + str);
+salida.println(str);
+if (str.equals("Adios")) break;
+}
+
+} catch (IOException e) {
+System.out.println("IOException: " + e.getMessage());
+}  
+salida.close();
+entrada.close();
+socketCliente.close();
+socketServidor.close();
+}
+}
+
+</code></pre>
+<p>Para probar como funciona este sencillo programa, se debe arrancar primero el servidor
+    ,que se quedára a la escucha de peticiones, y despues el cliente. Si se hace en orden inverso, al arrancar el cliente se producirá una IOException. 
+</p>
+
+<h3>TCP Object streams</h3>
+<p><strong>Clase Mensaje</strong></p>
+<pre class="language-java"><code>
+    
+package socketsobjectsstreams;
+
+import java.io.Serializable;
+
+/**
+ * 
+ * @author dordonez@ute.edu.ec
+ */
+public class Mensaje implements Serializable {
+private int id;
+private String msg;
+private double codigo;
+
+public Mensaje() {}
+
+public Mensaje(int id, String msg, double codigo) {
+    this.id = id;
+    this.msg = msg;
+    this.codigo = codigo;
+}
+
+public int getId() {
+    return id;
+}
+
+public void setId(int id) {
+    this.id = id;
+}
+
+public String getMsg() {
+    return msg;
+}
+
+public void setMsg(String msg) {
+    this.msg = msg;
+}
+
+public double getCodigo() {
+    return codigo;
+}
+
+public void setCodigo(double codigo) {
+    this.codigo = codigo;
+}
+
+@Override
+public String toString() {
+    return String.format("Id: %d\nMsg: %s\nCod: %f", getId(), getMsg(), getCodigo());
+}
+    
+}
+</code></pre>
+<p><strong>Clase MainClient</strong></p>
+<pre class="language-java"><code>
+
+package socketsobjectsstreams;
+
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.net.Socket;
+
+/**
+* 
+* @author dordonez@ute.edu.ec
+*/
+public class MainClient {
+public static void main(String[] args) {
+try {
+    Socket socket = new Socket("localhost", 8888);
+    ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
+    ObjectInputStream in = new ObjectInputStream(socket.getInputStream());
+                
+    Mensaje msg = (Mensaje) in.readObject();
+    System.out.println("Mensaje recibido desde el Server:");
+    System.out.println(msg);
+    
+    msg = new Mensaje(222, "Respuesta desde el cliente", 2.333);
+    
+    out.writeObject(msg);
+    
+} catch (Exception ex) {
+    ex.printStackTrace();
+}
+
+}
+}
+    
+</code></pre>
+<p><strong>Clase MainServer</strong></p>
+
+<pre class="language-java"><code>
+    
+package socketsobjectsstreams;
+
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+/**
+*
+* @author dordonez@ute.edu.ec
+*/
+public class MainServer {
+
+public static void main(String[] args) {
+try {
+System.out.println("Server esperando clientes");
+
+ServerSocket server = new ServerSocket(8888);
+Socket socket = server.accept();
+
+System.out.println("Cliente conectado");
+
+ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
+ObjectInputStream in = new ObjectInputStream(socket.getInputStream());            
+
+Mensaje msg = new Mensaje(1, "Hola desde el Server", 0.001);
+
+out.writeObject(msg);
+
+msg = (Mensaje) in.readObject();
+
+System.out.println("Mensaje recibido desde el Client:");
+System.out.println(msg);
+
+} catch (Exception ex) {
+ex.printStackTrace();
+} 
+}
+
+}
+</code></pre>
+
+
+<h3>TCP Servidores concurrentes</h3>
+<p><strong>Clase ManejaCliente</strong></p>
+<pre class="language-java"><code>
+    
+package socketssrvmulticlient;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.net.Socket;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+/**
+*
+* @author dordonez@ute.edu.ec
+*/
+public class ManejaCliente extends Thread {
+private Socket client;
+private Scanner in;
+private PrintWriter out;    
+
+public ManejaCliente(Socket client) {
+try {
+this.client = client;
+this.in = new Scanner(client.getInputStream());
+this.out = new PrintWriter(client.getOutputStream(), true);
+} catch (IOException ex) {
+Logger.getLogger(ManejaCliente.class.getName()).log(Level.SEVERE, null, ex);
+}         
+}
+
+@Override
+public void run() {
+String msg;
+try {
+out.println("Conectado al Server. finalice con EXIT");
+while(in.hasNextLine()) {
+    msg = in.nextLine();
+    System.out.println("Mensaje recibido: " + msg);
+    if(msg.contains("EXIT")) {
+        out.println("CLOSE:");
+        break;
+    } else {
+        out.println("ECHO: " + msg);
+    }
+}
+client.close();
+} catch (IOException ex) {
+Logger.getLogger(ManejaCliente.class.getName()).log(Level.SEVERE, null, ex);
+}
+}    
+
+}
+</code></pre>
+<p><strong>Clase MainServer</strong></p>
+<pre class="language-java"><code>
+   
+package socketssrvmulticlient;
+
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+/**
+*
+* @author dordonez@ute.edu.ec
+*/
+public class MainServer {
+
+/**
+* @param args the command line arguments
+*/
+public static void main(String[] args) {
+try {
+    ServerSocket server  = new ServerSocket(8888);
+    
+    while(true) {
+        System.out.println("Esperando cliente...");
+        Socket socket = server.accept();
+        System.out.println("Cliente conectado...");
+        new ManejaCliente(socket).start();
+    }
+    
+} catch (IOException ex) {
+    ex.printStackTrace();
+}
+}
+
+}
+ 
+</code></pre>
+<p><strong>Clase MainCliente</strong></p>
+<pre class="language-java"><code>
+
+package socketssrvmulticlient;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.net.Socket;
+import java.net.UnknownHostException;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+/**
+*
+* @author dordonez@ute.edu.ec
+*/
+public class MainCliente {
+public static void main(String[] args) {
+try {
+Socket socket = new Socket("localhost", 8888);
+Scanner in = new Scanner(socket.getInputStream());//lee del servidor
+PrintWriter out = new PrintWriter(socket.getOutputStream(), true);//escribe al servidor
+Scanner kb = new Scanner(System.in);//lee del teclado
+while(in.hasNextLine()) {
+    String msg = in.nextLine();
+    System.out.println(msg);
+    if(!msg.contains("CLOSE:")) {
+        out.println(kb.nextLine());
+    } else {
+        break;
+    }
+}
+} catch (UnknownHostException ex) {
+Logger.getLogger(MainCliente.class.getName()).log(Level.SEVERE, null, ex);
+} catch (IOException ex) {
+Logger.getLogger(MainCliente.class.getName()).log(Level.SEVERE, null, ex);
+}
+}    
+}
+
+</code></pre>
+
+</section>
+
+<div class="container_busqueda">
+   
+    <div id="search-wrapper">
+        <input type="search" id="search" placeholder="Buscar"/>
+        <i class="fa fa-search"></i>
+      </div>
+    <ul id="resultado" class="lista_busqueda">
+        
+    </ul>
+</div>
+</div>
+</div>
+</main>
+
+
+<footer>
+    <div class="container-pie">
+        <div class="copyright">
+           <p>&copy; 2020 Página realizada por estudiantes de la Universidad UTE.</p> 
+        </div>
+    </div>
+</footer>
+</div>
+
+<script src="js/jQuery.js"></script>
+<script src="js/scripts.js"></script>
+<script src="js/prism.js"></script>
+
+
+
+<script>
+    const temas = [  /*Cargar aqui enlaces para la busqueda con el mismo formato.*/
+    {titulo: '<a href="Expresiones_Lambda.html">Expresiones Lambda</a>'},   
+        {titulo: '<a href="Metodos_estaticos.html">Métodos Estáticos</a>'},   
+        {titulo: '<a href="ForkJoin.html">ForkJoin</a>'}, 
+        {titulo: '<a href="Hilo_Sincronizacion.html">Hilos y Sincronización</a>'},
+        {titulo: '<a href="JavaStreams.html">Java Streams</a>'},    
+        {titulo: '<a href="ip.html">TCP/IP, Sockets UDP</a>'}, 
+        {titulo: '<a href="MapReduce.html">MapReduce</a>'}, 
+        {titulo: '<a href="TCP.html">Sockets UTP</a>'}, 
+        {titulo: '<a href="Contenedores.html">Contenedores</a>'}, 
+		{titulo: '<a href="VirtualBox.html">VirtualBox</a>'}, 
+        {titulo: '<a href="Docker.html">Docker</a>'}, 
+        {titulo: '<a href="MaquinaVirtual.html">Máquina Virtual </a>'}, 
+        {titulo: '<a href="InyeccionDependencia.html">Inyeccion de Dependencias </a>'}, 
+    ]
+    const formulario= document.querySelector('#search');
+    const boton= document.querySelector('#boton');
+    const resultado=document.querySelector('#resultado');
+
+    const filtrar = ()=>{
+       resultado.innerHTML='';
+
+       const texto = formulario.value.toLowerCase();
+       for(let tema of temas ){
+           let titulo=tema.titulo.toLowerCase();
+           if(titulo.indexOf(texto) !== -1){
+               
+                resultado.innerHTML += '<li>'+tema.titulo+'</li>'
+         }
+        }
+        if(resultado.innerHTML===''){
+            resultado.innerHTML += '<li>Enlace no Encontrado...</li>'
+        }
+    }
+    //boton.addEventListener('click',filtrar)
+    formulario.addEventListener('keyup',filtrar);
+   
+    
+</script>
+</body>
+</html>
