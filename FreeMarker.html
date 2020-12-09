@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/prism.css">
+    <link rel="stylesheet" href="css/all.css">
+    <link  rel="icon"   href="img/favicon.png" type="image/png" />
+    <title>Contenedores</title>
+</head>
+<body>
+
+<div class="container-head">
+    <div class="logos">
+        <a href="index.html" class="logo"><img src="img/logo-utet.png" alt="logo" width="100px" height="84px" ></a>
+    </div> 
+</div>
+
+      
+
+<header>
+    <div class="container-menu logo-nav-contenedor">
+        <span class="menu-icon"><i class="fas fa-bars"></i></span>
+        <nav class="navegacion">
+            <ul class="show">
+                <strong><li><a href="index.html">Inicio</a></li></strong>
+                <strong><li><a href="Presentaciones.html">Presentaciones</a></li></strong>
+                <strong><li><a href="Videos.html">Videos</a></li></strong>
+               
+            </ul>
+        </nav>
+      </div>
+</header>
+
+
+<div class="container-general">
+<main>
+<div class="container-cuerpo">
+<div class="columna_izquierda">
+    <div class="contenido_1">
+        <strong><h3>Temas</h3></strong>
+    </div>
+    <div class="contenido_2">
+        <nav class="navegacion_2">
+            <ul class="show_2">
+             <!-- <li><a href="#"><i class="fas fa-sign-in-alt"></i>Expresiones Lambda</a></li> -->
+             <li><a href="Expresiones_Lambda.html"><i class="fas fa-sign-in-alt"></i>Expresiones Lambda</a></li> 
+             <li><a href="Hilo_Sincronizacion.html"><i class="fas fa-sign-in-alt"></i>Hilos y Sincronización</a></li>
+             <li><a href="Metodos_estaticos.html"><i class="fas fa-sign-in-alt"></i>Métodos Estáticos</a></li>
+             <li><a href="ForkJoin.html"><i class="fas fa-sign-in-alt"></i>ForkJoin</a></li>
+             <li><a href="JavaStreams.html"><i class="fas fa-sign-in-alt"></i>Java Streams</a></li>
+             <li><a href="ip.html"><i class="fas fa-sign-in-alt"></i>TCP/IP, Sockets UDP</a></li>
+             <li><a href="MapReduce.html"><i class="fas fa-sign-in-alt"></i>MapReduce</a></li>
+             <li><a href="TCP.html"><i class="fas fa-sign-in-alt"></i>Sockets TCP</a></li>
+             <li><a href="Contenedores.html"><i class="fas fa-sign-in-alt"></i>Contenedores</a></li>
+             <li><a href="MaquinaVirtual.html"><i class="fas fa-sign-in-alt"></i>Maquina virtual</a></li>
+             <li><a href="VirtualBox.html"><i class="fas fa-sign-in-alt"></i>Virtual Box</a></li>
+             <li><a href="Docker.html"><i class="fas fa-sign-in-alt"></i>Docker</a></li>
+             <li><a href="InyeccionDependencia.html"><i class="fas fa-sign-in-alt"></i>InyeccionDependencia</a></li>
+         <li><a href="Thymeleaf.html"><i class="fas fa-sign-in-alt"></i>Thymeleaf</a></li>
+         <li><a href="ConvencionSobreConfiguracion.html"><i class="fas fa-sign-in-alt"></i>Convención Sobre Configuración</a></li>
+         <li><a href="FreeMarker.html"><i class="fas fa-sign-in-alt"></i>FreeMarker</a></li>
+
+        </ul>
+        </nav>
+    </div>
+</div>
+
+<section class="columna_derecha">
+    <div text align="center"><h2>FreeMarker</h2></div>
+
+    <p>Apache FreeMarker es un motor de plantillas: una biblioteca Java para generar salida de texto (páginas web HTML, correos electrónicos, archivos de configuración, código fuente, etc.) basada en plantillas y datos cambiantes. Las plantillas están escritas en FreeMarker Template Language (FTL), que es un lenguaje simple y especializado (no un lenguaje de programación completo como PHP). Por lo general, se utiliza un lenguaje de programación de propósito general (como Java) para preparar los datos (emitir consultas a la base de datos, realizar cálculos comerciales). Luego, Apache FreeMarker muestra los datos preparados usando plantillas. En la plantilla, se centra en cómo presentar los datos, y fuera de la plantilla, se centra en qué datos presentar.</p>
+   <br>
+   
+    <div align="center"><img srcset="img/.jpeg 320w,
+        img/forkJoin.jpeg 480w,img/freemarker.png 800w"
+        sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
+        src="img/freemarker.png"  alt="Proceso" class="imagen"></div>
+    
+    <p>Este enfoque a menudo se denomina patrón MVC (Model View Controller) y es particularmente popular para páginas web dinámicas. Ayuda a separar a los diseñadores de páginas web (autores HTML) de los desarrolladores (normalmente, programadores Java). Los diseñadores no se enfrentarán a una lógica complicada en las plantillas y pueden cambiar la apariencia de una página sin que los programadores tengan que cambiar o recompilar el código.</p>
+   
+    <p>Si bien FreeMarker se creó originalmente para generar páginas HTML en marcos de aplicaciones web MVC, no está vinculado a servlets o HTML ni a nada relacionado con la web. También se utiliza en entornos de aplicaciones que no son web.</p>
+        
+    <p>Los diseñadores pueden cambiar el aspecto de una página sin que los programadores tengan que cambiar o recompilar el código, porque se separan la lógica del uso (programas de Java) y el diseño de la página (plantillas de FreeMarker).</p>    
+ 
+    <p>Las plantillas no se contaminan con los fragmentos complejos del programa. Esta separación es útil incluso para los proyectos donde es la misma persona el programador y el autor de la página de HMTL, puesto que ayuda a guardar el claro del uso y fácilmente conservable.</p>
+  
+    <p>Aunque FreeMarker tenga algunas capacidades programadas, no es un verdadero lenguaje de programación como el PHP. En lugar, los programas de Java elaboran los datos para ser exhibidos, y FreeMarker apenas genera las páginas textuales que exhiben los datos elaborados al usar plantillas.</p>
+  
+    <p>FreeMarker no es un marco de la aplicación web. Es conveniente para un componente en un marco de la aplicación web, pero el motor en sí mismo de FreeMarker no sabe nada sobre el HTTP o servlets. Genera simplemente el texto.</p>    
+  
+  <h2>Características</h2>
+    
+<br>
+  <li>Potente lenguaje de plantilla: bloques condicionales, iteraciones, asignaciones, operaciones y formato aritmético y de cadena, macros y funciones, incluidas otras plantillas, escape de forma predeterminada (opcional) y muchos más</li>
+  <br>
+  <li>Multiuso y ligero: cero dependencias, cualquier formato de salida, puede cargar plantillas desde cualquier lugar (conectable), muchas opciones de configuración</li>
+  <br>
+  <li>Reconocimiento de internacionalización / localización: número sensible a la configuración regional y formato de fecha / hora, variaciones de plantilla localizadas. </li>
+  <br>
+  <li>Capacidades de procesamiento XML: coloque XML DOM-s en el modelo de datos y recórralos, o incluso procéselos declarativamente</li>
+  <br>
+  <li>Modelo de datos versátil: los objetos Java se exponen a la plantilla como un árbol de variables a través de adaptadores conectables, que decide cómo los ve la plantilla.</li>
+  <br>
+  <li>Puede ser utilizado para generar cualquier clase de texto: HTML, XML, rtf, código fuente de Java, etc.</li>
+  <br>
+  <li>Fácil encajar en el producto: Ligero. No requiere el ambiente del servlet (no depende de clases de javax.servlet).</li>
+  <br>
+  <li>Cargador enchufable de la plantilla: se puede cargar plantillas de cualquier fuente; archivos, base de datos, etc. locales.</li>
+  <br>
+  <li>Puede hacer lo que se requiera con el texto generado: almacenarlo en un archivo local, enviarlo como email, enviarlo de nuevo a un web browser de una aplicación web, de un etc.</li>
+
+
+  <h2>Ejemplo: </h2>
+  La siguiente plantilla:
+
+  <div align="center"><img srcset="img/freemarker2.jpg 320w,
+    img/forkJoin.jpeg 480w,img/freemarker2.jpg 800w"
+    sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
+    src="img/freemarker2.jpg"  alt="Proceso" class="imagen"></div>
+
+    procesada por FreeMarker producirá algo como:
+    <div align="center"><img srcset="img/freemarker3.jpg 320w,
+        img/forkJoin.jpeg 480w,img/freemarker3.jpg 800w"
+        sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
+        src="img/freemarker3.jpg"  alt="Proceso" class="imagen"></div>
+
+<p>Variables como "nombre" y "mensajes" provienen de fuera de la plantilla y, por lo tanto, el autor de la plantilla tiene que ocuparse únicamente de los problemas de presentación. La plantilla sigue siendo la misma independientemente de si estas variables provienen de una base de datos o de una cookie o se calculan de cualquier otra manera. Además, la API Java exacta (y por lo tanto la clase) de los valores se puede ocultar en FreeMarker utilizando una técnica llamada envoltura de objetos. Por ejemplo, "messages" parece ser una lista o matriz de JavaBeans que tienen propiedades "from" y "body", pero también podría ser algo muy diferente, y la plantilla no se ve afectada (siempre que un contenedor de objetos adecuado se utiliza).</p>
+    <br>
+    <h2>Conclusiones</h2>
+
+    <li>A través de la recopilación de información consolidamos nuestros conocimientos sobre el tema freemarker.</li>
+    <br>
+    <li>Aprendimos que freemarker es un potente lenguaje de plantilla: bloques condicionales, iteraciones, asignaciones, operaciones y formato aritmético.</li>
+    <br>
+    <li>Con la realización de la exposición pudimos compartir la información recopilada sobre el tema de freemarker a nuestros compañeros de clase.</li>
+</section>
+
+<div class="container_busqueda">
+   
+    <div id="search-wrapper">
+        <input type="search" id="search" placeholder="Buscar"/>
+        <i class="fa fa-search"></i>
+      </div>
+    <ul id="resultado" class="lista_busqueda">
+        
+    </ul>
+</div>
+</div>
+</div>
+</main>
+
+
+<footer>
+    <div class="container-pie">
+        <div class="copyright">
+           <p>&copy; 2020 Página realizada por estudiantes de la Universidad UTE.</p> 
+        </div>
+    </div>
+</footer>
+</div>
+
+<script src="js/jQuery.js"></script>
+<script src="js/scripts.js"></script>
+<script src="js/prism.js"></script>
+
+
+
+<script>
+    const temas = [  /*Cargar aqui enlaces para la busqueda con el mismo formato.*/
+    {titulo: '<a href="Expresiones_Lambda.html">Expresiones Lambda</a>'},   
+        {titulo: '<a href="Metodos_estaticos.html">Métodos Estáticos</a>'},   
+        {titulo: '<a href="ForkJoin.html">ForkJoin</a>'}, 
+        {titulo: '<a href="Hilo_Sincronizacion.html">Hilos y Sincronización</a>'},
+        {titulo: '<a href="JavaStreams.html">Java Streams</a>'},    
+        {titulo: '<a href="ip.html">TCP/IP, Sockets UDP</a>'}, 
+        {titulo: '<a href="MapReduce.html">MapReduce</a>'}, 
+        {titulo: '<a href="TCP.html">Sockets UTP</a>'}, 
+        {titulo: '<a href="Contenedores.html">Contenedores</a>'}, 
+		{titulo: '<a href="VirtualBox.html">VirtualBox</a>'}, 
+        {titulo: '<a href="Docker.html">Docker</a>'}, 
+        {titulo: '<a href="MaquinaVirtual.html">Máquina Virtual </a>'}, 
+        {titulo: '<a href="InyeccionDependencia.html">Inyeccion de Dependencias </a>'}, 
+        {titulo: '<a href="ConvencionSobreConfiguracion.html">Convención Sobre Configuración </a>'}, 
+        {titulo: '<a href="FreeMarker.html">FreeMarker </a>'}, 
+
+    ]
+    const formulario= document.querySelector('#search');
+    const boton= document.querySelector('#boton');
+    const resultado=document.querySelector('#resultado');
+
+    const filtrar = ()=>{
+       resultado.innerHTML='';
+
+       const texto = formulario.value.toLowerCase();
+       for(let tema of temas ){
+           let titulo=tema.titulo.toLowerCase();
+           if(titulo.indexOf(texto) !== -1){
+               
+                resultado.innerHTML += '<li>'+tema.titulo+'</li>'
+         }
+        }
+        if(resultado.innerHTML===''){
+            resultado.innerHTML += '<li>Enlace no Encontrado...</li>'
+        }
+    }
+    //boton.addEventListener('click',filtrar)
+    formulario.addEventListener('keyup',filtrar);
+   
+    
+</script>
+</body>
+</html>

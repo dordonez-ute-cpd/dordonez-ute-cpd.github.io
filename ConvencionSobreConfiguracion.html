@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/prism.css">
+    <link rel="stylesheet" href="css/all.css">
+    <link  rel="icon"   href="img/favicon.png" type="image/png" />
+    <title>Convención Sobre Configuración</title>
+</head>
+<body>
+
+<div class="container-head">
+    <div class="logos">
+        <a href="index.html" class="logo"><img src="img/logo-utet.png" alt="logo" width="100px" height="84px" ></a>
+    </div> 
+</div>
+
+      
+
+<header>
+    <div class="container-menu logo-nav-contenedor">
+        <span class="menu-icon"><i class="fas fa-bars"></i></span>
+        <nav class="navegacion">
+            <ul class="show">
+                <strong><li><a href="index.html">Inicio</a></li></strong>
+                <strong><li><a href="Presentaciones.html">Presentaciones</a></li></strong>
+                <strong><li><a href="Videos.html">Videos</a></li></strong>
+               
+            </ul>
+        </nav>
+      </div>
+</header>
+
+
+<div class="container-general">
+<main>
+<div class="container-cuerpo">
+<div class="columna_izquierda">
+    <div class="contenido_1">
+        <strong><h3>Temas</h3></strong>
+    </div>
+    <div class="contenido_2">
+        <nav class="navegacion_2">
+            <ul class="show_2">
+             <!-- <li><a href="#"><i class="fas fa-sign-in-alt"></i>Expresiones Lambda</a></li> -->
+             <li><a href="Expresiones_Lambda.html"><i class="fas fa-sign-in-alt"></i>Expresiones Lambda</a></li> 
+             <li><a href="Hilo_Sincronizacion.html"><i class="fas fa-sign-in-alt"></i>Hilos y Sincronización</a></li>
+             <li><a href="Metodos_estaticos.html"><i class="fas fa-sign-in-alt"></i>Métodos Estáticos</a></li>
+             <li><a href="ForkJoin.html"><i class="fas fa-sign-in-alt"></i>ForkJoin</a></li>
+             <li><a href="JavaStreams.html"><i class="fas fa-sign-in-alt"></i>Java Streams</a></li>
+             <li><a href="ip.html"><i class="fas fa-sign-in-alt"></i>TCP/IP, Sockets UDP</a></li>
+             <li><a href="MapReduce.html"><i class="fas fa-sign-in-alt"></i>MapReduce</a></li>
+             <li><a href="TCP.html"><i class="fas fa-sign-in-alt"></i>Sockets TCP</a></li>
+             <li><a href="Contenedores.html"><i class="fas fa-sign-in-alt"></i>Contenedores</a></li>
+             <li><a href="MaquinaVirtual.html"><i class="fas fa-sign-in-alt"></i>Maquina virtual</a></li>
+             <li><a href="VirtualBox.html"><i class="fas fa-sign-in-alt"></i>Virtual Box</a></li>
+             <li><a href="Docker.html"><i class="fas fa-sign-in-alt"></i>Docker</a></li>
+          <li><a href="InyeccionDependencia.html"><i class="fas fa-sign-in-alt"></i>InyeccionDependencia</a></li>
+          <li><a href="ConvencionSobreConfiguracion.html"><i class="fas fa-sign-in-alt"></i>Convención Sobre Configuración</a></li>
+          <li><a href="Thymeleaf.html"><i class="fas fa-sign-in-alt"></i>Thymeleaf</a></li>
+          <li><a href="FreeMarker.html"><i class="fas fa-sign-in-alt"></i>FreeMarker</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<section class="columna_derecha">
+    <div align="center"><h1> Convención Sobre Configuración</h1></div>
+
+    <p>La convención sobre la configuración (también conocida como codificación por convención) 
+        es un paradigma de diseño de software utilizado por los marcos de software que intenta disminuir el número de decisiones que un 
+        desarrollador que usa el marco debe tomar sin perder necesariamente flexibilidad.
+         El concepto fue introducido por David Heinemeier Hansson para describir la filosofía del marco web Ruby on Rails , 
+         pero está relacionado con ideas anteriores como el concepto de " valores predeterminados sensibles " y el principio del mínimo asombro en el diseño de la interfaz de usuario.
+    </p>
+<br><br>
+    <p>
+Básicamente, la frase significa que un desarrollador solo necesita especificar aspectos no convencionales de la aplicación. Por ejemplo, si hay una clase Ventas en el modelo, 
+la tabla correspondiente en la base de datos se llama "ventas" por defecto. Sólo si uno se desvía de esta convención, como la tabla "ventas de productos", 
+es necesario escribir código con respecto a estos nombres.      
+    </p>
+
+       
+<p>Cuando la convención implementada por la herramienta coincide con
+     el comportamiento deseado, se comporta como se esperaba sin tener que escribir 
+     archivos de configuración. Solo cuando el comportamiento deseado se desvía de 
+     la convención implementada, se requiere una configuración explícita.</p>
+
+
+    
+<h2></h2>
+<p>
+    El principio de Convención sobre Configuración es uno de los principios más importantes de
+     ingeniería de software. ¿Para qué sirve este principio? . 
+     Se trata de un principio que su objetivo es simplificar el día a día del desarrollo. 
+     La mayor parte de las veces cuando desarrollamos software hay una parte del tiempo de desarrollo que lo dedicamos a tareas de configuración de ese software. 
+    Por ejemplo, podemos tener un fichero de propiedades que ponga
+<br>
+<br>
+baseDatos= basedatos1
+<br>
+servidorCorreo=miservidorCorreo.com
+<br>
+carpetaPDF=micarpeta
+
+</p>
+
+
+<p>
+    Esto es simplemente una labor de configuración que haremos por cada aplicación que demos de alta. Sin embargo,
+     nos podemos encontrar que otro desarrollador decidió que su fichero de configuración sea el siguiente:
+</p> 
+    
+
+<p> 
+    dataserver= basedatos1
+    <br>
+    correo=miservidorCorreo.com
+<br>
+    pdf=micarpeta
+<br>
+</p> 
+<br>
+<p> 
+ Es cierto que almacena la misma información para también es cierto que la configuración no se parece en nada. Esto siempre genera muchos problemas.
+</p>
+
+
+
+<br>
+<div align="center"><img srcset="img/.jpeg 320w,
+    img/forkJoin.jpeg 480w,img/convencionsobreconfiguracion1.png 800w"
+    sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
+    src="img/convencionsobreconfiguracion1.png"  alt="Proceso" class="imagen"></div>
+
+<p>
+    Porque abre las puertas a opciones como la siguiente cuando uno realiza la configuración.
+    <br>
+    baseDatos= basedatos1
+    <br>
+    servidoCorreo=miservidorCorreo.com
+    <br>
+    carpetaPDF=micarpeta
+    <br>
+    Los datos parecen correctos como al principio pero lamentablemente “servidoCorreo” le falta la “r” de “servidor” .
+    
+
+</p>
+
+<div align="center"><img srcset="img/.jpeg 320w,
+    img/forkJoin.jpeg 480w,img/convencionsobreconfiguracion2.png 800w"
+    sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
+    src="img/convencionsobreconfiguracion2.png"  alt="Proceso" class="imagen"></div>
+<br>
+
+
+<p>
+    Un pequeño fallo, pero un fallo que nos puede volver locos. 
+    El principio de convención sobre configuración nos dice que definamos una convención “fija” y 
+    nos olvidemos de “configurar” continuamente las parametrizaciones siempre que sea posible. Un ejemplo sencillo sería
+</p>
+<br>
+<p>
+    database.server=basedatos1
+<br>
+    mail.server=miservidorCorreo.com
+    <br>
+    app.folder=micarpeta
+    <br>
+</p>
+<p>Los nombres son más flexibles y asumimos que por convención siempre 
+    se denominan database.server , mail.server y app.folder . 
+    Aquí, aunque nos cueste verlo también estamos asumiendo otra convención que es que cada palabra está separada por un “.”. 
+    Por lo tanto copiaremos y pegaremos el fichero y modificaremos valores, no propiedades.</p>
+
+<br>
+<h2>Marco de software</h2>
+
+<p>
+    En la programación de computadoras, un marco de software es una abstracción en la que el software que proporciona una funcionalidad genérica puede cambiarse selectivamente mediante código adicional escrito por el usuario,
+     proporcionando así software específico de la aplicación. 
+     Proporciona una forma estándar de crear e implementar aplicaciones y es un entorno de software universal y reutilizable que proporciona una funcionalidad 
+     particular como parte de una plataforma de software más grande para facilitar el desarrollo de aplicaciones, productos y soluciones de software. Los marcos de software pueden incluir programas de soporte,
+      compiladores, bibliotecas de códigos, conjuntos de herramientas e interfaces de programación de aplicaciones (API)que reúnen todos los diferentes componentes para permitir el desarrollo de un proyecto o sistema.
+
+</p>
+
+<p>Los marcos tienen características distintivas clave que los separan de las bibliotecas normales:</p>
+<p>
+    Inversión de control: en un marco, a diferencia de las bibliotecas o de las aplicaciones de usuario estándar, el flujo de control general del programa no lo dicta el llamador, sino el marco. Esto generalmente se logra con el patrón de método de plantilla.
+    Comportamiento predeterminado: esto se puede proporcionar con los métodos invariantes del patrón de método de plantilla en una clase abstracta proporcionada por el marco.
+    Extensibilidad: un usuario puede extender el marco, generalmente mediante anulación selectiva, o los programadores pueden agregar código de usuario especializado para proporcionar una funcionalidad específica. Esto generalmente se logra mediante un método de enlace en una subclase que anula un método de plantilla en la superclase.
+    Código de marco no modificable: el código de marco, en general, no se supone que debe modificarse, aunque acepta extensiones implementadas por el usuario. En otras palabras, los usuarios pueden extender el marco, pero no pueden modificar su código.
+
+</p>
+<p>
+    Los diseñadores de marcos de software tienen como objetivo facilitar el desarrollo de software al permitir que los diseñadores y programadores dediquen su tiempo a cumplir con los requisitos de software en lugar de ocuparse de los detalles más estándar de bajo nivel de proporcionar un sistema en funcionamiento, reduciendo así el tiempo de desarrollo general. [2] Por ejemplo, un equipo que utiliza un marco web para desarrollar un sitio web bancario puede centrarse en escribir un código específico para la banca en lugar de en la mecánica del manejo de solicitudes y la gestión estatal.
+</p>
+<br>
+<p>
+    Los marcos a menudo aumentan el tamaño de los programas, un fenómeno denominado " código hinchado ". Debido a las necesidades de aplicaciones impulsadas por la demanda del cliente, tanto los marcos competitivos como los complementarios a veces terminan en un producto. Además, debido a la complejidad de sus API, es posible que no se logre la reducción prevista en el tiempo de desarrollo general debido a la necesidad de dedicar tiempo adicional a aprender a usar el marco; esta crítica es claramente válida cuando el personal de desarrollo encuentra por primera vez un marco especial o nuevo. Si dicho marco no se utiliza en tareas de trabajo posteriores, el tiempo invertido en aprender el marco puede costar más que el código escrito con un propósito familiar para el personal del proyecto; muchos programadores guardan copias de código estándar útil para necesidades comunes.
+</p>
+<br>
+<p>
+    Sin embargo, una vez que se aprende un marco, los proyectos futuros pueden ser más rápidos y fáciles de completar; el concepto de un marco es hacer un conjunto de soluciones de talla única y, con familiaridad, la producción de código debería aumentar lógicamente. No existen tales afirmaciones sobre el tamaño del código eventualmente empaquetado con el producto de salida, ni sobre su relativa eficiencia y concisión. El uso de cualquier solución de biblioteca necesariamente atrae extras y activos extraños no utilizados, a menos que el software sea un enlazador de objetos de compilación que haga un módulo ejecutable ajustado (pequeño, totalmente controlado y especificado).
+</p>
+<br>
+<p>
+    El problema continúa, pero más de una década de experiencia en la industria ha demostrado que los marcos más efectivos resultan ser aquellos que evolucionan a partir de la refactorización del código común de la empresa, en lugar de utilizar un modelo genérico de "talla única "Se adapta a todos" desarrollado por terceros para fines generales. Un ejemplo de eso sería cómo la interfaz de usuario en un paquete de aplicaciones como una suite ofimática crece para tener una apariencia, sensación y atributos y métodos comunes para compartir datos, ya que las aplicaciones empaquetadas que alguna vez fueron dispares crecen unificadas en una suite que es más ajustada. y más pequeño; la suite más nueva evolucionada puede ser un producto que comparte bibliotecas de servicios e interfaces de usuario integrales.
+</p>
+<br>
+
+<p>
+    Esta tendencia en la controversia plantea un tema importante sobre los marcos. Crear un marco que sea elegante, en lugar de uno que simplemente resuelva un problema, sigue siendo más un oficio que una ciencia. " Elegancia del software “implica claridad, concisión y poco desperdicio (funcionalidad extra o extraña, gran parte de la cual es definida por el usuario). Para aquellos marcos que generan código, por ejemplo," elegancia "implicaría la creación de código que sea limpio y comprensible para un programador experto (y que, por lo tanto, es fácilmente modificable), frente a uno que simplemente genera el código correcto. El problema de la elegancia es por qué relativamente pocos marcos de software han resistido la prueba del tiempo: los mejores marcos han podido evolucionar con gracia como la tecnología subyacente en la que Incluso allí, después de haber evolucionado, muchos de estos paquetes conservarán las capacidades heredadas y aumentarán el software final, ya que los métodos reemplazados se han mantenido en paralelo con los métodos más nuevos.
+</p>
+<br>
+<h2>Resumen</h2>
+<p>
+    Convención sobre configuración es un concepto sencillo que se utiliza principalmente en programación. Significa que el entorno con el que se trabaja (sistemas, librerías, lenguaje, etc.) asume una gran cantidad de situaciones lógicas por defecto, de modo que, si te adaptas a ellas en vez de crear tus propias reglas cada vez, programar se convierte en una tarea mucho más sencilla y productiva.
+</p>
+<br>
+<p>
+    El objetivo es decrementar el número de decisiones que tiene que realizar el programador y eliminar la complejidad de tener que configurar todas y cada una de las áreas de desarrollo de una aplicación. La consecuencia inmediata es que se puede crear muchas más cosas en menos tiempo.
+</p>
+<br>
+<p>
+    Entornos de programación de gran éxito como Ruby on Rails se basan en este concepto. Si se sigue las convenciones establecidas, se puede desarrollar una aplicación Rails en mucho menos tiempo y con muchas menos líneas de código de las que se necesitaría para desarrollar una aplicación web similar en Java, por ejemplo.
+</p>
+<br>
+<p>
+    Si, por otra parte, se quiere hacer caso omiso de las convenciones, siempre las puedes sustituir con un código propio. Sin embargo, y puesto que las convenciones no son arbitrarias, sino que han sido establecidas por una comunidad de programadores de gran nivel, pocas veces tiene sentido perder el tiempo en sobre-escribirlas.
+</p>
+<br>
+
+<h3>Aplicación</h3>
+<p>
+   <b>Ruby on Rails:</b>   también conocido como RoR o Rails, es un framework de aplicaciones web de código abierto escrito en el lenguaje de programación Ruby, siguiendo el paradigma del patrón Modelo Vista Controlador (MVC). Trata de combinar la simplicidad con la posibilidad de desarrollar aplicaciones del mundo real escribiendo menos código que con otros frameworks y con un mínimo de configuración. El lenguaje de programación Ruby permite la metaprogramación, de la cual Rails hace uso, lo que resulta en una sintaxis que muchos de sus usuarios encuentran muy legible. Rails se distribuye a través de RubyGems, que es el formato oficial de paquete y canal de distribución de bibliotecas y aplicaciones Ruby.
+</p>
+
+<h3>Filosofía</h3>
+<p>
+    Los principios fundamentales de Ruby on Rails incluyen No te repitas (del inglés Don't repeat yourself, DRY) y Convención sobre Configuración.
+</p>
+<br>
+<p>
+    No te repitas significa que las definiciones deberían hacerse una sola vez. Dado que Ruby on Rails es un framework de pila completa, los componentes están integrados de manera que no hace falta establecer puentes entre ellos. Por ejemplo, en ActiveRecord, las definiciones de las clases no necesitan especificar los nombres de las columnas; Ruby puede averiguarlos a partir de la propia base de datos, de forma que definirlos tanto en el código como en el programa sería redundante.  
+</p>
+<br>
+<p>
+    Convención sobre configuración significa que el programador sólo necesita definir aquella configuración que no es convencional. Por ejemplo, si hay una clase User en el modelo, la tabla correspondiente de la base de datos es users(en plural), pero si la tabla no sigue la convención (por ejemplo blogposts) debe ser especificada manualmente (self.table_name = "blogposts") en el modelo. Así, cuando se diseña una aplicación partiendo de cero sin una base de datos preexistente, el seguir las convenciones de Rails significa usar menos código (aunque el comportamiento puede ser configurado si el sistema debe ser compatible con un sistema heredado anterior).
+</p>
+<div align="center"><img srcset="img/.jpeg 320w,
+    img/forkJoin.jpeg 480w,img/ruby1.png 800w"
+    sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
+    src="img/ruby1.png"  alt="Proceso" class="imagen"></div>
+
+<h2>Conlusiones</h2>
+    <p>
+   <li>A través de la recopilación de información consolidamos nuestros conocimientos sobre el tema de convención sobre la configuración.</li>	<br>
+<li>        	Aprendimos que el objetivo de la convención sobre la configuración es decrementar el número de decisiones que tiene que realizar el programador y eliminar la complejidad de tener que configurar todas y cada una de las áreas de desarrollo de una aplicación.
+</li>  <br>       
+<li>
+    Con la realización de la exposición pudimos compartir la información recopilada sobre el tema de convención sobre la configuración.
+
+</li> <br> 
+
+    </p>
+
+
+</section>
+
+
+
+
+
+
+<div class="container_busqueda">
+   
+    <div id="search-wrapper">
+        <input type="search" id="search" placeholder="Buscar"/>
+        <i class="fa fa-search"></i>
+      </div>
+    <ul id="resultado" class="lista_busqueda">
+        
+    </ul>
+</div>
+</div>
+</div>
+</main>
+
+
+<footer>
+    <div class="container-pie">
+        <div class="copyright">
+           <p>&copy; 2020 Página realizada por estudiantes de la Universidad UTE.</p> 
+        </div>
+    </div>
+</footer>
+</div>
+
+<script src="js/jQuery.js"></script>
+<script src="js/scripts.js"></script>
+<script src="js/prism.js"></script>
+
+
+
+<script>
+    const temas = [  /*Cargar aqui enlaces para la busqueda con el mismo formato.*/
+    {titulo: '<a href="Expresiones_Lambda.html">Expresiones Lambda</a>'},   
+        {titulo: '<a href="Metodos_estaticos.html">Métodos Estáticos</a>'},   
+        {titulo: '<a href="ForkJoin.html">ForkJoin</a>'}, 
+        {titulo: '<a href="Hilo_Sincronizacion.html">Hilos y Sincronización</a>'},
+        {titulo: '<a href="JavaStreams.html">Java Streams</a>'},    
+        {titulo: '<a href="ip.html">TCP/IP, Sockets UDP</a>'}, 
+        {titulo: '<a href="MapReduce.html">MapReduce</a>'}, 
+        {titulo: '<a href="TCP.html">Sockets UTP</a>'}, 
+        {titulo: '<a href="Contenedores.html">Contenedores</a>'}, 
+		{titulo: '<a href="VirtualBox.html">VirtualBox</a>'}, 
+        {titulo: '<a href="Docker.html">Docker</a>'}, 
+        {titulo: '<a href="MaquinaVirtual.html">Máquina Virtual </a>'}, 
+        {titulo: '<a href="InyeccionDependencia.html">Inyeccion de Dependencias </a>'}, 
+        {titulo: '<a href="ConvencionSobreConfiguracion.html">Convención Sobre Configuración </a>'}, 
+        {titulo: '<a href="FreeMarker.html">FreeMarker </a>'}, 
+    ]
+    const formulario= document.querySelector('#search');
+    const boton= document.querySelector('#boton');
+    const resultado=document.querySelector('#resultado');
+
+    const filtrar = ()=>{
+       resultado.innerHTML='';
+
+       const texto = formulario.value.toLowerCase();
+       for(let tema of temas ){
+           let titulo=tema.titulo.toLowerCase();
+           if(titulo.indexOf(texto) !== -1){
+               
+                resultado.innerHTML += '<li>'+tema.titulo+'</li>'
+         }
+        }
+        if(resultado.innerHTML===''){
+            resultado.innerHTML += '<li>Enlace no Encontrado...</li>'
+        }
+    }
+    //boton.addEventListener('click',filtrar)
+    formulario.addEventListener('keyup',filtrar);
+   
+    
+</script>
+</body>
+</html>
