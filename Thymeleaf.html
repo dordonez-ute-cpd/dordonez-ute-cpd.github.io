@@ -1,0 +1,237 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/prism.css">
+    <link rel="stylesheet" href="css/all.css">
+    <link  rel="icon"   href="img/favicon.png" type="image/png" />
+<title>Thymeleaf</title>
+</head>
+
+<body>
+	<div class="container-head">
+    <div class="logos">
+        <a href="index.html" class="logo"><img src="img/logo-utet.png" alt="logo" width="100px" height="84px" ></a>
+    </div> 
+</div>
+
+      
+
+<header>
+    <div class="container-menu logo-nav-contenedor">
+        <span class="menu-icon"><i class="fas fa-bars"></i></span>
+        <nav class="navegacion">
+            <ul class="show">
+                <strong><li><a href="index.html">Inicio</a></li></strong>
+                <strong><li><a href="Presentaciones.html">Presentaciones</a></li></strong>
+                <strong><li><a href="Videos.html">Videos</a></li></strong>
+               
+            </ul>
+        </nav>
+      </div>
+</header>
+
+
+<div class="container-general">
+<main>
+<div class="container-cuerpo">
+<div class="columna_izquierda">
+    <div class="contenido_1">
+        <strong><h3>Temas</h3></strong>
+    </div>
+    <div class="contenido_2">
+        <nav class="navegacion_2">
+            <ul class="show_2">
+             <!-- <li><a href="#"><i class="fas fa-sign-in-alt"></i>Expresiones Lambda</a></li> -->
+             <li><a href="Expresiones_Lambda.html"><i class="fas fa-sign-in-alt"></i>Expresiones Lambda</a></li> 
+             <li><a href="Hilo_Sincronizacion.html"><i class="fas fa-sign-in-alt"></i>Hilos y Sincronización</a></li>
+             <li><a href="Metodos_estaticos.html"><i class="fas fa-sign-in-alt"></i>Métodos Estáticos</a></li>
+             <li><a href="ForkJoin.html"><i class="fas fa-sign-in-alt"></i>ForkJoin</a></li>
+             <li><a href="JavaStreams.html"><i class="fas fa-sign-in-alt"></i>Java Streams</a></li>
+             <li><a href="ip.html"><i class="fas fa-sign-in-alt"></i>TCP/IP, Sockets UDP</a></li>
+             <li><a href="MapReduce.html"><i class="fas fa-sign-in-alt"></i>MapReduce</a></li>
+             <li><a href="TCP.html"><i class="fas fa-sign-in-alt"></i>Sockets TCP</a></li>
+             <li><a href="Contenedores.html"><i class="fas fa-sign-in-alt"></i>Contenedores</a></li>
+             <li><a href="MaquinaVirtual.html"><i class="fas fa-sign-in-alt"></i>Maquina virtual</a></li>
+             <li><a href="VirtualBox.html"><i class="fas fa-sign-in-alt"></i>Virtual Box</a></li>
+             <li><a href="Docker.html"><i class="fas fa-sign-in-alt"></i>Docker</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<section class="columna_derecha">
+    <div text align="center"><h2>Thymeleaf</h2></div>
+	
+	<img alt="Imagen 0 en Qué es Thymeleaf" class="img-responsive center-block img-responsive center-block" height="369" src="https://dc722jrlp2zu8.cloudfront.net/media/cache/8a/32/8a32ca4bf33b23b022f50512f33414e7.webp" srcset="https://dc722jrlp2zu8.cloudfront.net/media/cache/8a/32/8a32ca4bf33b23b022f50512f33414e7.webp 658w, https://dc722jrlp2zu8.cloudfront.net/media/cache/f5/47/f54781e87746722ae7e1583f2207ce07.webp 480w" width="658" data-pagespeed-url-hash="2696921115" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+		<h4>¿Qué es Thymeleaf?</h4>
+		<ul>
+		<p> Thymeleaf es un moderno motor de plantillas Java del lado del servidor para entornos web e independientes. </p>
+		<p>El objetivo principal de Thymeleaf es incorporar elegantes plantillas naturales a su flujo de trabajo de desarrollo: HTML que se puede mostrar correctamente en los navegadores y que también funcionan como prototipos estáticos, lo que permite una colaboración más sólida en los equipos de desarrollo.</p>
+		<h4>Plantillas naturales</h4>	
+		</ul>
+		
+		<ul>
+			<p>Las plantillas HTML escritas en Thymeleaf aún se ven y funcionan como HTML, lo que permite que las plantillas reales que se ejecutan en su aplicación sigan funcionando como artefactos de diseño útiles.</p>
+			
+		<pre class="language-html">
+		<code> 
+		
+		&lt;table&gt;
+		 &lt;thead&gt;
+		  &lt;tr&gt;
+			&lt;th th:text="#{msgs.headers.name}"&gt;Name&lt;/th&gt;
+			&lt;th th:text="#{msgs.headers.price}"&gt;Name&lt;/th&gt;
+		  &lt;/tr&gt;
+		 &lt;/thead&gt;
+		 &lt;/tbody&gt;
+		  &lt;tr th:each="prod: ${allProducts}"&gt;
+		   &lt;td th:text="${prod.name}"&gt;Oranges&lt;/td&gt;
+		   &lt;td th:text="${#numbers.formatDecimal(prod.price, 1, 2)}"&gt;0.99&lt;/td&gt;
+		  &lt;/tr&gt;
+		 &lt;/tbody&gt;
+		&lt;/table&gt;	
+		
+		
+			</code></pre>
+			</ul>
+	
+		<p>Ventajas</p>
+		<p>Permite realizar tareas que se conocen como natural templating. Es decir, como está basada en añadir atributos y etiquetas, sobre todo HTML, va a permitir que nuestras plantillas se puedan renderizar en local, y esa misma plantilla después utilizarla también para que sea procesada dentro del motor de plantillas. Por lo cual las tareas de diseño y programación se pueden llevar conjuntamente.</p>
+		<p>Es integrable con muchos de los frameworks más utilizados, como por ejemplo Spring MVC, Play, Java EE... Y está basado en el uso de nuevas etiquetas, de nuevos atributos.</p>
+		
+		<h4>Tipos de expresiones</h4>
+		<p>Thymeleaf nos permite trabajar con varios tipos de expresiones, que vamos a ver:</p>
+		<ul>
+			<li>Expresiones variables: Son quizás las más utilizadas, como por ejemplo ${…}</li>
+			<li>Expresiones de selección: Son expresiones que nos permiten reducir la longitud de la expresión si prefijamos un objeto mediante una expresión variable, como por ejemplo *{…} </li>
+			<li>Expresiones de mensaje: Que nos permiten, a partir de ficheros properties o ficheros de texto, cargar los mensajes e incluso realizar la internalización de nuestras aplicaciones, como por ejemplo #{…} </li>
+			<li>Expresiones de enlace: Nos permiten crear URL que pueden tener parámetros o variables, como por ejemplo @{…} </li>
+			<li>Expresiones de fragmentos: Nos van a permitir dividir nuestras plantillas en plantillas más pequeñas e ir cargándolas según las vayamos necesitando, como por ejemplo ~{…} </li>
+		</ul>
+	
+		<h4>Expresiones variables</h4>
+		<p>Vamos a ver unos ejemplos:</p>
+		<ul>
+			<li>${sesión.usuario.nombre} =&gt; Podemos usar la notación de puntos para acceder a las propiedades de un objeto.</li>
+			<li><pre class="language-html"><code>&lt;span th:text=”${libro.autor.nombre}”&gt;</code></pre>
+				<p> Uno de los atributos que podemos usar es th:text con diferentes etiquetas HTML, para poder mostrar, por ejemplo, el nombre del autor de un libro. También podemos navegar entre objetos.</p></li>
+			<li><pre class="language-html"><code>&lt;p th:text=”${#numbers.formatCurrency(5)}”&gt;</code></pre>
+				<p> Algunas expresiones vienen ya predefinidas, como la función formatCurrency, que nos va a permitir formatear un numero como una moneda y le va a añadir la moneda del sistema por defecto.</p></li>
+			<li><pre class="language-html"><code>&lt;td th:text=”${myObject.myMethod()}”&gt;</code></pre>
+				<p> También podemos llamar a métodos definidos en nuestros propios objetos, lo vamos a poder hacer desde las plantillas.</p></li>
+			
+		<h4>Atributos básicos</h4>
+		<p>Los atributos mas conocidos que vamos a ver son:</p>
+		<ul>
+			<li><code>th:text</code>: Permite reemplazar el texto de la etiqueta por el valor de la expresión que le demos.
+			<p>Ejemplo:<pre class="language-html"> <code>&lt;p th:text=”${saludo}&gt;Saludos&lt;/p&gt; </code></pre></p></li>
+			<li><code>th:each:</code>: Nos va a permitir repetir tantas veces como se indique o iterar sobre los elementos de una colección.
+			<p>Ejemplo: <pre class="language-html"><code>&lt;li th:each=”libro : ${libros}” th:text=”${libro.titulo}”&gt;La divina Comedia&lt;/li&gt; </code></pre></p></li>
+			<li><code>th:class:</code>: Permite modificar las clases de un elemento de forma que podríamos modular el CSS de ese elemento HTML.
+			<p>Ejemplo:<pre class="language-html"><code>&lt;p th:class=”${row.even}? ’even’: ’odd’”&gt;&lt;/p&gt; </code></pre></p></li>
+			
+		<h4>Instalar Plugin de Thymeleaf</h4>
+			<p>Bueno, para tener mayor facilidad al momento de usar thymeleaf, existe un plugin el cual vamos a poder instalar en nuestro Spring Tools</p>
+			<br>
+			<p>Ventajas de este plugin: </p>
+			<ul>
+				<li>Autocompletado de código (No vamos a tener que escribir cada sentencia de Thymeleaf)</li>
+				<li>Una ayuda certera para cada uno de los atributos o de los elementos de Thymeleaf.</li>
+				<li>La asistencia de contenido dentro de las expresiones.</li>
+			</ul>
+			<p>Para instalar el plugin nada mas debemos seguir los siguientes pasos: </p>
+			<ul>
+				<li>1. Tener instalado nuestro Spring Tools.</li>
+				<li>2. En nuestra barra superior de Spring Tolls debemos dar click a "Help" o "Ayuda".</li>
+				<li>3. Luego damos en la opción que dice "Install new Software".</li>
+				<li>4. Aparecerá una ventana la cual tenemos que dar el boton "Add" que esta a lado de una barra que dice "Work with"</li>
+				<li>5. Pondremos el nombre de nuestro nuevo Plugin "Thymeleaf" y agregamos donde dice "Location" el siguiente URL:
+				<p><a href="https://www.thymeleaf.org/">https://www.thymeleaf.org/eclipse-plugin-update-site/</a></p></li>
+				<li>6. Ponemos en "Add" y empezará a buscar el nombre y la version de nuestro URL.</li>
+				<li>7. Habilitamos la casilla que ha encontrado el programa y damos todo siguiente.</li>
+				<li>8. Y listo, empezará a agregar el plugin para poder agregar la plantilla de Thymeleaf a nuestros proyectos. </li>
+			</ul>
+			<p>Acá dejamos también un video demostrativo de como seguir estos pasos:</p>
+			<p><strong>Instalando Plugin Thymeleaf</strong></p>
+    		<div align="center" class="video-responsive"><iframe src="https://www.youtube.com/embed/fRRjHGZc7Bo?start=156" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+	
+	    <p>Pagina oficial: <a href="https://www.thymeleaf.org/">Thymeleaf.org</a></p>
+	
+	
+</section>
+
+<div class="container_busqueda">
+   
+    <div id="search-wrapper">
+        <input type="search" id="search" placeholder="Buscar"/>
+        <i class="fa fa-search"></i>
+      </div>
+    <ul id="resultado" class="lista_busqueda">
+        
+    </ul>
+</div>
+</div>
+</div>
+</main>
+
+
+<footer>
+    <div class="container-pie">
+        <div class="copyright">
+           <p>&copy; 2020 Página realizada por estudiantes de la Universidad UTE.</p> 
+        </div>
+    </div>
+</footer>
+</div>
+
+<script src="js/jQuery.js"></script>
+<script src="js/scripts.js"></script>
+<script src="js/prism.js"></script>
+
+
+
+<script>
+    const temas = [  /*Cargar aqui enlaces para la busqueda con el mismo formato.*/
+    {titulo: '<a href="Expresiones_Lambda.html">Expresiones Lambda</a>'},   
+        {titulo: '<a href="Metodos_estaticos.html">Métodos Estáticos</a>'},   
+        {titulo: '<a href="ForkJoin.html">ForkJoin</a>'}, 
+        {titulo: '<a href="Hilo_Sincronizacion.html">Hilos y Sincronización</a>'},
+        {titulo: '<a href="JavaStreams.html">Java Streams</a>'},    
+        {titulo: '<a href="ip.html">TCP/IP, Sockets UDP</a>'}, 
+        {titulo: '<a href="MapReduce.html">MapReduce</a>'}, 
+        {titulo: '<a href="TCP.html">Sockets UTP</a>'}, 
+        {titulo: '<a href="Contenedores.html">Contenedores</a>'}, 
+		{titulo: '<a href="VirtualBox.html">VirtualBox</a>'}, 
+        {titulo: '<a href="Docker.html">Docker</a>'}, 
+        {titulo: '<a href="MaquinaVirtual.html">Máquina Virtual </a>'}, 
+    ]
+    const formulario= document.querySelector('#search');
+    const boton= document.querySelector('#boton');
+    const resultado=document.querySelector('#resultado');
+
+    const filtrar = ()=>{
+       resultado.innerHTML='';
+
+       const texto = formulario.value.toLowerCase();
+       for(let tema of temas ){
+           let titulo=tema.titulo.toLowerCase();
+           if(titulo.indexOf(texto) !== -1){
+               
+                resultado.innerHTML += '<li>'+tema.titulo+'</li>'
+         }
+        }
+        if(resultado.innerHTML===''){
+            resultado.innerHTML += '<li>Enlace no Encontrado...</li>'
+        }
+    }
+    //boton.addEventListener('click',filtrar)
+    formulario.addEventListener('keyup',filtrar);
+   
+    
+</script>
+</body>
+</html>
