@@ -74,10 +74,8 @@
     <p>Apache FreeMarker es un motor de plantillas: una biblioteca Java para generar salida de texto (páginas web HTML, correos electrónicos, archivos de configuración, código fuente, etc.) basada en plantillas y datos cambiantes. Las plantillas están escritas en FreeMarker Template Language (FTL), que es un lenguaje simple y especializado (no un lenguaje de programación completo como PHP). Por lo general, se utiliza un lenguaje de programación de propósito general (como Java) para preparar los datos (emitir consultas a la base de datos, realizar cálculos comerciales). Luego, Apache FreeMarker muestra los datos preparados usando plantillas. En la plantilla, se centra en cómo presentar los datos, y fuera de la plantilla, se centra en qué datos presentar.</p>
    <br>
    
-    <div align="center"><img srcset="img/.jpeg 320w,
-        img/forkJoin.jpeg 480w,img/freemarker.png 800w"
-        sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
-        src="img/freemarker.png"  alt="Proceso" class="imagen"></div>
+   <div text align="center"><img src="img/freemarker.png" alt="" height="350" width="350" class="imagen"></div>
+
     
     <p>Este enfoque a menudo se denomina patrón MVC (Model View Controller) y es particularmente popular para páginas web dinámicas. Ayuda a separar a los diseñadores de páginas web (autores HTML) de los desarrolladores (normalmente, programadores Java). Los diseñadores no se enfrentarán a una lógica complicada en las plantillas y pueden cambiar la apariencia de una página sin que los programadores tengan que cambiar o recompilar el código.</p>
    
@@ -116,16 +114,11 @@
   <h2>Ejemplo: </h2>
   La siguiente plantilla:
 
-  <div align="center"><img srcset="img/freemarker2.jpg 320w,
-    img/forkJoin.jpeg 480w,img/freemarker2.jpg 800w"
-    sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
-    src="img/freemarker2.jpg"  alt="Proceso" class="imagen"></div>
+  <div text align="center"><img src="img/freemarker2.jpg" alt="" height="350" width="350" class="imagen"></div>
+
 
     procesada por FreeMarker producirá algo como:
-    <div align="center"><img srcset="img/freemarker3.jpg 320w,
-        img/forkJoin.jpeg 480w,img/freemarker3.jpg 800w"
-        sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
-        src="img/freemarker3.jpg"  alt="Proceso" class="imagen"></div>
+    <div text align="center"><img src="img/freemarker3.jpg" alt="" height="350" width="350" class="imagen"></div>
 
 <p>Variables como "nombre" y "mensajes" provienen de fuera de la plantilla y, por lo tanto, el autor de la plantilla tiene que ocuparse únicamente de los problemas de presentación. La plantilla sigue siendo la misma independientemente de si estas variables provienen de una base de datos o de una cookie o se calculan de cualquier otra manera. Además, la API Java exacta (y por lo tanto la clase) de los valores se puede ocultar en FreeMarker utilizando una técnica llamada envoltura de objetos. Por ejemplo, "messages" parece ser una lista o matriz de JavaBeans que tienen propiedades "from" y "body", pero también podría ser algo muy diferente, y la plantilla no se ve afectada (siempre que un contenedor de objetos adecuado se utiliza).</p>
     <br>
