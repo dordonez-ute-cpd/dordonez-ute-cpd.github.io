@@ -1,17 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/prism.css">
     <link rel="stylesheet" href="css/all.css">
     <link  rel="icon"   href="img/favicon.png" type="image/png" />
-    <title>Presentaciones</title>
+<title>VirtualBox</title>
 </head>
-<body>
 
-<div class="container-head">
+<body>
+	<div class="container-head">
     <div class="logos">
         <a href="index.html" class="logo"><img src="img/logo-utet.png" alt="logo" width="100px" height="84px" ></a>
     </div> 
@@ -64,22 +65,49 @@
 </div>
 
 <section class="columna_derecha">
+    <div text align="center"><h2>Inyeccion de Dependencias</h2></div>
+    <div align="center"><img srcset="img/inyecciond.png"
+        sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
+        src="img/contenedor1.png"  alt="Proceso" class="imagen"></div>
+        <h3>Concepto y Características</h3>
+		<p>DI es un patrón de diseño de software usado en POO (Programación Orientada a Objetos) que trata de solucionar las necesidades de creación de los objetos de una manera práctica, útil, escalable y con una versatilidad del código. Nos ayuda a separar nuestro código por responsabilidades, dedicándose a la organización del código que tiene que ver con la creación de los objetos.</p>
+        <p>En POO tenemos una posible separación del código tenemos una posible separación del código en dos partes, una en la que creamos los objetos y otra en la que los usamos.</p>
+        <p>DI nos permite inyectar comportamientos a componentes haciendo que nuestras piezas de software sean independientes y se comuniquen únicamente a través de una interface. Esto extrae responsabilidades a un componente para delegarlas en otro, estableciendo un mecanismo a través del cual el nuevo componente puede ser cambiado en tiempo de ejecución. Para lograr esta tarea DI se basa en un patrón más genérico llamado Inversión de Control (Inversion of Control).</p>
+        <p>Las dependencias en el software son necesarias. La problemática con estas viene dada por el grado de acoplamiento que tiene la dependencia con el componente. Lo ideal es tratar de favorecer un grado de acoplamiento bajo, pero sin sacrificar la cohesión.</p>
+        <h4>Principio de Inyección de Dependencias</h4>
+        <p>Robert C. Martin afirma que:</p>
+		<ul>
+			<li>Las clases de alto nivel no deberían depender de las clases de bajo nivel. Ambas deberían depender de las abstracciones.</li>
+			<li>Las abstracciones no deberían depender de los detalles. Los detalles deberían depender de las abstracciones.</li>
+		</ul>
+		<h3>Contenedor de dependencias</h3>
+		<p>El contenedor inyecta a cada objeto los objetos necesarios según las relaciones de dependencia registradas en la configuración previa,  es implementado por un framework externo a la aplicación (como Spring), por lo cual en la aplicación también se utilizará inversión de control al ser el contenedor (almacenado en una biblioteca) quien invoque el código de la aplicación.</p>
+		<p>Nos permite que la instanciación de un objeto, por muchas dependencias que tenga, vuelva a ser tan simple como una llamada a un método, ya que simplemente tiene todos los objetos que puedas necesitar para crear cualquier objeto complejo y si no cuenta en ese instante con las dependencias necesarias, sabe cómo conseguirlas en el acto.</p>
+		<h3>Declaración de la inyección</h3>
+        <p>Debido a que sus componentes tienen una fuerte relación entre sí, que al final nos supondrá un inconveniente para el mantenimiento del software, se usa interfaces. De esta forma conseguimos abstraer la relación entre una clase A que depende de una clase B sin importar la implementación de cada uno de los dos obteniendo un desacoplamiento.</p>
+        <h3>Principio de Hollywood</h3>
+        <p>IoC(Inversión de control) también es conocido como Principio de Hollywood cuyo principal de un contenedor IoC es el de gestionar el ciclo de vida de los objetos. El contenedor IoC registra una implementación específica para cada tipo de interfaz y retorna una instancia de objeto. Esta resolución de objetos tiene lugar en un único punto de las aplicaciones; normalmente, a nivel de infraestructura.</p>
+        <h3>Tipos de implementación</h3>
+        <p>Tenemos tres formas de implementar:</p>
+        <ul>
+        <li>Por constructor.<br>
+            <div align="center"><img srcset="img/inyecciondc.png"
+                sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
+                src="img/contenedor1.png"  alt="Proceso" class="imagen"></div>
+        </li>
+        
+		<li>Por setters.<br>
+            <div align="center"><img srcset="img/inyeccionds.png"
+                sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
+                src="img/contenedor1.png"  alt="Proceso" class="imagen"></div>
 
-<div class="div-presentaciones">  
-<div align="center"><iframe  src="pdf/Expresiones_lambda.pdf" width="720px" height="500px"></iframe ></div>
-<div align="center"><iframe  src="pdf/grupo3.pdf" width="720px" height="500px"></iframe ></div>
-<div align="center"><iframe  src="pdf/MapReduc.pdf" width="720px" height="500px"></iframe ></div>
-<div align="center"><iframe  src="pdf/ForkJoin.pdf" width="720px" height="500px"></iframe ></div>
-<div align="center"><iframe  src="pdf/Contenedores.pdf" width="720px" height="500px"></iframe ></div>
-<div align="center"><iframe  src="pdf/VirtualBox.pdf" width="720px" height="500px"></iframe ></div>
-<div align="center"><iframe  src="pdf/Docker.pdf" width="720px" height="500px"></iframe ></div>
-<div align="center"><iframe  src="pdf/InyeccionDependencias.pdf" width="720px" height="500px"></iframe ></div>
-</div>
-
-
-
-
-
+        </li>
+		<li>Por interfaz.<br>
+            <div align="center"><img srcset="img/inyecciondint.png"
+                sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
+                src="img/contenedor1.png"  alt="Proceso" class="imagen"></div>
+        </li>
+		</ul>	
 </section>
 
 <div class="container_busqueda">
@@ -108,6 +136,7 @@
 
 <script src="js/jQuery.js"></script>
 <script src="js/scripts.js"></script>
+<script src="js/prism.js"></script>
 
 
 
@@ -124,9 +153,8 @@
         {titulo: '<a href="Contenedores.html">Contenedores</a>'}, 
 		{titulo: '<a href="VirtualBox.html">VirtualBox</a>'}, 
         {titulo: '<a href="Docker.html">Docker</a>'}, 
-        {titulo: '<a href="MaquinaVirtual.html">Máquina Virtual </a>'}, 
+        {titulo: '<a href="MaquinaVirtual.html">Máquina Virtual </a>'},
         {titulo: '<a href="InyeccionDependencia.html">Inyeccion de Dependencias </a>'}, 
-       
     ]
     const formulario= document.querySelector('#search');
     const boton= document.querySelector('#boton');
@@ -152,5 +180,8 @@
    
     
 </script>
+</body>
+</html>
+
 </body>
 </html>
