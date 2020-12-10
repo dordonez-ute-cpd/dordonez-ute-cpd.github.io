@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/prism.css">
+    <link rel="stylesheet" href="css/all.css">
+    <link  rel="icon"   href="img/favicon.png" type="image/png" />
+    <title>Groovy</title>
+</head>
+
+<div class="container-head">
+    <div class="logos">
+        <a href="index.html" class="logo"><img src="img/logo-utet.png" alt="logo" width="100px" height="84px" ></a>
+    </div> 
+</div>
+
+      
+
+
+<body>
+    <header>
+        <div class="container-menu logo-nav-contenedor">
+            <span class="menu-icon"><i class="fas fa-bars"></i></span>
+            <nav class="navegacion">
+                <ul class="show">
+                    <strong><li><a href="index.html">Inicio</a></li></strong>
+                    <strong><li><a href="Presentaciones.html">Presentaciones</a></li></strong>
+                    <strong><li><a href="Videos.html">Videos</a></li></strong>
+                   
+                </ul>
+            </nav>
+          </div>
+    </header>
+
+    <div class="container-general">
+        <main>
+        <div class="container-cuerpo">
+        <div class="columna_izquierda">
+            <div class="contenido_1">
+                <strong><h3>Temas</h3></strong>
+            </div>
+            <div class="contenido_2">
+                <nav class="navegacion_2">
+                    <ul class="show_2">
+                     <!-- <li><a href="#"><i class="fas fa-sign-in-alt"></i>Expresiones Lambda</a></li> -->
+                     <li><a href="Expresiones_Lambda.html"><i class="fas fa-sign-in-alt"></i>Expresiones Lambda</a></li> 
+                     <li><a href="Hilo_Sincronizacion.html"><i class="fas fa-sign-in-alt"></i>Hilos y Sincronización</a></li>
+                     <li><a href="Metodos_estaticos.html"><i class="fas fa-sign-in-alt"></i>Métodos Estáticos</a></li>
+                     <li><a href="ForkJoin.html"><i class="fas fa-sign-in-alt"></i>ForkJoin</a></li>
+                     <li><a href="JavaStreams.html"><i class="fas fa-sign-in-alt"></i>Java Streams</a></li>
+                     <li><a href="ip.html"><i class="fas fa-sign-in-alt"></i>TCP/IP, Sockets UDP</a></li>
+                     <li><a href="MapReduce.html"><i class="fas fa-sign-in-alt"></i>MapReduce</a></li>
+                     <li><a href="TCP.html"><i class="fas fa-sign-in-alt"></i>Sockets TCP</a></li>
+                     <li><a href="Contenedores.html"><i class="fas fa-sign-in-alt"></i>Contenedores</a></li>
+                     <li><a href="MaquinaVirtual.html"><i class="fas fa-sign-in-alt"></i>Maquina virtual</a></li>
+                     <li><a href="VirtualBox.html"><i class="fas fa-sign-in-alt"></i>Virtual Box</a></li>
+                     <li><a href="Docker.html"><i class="fas fa-sign-in-alt"></i>Docker</a></li>
+                     <li><a href="InyeccionDependencia.html"><i class="fas fa-sign-in-alt"></i>InyeccionDependencia</a></li>
+                 <li><a href="Thymeleaf.html"><i class="fas fa-sign-in-alt"></i>Thymeleaf</a></li>
+                 <li><a href="ConvencionSobreConfiguracion.html"><i class="fas fa-sign-in-alt"></i>Convención Sobre Configuración</a></li>
+                 <li><a href="FreeMarker.html"><i class="fas fa-sign-in-alt"></i>FreeMarker</a></li>
+                 <li><a href="SpringMVC.html"><i class="fas fa-sign-in-alt"></i>Creación de aplicaciones web con Spring MVC</a></li>
+                 <li><a href="Groovy.html"><i class="fas fa-sign-in-alt"></i>Groovy</a></li>
+                </ul>
+                </nav>
+            </div>
+        </div>
+        
+        <section class="columna_derecha">
+            <div text align="center"><h2>Groovy</h2></div>
+        
+            <p>
+                Groovy es un lenguaje que nació en 2003, basado en algunas funcionalidades similares a Python, 
+                Ruby, Perl y Smalltalk, todo ello ejecutándose sobre la máquina virtual de Java, lo que conlleva la
+                posibilidad de utilizar la riquísima biblioteca de librerías de Java, entre otros beneficios.
+
+                Además, la curva de aprendizaje de Groovy es casi plana y tiene, desde hace años, algunas funcionalidades que ahora 
+                se permiten con Java 8 y otras muchas que se permitirán con Java 9, como el uso de streams, tipado dinámico de variables
+                y otras muchas funcionalidades.
+
+                Groovy es un lenguaje muy versátil, permitiendo usarse para desarrollar aplicaciones web, aplicaciones de escritorio,
+                aplicaciones móviles para Android o incluso usándolo como lenguaje de scripting. Además, no es necesario utilizar 
+                en exclusiva, ya que se puede usar a la vez dentro de un proyecto Java ya existente y comenzar a realizar los test 
+                utilizando la potencia de este lenguaje, junto con algunos de sus frameworks de testing, principalmente Spock y Geb.
+            </p>
+           <br>
+           
+           <div align="center"><img srcset="img/Groovylogo.png 320w,
+            img/Groovylogo.png 480w,img/Groovylogo.png 800w"
+            sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
+            src="img/Groovylogo.png"  alt="Proceso" class="imagen">
+        </div>
+        
+            
+            <p>Groovy es comúnmente conocido como un lenguaje de escripting y trabaja muy bien para esto.
+            </p>
+            <p>
+                Groovy es muy cercanamente unido a la plataforma java (muchas partes de groovy son escritas en java y el resto son escritas en el mismo groovy).
+
+            </p>
+     <h2>La integración entre Groovy y Java</h2>
+            
+        <br>
+            <p>Ser amigable con java significa dos cosas:</p>
+            <li>Una perfecta integración con el entorno de ejecución de java.</li>
+            <li>Tener una sintaxis que esté alineada con java. </li>
+            <br>
+            <div align="center"><img srcset="img/Groovydos.png 320w,
+                img/Groovydos.png 480w,img/Groovydos.png 800w"
+                sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
+                src="img/Groovylogo.png"  alt="Proceso" class="imagen">
+            </div>
+            <p>
+                Llamar a Java es un ejercicio sencillo. Es algo que ofrecen todos los lenguajes de JVM, al menos de los que vale la pena
+                hablar. Todos lo hacen posible, algunos quedándose dentro de sus propias abstracciones que no son de Java, y algunas 
+                proporcionando una puerta de enlace. Groovy es uno de los pocos que lo hacen a su manera y a la manera de Java al 
+                mismo tiempo, porque no hay ninguna diferencia.
+                La integración en la dirección opuesta es igual de fácil. Supongamos una clase Groovy
+                MyGroovyClass se compila en MyGroovyClass.class y se coloca en el classpath. usted
+                puede usar esta clase Groovy desde dentro de una clase Java escribiendo
+            </p>
+            <div align="center"><img srcset="img/MyGroovyClass.png 320w,
+                img/MyGroovyClass.png 480w,img/MyGroovyClass.png 800w"
+                sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
+                src="img/Groovylogo.png"  alt="Proceso" class="imagen">
+            </div>
+            <p>
+                Luego puede llamar a métodos en la instancia, pasar la referencia como un argumento a
+                métodos, etc. La JVM ignora que el código fue escrito en Groovy. 
+                Esto se vuelve particularmente importante cuando se integra con frameworks de Java que
+                llaman a su clase donde no se tiene control sobre como esa llamada es afectada.
+                La "interoperabilidad" en esta dirección está un poco más envuelta para lenguajes alternativos
+                JVM. Si, Pueden compilar al bytecode pero eso no significa mucho por si mismo, porque uno
+                puede producir bytecode valido que es totalmente incomprensible para java. Un lenguaje puede
+                no ser siquiera orientado a objetos y entregar clases y métodos e incluso si lo hace, podría
+                asignar una semántica totalmente diferente para cada abstracción, groovy en contraste, se 
+                encuentra dentro del módelo de java orientado a objetos. En verdad el compilar los archivos
+                de las clases es solo una de las muchas formas de integrar groovy en tu proyecto de java.
+            </p>
+            <div align="center"><img srcset="img/Groovytres.png 320w,
+                img/Groovytres.png 480w,img/Groovytres.png 800w"
+                sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
+                src="img/Groovylogo.png"  alt="Proceso" class="imagen">
+            </div>
+                <br>
+
+        <h2>Lineamientos de sintaxis: </h2>
+         
+            <p>       
+                La segunda dimensión de lo amigable de Groovy es su alineación sintaxis. Comparemos
+                los diferentes mecanismos para obtener la fecha de hoy en varios idiomas para demostrar
+                qué debe significar la alineación:
+            </p>
+            <div align="center"><img srcset="img/Groovycuatro.png 320w,
+                img/Groovycuatro.png  480w,img/Groovycuatro.png  800w"
+                sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
+                src="img/Groovylogo.png"  alt="Proceso" class="imagen">
+            </div>
+        
+            <p>
+                La solución Groovy es corta, precisa y más compacta que Java normal. Groovy
+                no necesita importar el paquete java.util ni especificar el tipo de fecha.
+                Esto es muy util cuando utilizamos Groovy para evaluar la entrada de un usuario.
+                En esos casos, uno no puede asumar que el usuario es profesional en estructuras
+                de paquetes de java o que está dispuesto a escribir más código del necesario.
+                Adicionalmente Groovy no requiere de puntos y comas cuando puede entender el
+                código sin estas. A pesar de ser más compacto, Groovy es completamente comprensible
+                para un programador de Java. 
+            </p>
+            <br>
+            <h2>Un lenguaje rico en funciones:</h2>
+        
+            <p>
+                Dar una lista de características de Groovy es un poco como enumerar los movimientos que puede
+                realizar un bailarín. Aunque cada función es importante en sí misma, es lo bien que funcionan
+                juntas lo que hace que brille.
+            </p>
+            <p>
+                Groovy tiene tres mejoras sobre las características
+                de java:características del lenguaje, bibliotecas específicas de Groovy y adiciones al Java existente
+                clases estándar (conocidas como Groovy Development Kit o GDK).
+            </p>
+            <div align="center"><img srcset="img/Groovycinco.png 320w,
+                img/Groovycinco.png  480w,img/Groovycinco.png  800w"
+                sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
+                src="img/Groovylogo.png"  alt="Proceso" class="imagen">
+            </div>
+
+            <h2>Tipos de datos simples en Groovy:</h2>
+            <p>
+                Groovy admite un conjunto limitado de tipos de datos a nivel de lenguaje; es decir,
+                ofrece constructores para declaraciones literales y operadores especializados.
+                En Groovy, todo es un objeto. Después de todo, es un lenguaje orientado a objetos. Groovy no es como Java,
+                que está orientado a objetos y aparte algunos tipos integrados.
+
+            </p>
+        <h3>Sistema de tipos en JAVA: primitivos y referencias</h3>
+            <p>
+                Java distingue entre tipos primitivos tales como( boolean, short, int, double, float, char y byte)
+                y tipos de referencia como (object y String).  Hay un conjunto fijo de datos primitivos, y estos 
+                son los únicos datos que tienen semántica de valor, donde el valor de una variable de ese tipo es el 
+                número real, carácter o valor de verdadero o falso. NO se puede crear tipos de datos propios en Java.
+   
+            </p>
+        <h3>En groovy todo es un objeto:</h3>
+            <p>
+                Para hacer de groovy un completo lenguaje orientado a objetos y porque a nivel de JVm java no soporta
+                operaciones orientadas a objetos tales como llamadas a los métodos en tipos primitivos, los diseñadores
+                de groovy decidieron desechar los datos primitivos. Cuando Groovy necesita almacenar valores que habrían
+                usado tipos primitivos en java. Groovy utiliza el contenedor de clases que son proveeidas por la plataforma de java.
+
+            </p>
+            <h3>Tipos de datos primitivos y sus contenedores</h3>
+            <div align="center"><img srcset="img/Groovyseis.png 320w,
+                img/Groovyseis.png  480w,img/Groovyseis.png  800w"
+                sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
+                src="img/Groovylogo.png"  alt="Proceso" class="imagen">
+            </div>
+            <p>
+
+            </p>
+        <h2>Groovy Dinámico:</h2>
+            <p>
+                Es importante entender que incluso cuando tulizamos todo de sus capacidades dinámicas, Groovy está proporcionando
+                seguridad de tipo completo en el tiempo de ejecución.
+                Por defecto, Groovy es un lenguaje dinñamico. Se puede de forma segura dejar marcas de tipo en la mayoría de escenarios
+                y saber que groovy va a hacer las revisiones apropiadas en el tiempo de ejecución para aseguridar la seguridad de tipos 
+                cuando sea requerida. A causa de que las “type markers” son opcionales en groovy se le llama “tipeo opcional”.
+                Los tipos están ahí por supuesto, pero por supuesto, se puede elegir no hacerlas explicitas en el código.
+                      
+            </p>
+        <h2>A quién va dirigido Groovy</h2>
+
+            <h3>A los programadores JAVA</h3>
+                <p>
+                    Un programador Java con muchos años de experiencia conocerá todas las partes importantes del entorno Java y su API,
+                    así como otros paquetes adicionales.
+
+                    Sin embargo, algo aparentemente tan sencillo como listar todos los archivos recursivamente que cuelgan de un directorio se hace pesado 
+                    en Java y suponiendo que existiera la función eachFileRecurse() tendríamos algo similar a:
+
+                </p>
+            <br>
+                <div align="center"><img srcset="img/Groovysiete.png 320w,
+                    img/Groovysiete.png  480w,img/Groovysiete.png  800w"
+                    sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
+                    src="img/Groovylogo.png"  alt="Proceso" class="imagen">
+                </div>
+            <br>
+                <p>Mientras que con Groovy quedaría solo una linea: </p>
+                <div align="center"><img srcset="img/Groovyocho.png 320w,
+                    img/Groovyocho.png 480w,img/Groovyocho.png 800w"
+                    sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
+                    src="img/Groovylogo.png"  alt="Proceso" class="imagen">
+                </div>
+            <br>
+            <h3>A los programadores de Script:</h3>
+                <p>
+                    Groovy también va dirigido a aquellos programadores que han pasado muchos años trabajando con lenguajes de programación como
+                    Perl, Ruby, Python o PHP. En ocasiones, sobre todo en las grandes empresas, los clientes requieren obligatoriamente el uso de
+                    una Plataforma robusta como puede ser Java. Estos programadores deben reciclarse, ya que no es factible cualquier solución que
+                    pase por utilizar un lenguaje script como los mencionados anteriormente.
+
+                    Continuamente este tipo de programadores afirman que se sienten frustrados por toda la ceremonia que conlleva un lenguaje como
+                    Java y la frase "si pudiera utilizar un lenguaje como Ruby, podría escribir todo este método en una sola línea" es su pan de 
+                    cada día. Groovy puede darles un respiro y una vía de escape a este tipo de programadores.
+
+                </p>
+            <h3>A los programadores Ágiles y extremos:</h3>
+                <p>
+                    Este tipo de programadores están acostumbrados a trabajar con la próxima revisión tan cercana,
+                    que pararse a pensar en utilizar un nuevo lenguaje de programación queda fuera de sus principales 
+                    objetivos. Sin embargo, una de los aspectos más importantes para los programadores ágiles, consiste 
+                    en tener siempre a su disposición los mejores recursos y metodologías para llevar a cabo su trabajo.
+
+                    Y ahí es donde Groovy les puede aportar mucho, ya que Groovy es un lenguaje perfecto para realizar esas tareas de automatización
+                    tan habituales en sus proyectos. Estas tareas van desde la integración continua y la realización de informes, hasta la documentación
+                    automática e instalación.
+
+                </p>
+            <h2>Crear una página HTML con Groovy:</h2>
+                <p>
+                    En este ejemplo vamos a ver cómo podemos crear una página web HTML mediante Groovy.
+                    Vamos a generar un código HTML de una forma muy sencilla apoyándonos en Groovy.
+
+                    Para poder crear la página HTML vamos a utilizar la clase MarkupBuilder
+                    , la misma que utilizábamos para crear un documento XML con Groovy.
+                    Lo que sucede en este caso es que con MarkupBuilder vamos a crear los tags de HTML.
+
+                    Así, lo primero será definir nuestro MarkupBuilder y 
+                    su respectiva StringWriter que será dónde dejemos el contenido de la página web HTML.
+                </p>
+                <div align="center"><img srcset="img/Groovynueve.png 320w,
+                    img/Groovynueve.png  480w,img/Groovynueve.png  800w"
+                    sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
+                    src="img/Groovylogo.png"  alt="Proceso" class="imagen">
+                </div>
+                <p>
+                    Ahora, mediante los métodos dinámicos del MarkupBuilder vamos creando la estructura HTML. Hay que recordar que para crear un nodo de la página web HTML haremos lo siguiente:
+                </p>
+                <div align="center"><img srcset="img/Groovydies.png 320w,
+                    img/Groovydies.png  480w,img/Groovydies.png  800w"
+                    sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
+                    src="img/Groovylogo.png"  alt="Proceso" class="imagen">
+                </div>
+                <p>Vamos a crear el elemento raiz HTML.</p>
+                <div align="center"><img srcset="img/Groovyonce.png 320w,
+                    img/Groovyonce.png 480w,img/Groovyonce.png  800w"
+                    sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
+                    src="img/Groovylogo.png"  alt="Proceso" class="imagen">
+                </div>
+                <p>
+                    Vemos que como no tiene ni atributos, ni contenido, ni elementos hijo (todavía), lo construimos vacío.
+
+                    Pero, ahora vamos a insertarle la cabecera o HEAD y el cuerpo o BODY.
+                </p>
+                <div align="center"><img srcset="img/Groovydoce.png 320w,
+                    img/Groovydoce.png 480w,img/Groovydoce.png  800w"
+                    sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
+                    src="img/Groovylogo.png"  alt="Proceso" class="imagen">
+                </div>
+                <p>
+                    Vemos que cada elemento de nuestra página web HTML tiene un método asociado.
+                    Y que en el caso del título de la página o TITLE lleva contenido, 
+                    dicho contenido lo hemos metido como parámetro del metodo.
+
+                    Ahora vamos a poner un elemento con atributos, por ejemplo, un texto que tenga un enlace.
+                    Para ello utilizamos un elemento A y su atributo href.
+                </p>
+                <div align="center"><img srcset="img/Groovytrece.png 320w,
+                    img/Groovytrece.png 480w,img/Groovytrece.png 800w"
+                    sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
+                    src="img/Groovylogo.png"  alt="Proceso" class="imagen">
+                </div>
+                <p>
+                    Vemos que es muy sencillo ir creando elementos HTML con nuestro MarkupBuilder.
+                     De eta forma, el código completo de la página quedará de la siguiente forma:
+                </p>
+                <div align="center"><img srcset="img/Groovycatorce.png 320w,
+                    img/Groovycatorce.png 480w,img/Groovycatorce.png 800w"
+                    sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
+                    src="img/Groovylogo.png"  alt="Proceso" class="imagen">
+                </div>
+                <p>
+                    Ya solo nos quedará crear un fichero .html para volcar el contenido. 
+                    En este caso utilizamos la clase File para volcar la página web HTML.
+                </p>
+        </section>
+        
+        <div class="container_busqueda">
+           
+            <div id="search-wrapper">
+                <input type="search" id="search" placeholder="Buscar"/>
+                <i class="fa fa-search"></i>
+              </div>
+            <ul id="resultado" class="lista_busqueda">
+                
+            </ul>
+        </div>
+        </div>
+        
+        </div>
+    </main>
+        
+ 
+<footer>
+    <div class="container-pie">
+        <div class="copyright">
+           <p>&copy; 2020 Página realizada por estudiantes de la Universidad UTE.</p> 
+        </div>
+    </div>
+</footer>
+</div>
+
+<script src="js/jQuery.js"></script>
+<script src="js/scripts.js"></script>
+<script src="js/prism.js"></script>
+
+
+
+<script>
+    const temas = [  /*Cargar aqui enlaces para la busqueda con el mismo formato.*/
+    {titulo: '<a href="Expresiones_Lambda.html">Expresiones Lambda</a>'},   
+        {titulo: '<a href="Metodos_estaticos.html">Métodos Estáticos</a>'},   
+        {titulo: '<a href="ForkJoin.html">ForkJoin</a>'}, 
+        {titulo: '<a href="Hilo_Sincronizacion.html">Hilos y Sincronización</a>'},
+        {titulo: '<a href="JavaStreams.html">Java Streams</a>'},    
+        {titulo: '<a href="ip.html">TCP/IP, Sockets UDP</a>'}, 
+        {titulo: '<a href="MapReduce.html">MapReduce</a>'}, 
+        {titulo: '<a href="TCP.html">Sockets UTP</a>'}, 
+        {titulo: '<a href="Contenedores.html">Contenedores</a>'}, 
+		{titulo: '<a href="VirtualBox.html">VirtualBox</a>'}, 
+        {titulo: '<a href="Docker.html">Docker</a>'}, 
+        {titulo: '<a href="MaquinaVirtual.html">Máquina Virtual </a>'}, 
+        {titulo: '<a href="InyeccionDependencia.html">Inyeccion de Dependencias </a>'}, 
+        {titulo: '<a href="ConvencionSobreConfiguracion.html">Convención Sobre Configuración </a>'}, 
+        {titulo: '<a href="FreeMarker.html">FreeMarker </a>'}, 
+        {titulo: '<a href="Groovy.html">Groovy </a>'}, 
+        {titulo: '<a href="SpringMVC.html">Creación de aplicaciones web con Spring MVC </a>'},
+    ]
+    const formulario= document.querySelector('#search');
+    const boton= document.querySelector('#boton');
+    const resultado=document.querySelector('#resultado');
+
+    const filtrar = ()=>{
+       resultado.innerHTML='';
+
+       const texto = formulario.value.toLowerCase();
+       for(let tema of temas ){
+           let titulo=tema.titulo.toLowerCase();
+           if(titulo.indexOf(texto) !== -1){
+               
+                resultado.innerHTML += '<li>'+tema.titulo+'</li>'
+         }
+        }
+        if(resultado.innerHTML===''){
+            resultado.innerHTML += '<li>Enlace no Encontrado...</li>'
+        }
+    }
+    //boton.addEventListener('click',filtrar)
+    formulario.addEventListener('keyup',filtrar);
+   
+    
+</script>       
+        
+        
+    
+</body>
+</html>
