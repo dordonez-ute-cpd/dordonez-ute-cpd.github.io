@@ -6,14 +6,13 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/all.css">
-    <link  rel="icon"   href="img/favicon.png" type="image/png" />
-    <title>Map Reduce</title>
+    <title>Maquina Virtual</title>
 </head>
 <body>
 
 <div class="container-head">
     <div class="logos">
-        <a href="index.html" class="logo"><img src="img/logo-utet.png" alt="logo" width="100px" height="84px" ></a>
+        <a href="index.html" class="logo"><img src="img/logo-ute.png" alt="logo" width="90px" height="90px" ></a>
     </div> 
 </div>
 
@@ -38,12 +37,12 @@
     <div class="container-cuerpo">
     <div class="columna_izquierda">
         <div class="contenido_1">
-            <strong><h3>Parcial Uno</h3></strong>
+            <strong><h3>Temas</h3></strong>
         </div>
         <div class="contenido_2">
             <nav class="navegacion_2">
                 <ul class="show_2">
-                 <!-- <li><a href="#"><i class="fas fa-sign-in-alt"></i>Expresiones Lambda</a></li> -->
+                    <!-- <li><a href="#"><i class="fas fa-sign-in-alt"></i>Expresiones Lambda</a></li> -->
              <!-- <li><a href="#"><i class="fas fa-sign-in-alt"></i>Expresiones Lambda</a></li> -->
              <li><a href="Expresiones_Lambda.html"><i class="fas fa-sign-in-alt"></i>Expresiones Lambda</a></li> 
              <li><a href="Hilo_Sincronizacion.html"><i class="fas fa-sign-in-alt"></i>Hilos y Sincronización</a></li>
@@ -76,72 +75,95 @@
             <li><a href="Thymeleaf.html"><i class="fas fa-sign-in-alt"></i>Thymeleaf</a></li>
             <li><a href="FreeMarker.html"><i class="fas fa-sign-in-alt"></i>FreeMarker</a></li>    
             <li><a href="Groovy.html"><i class="fas fa-sign-in-alt"></i>Groovy</a></li>
-                
-        </ul>
+               </ul>
             </nav>
         </div>
     </div>
     
     <section class="columna_derecha">
-        <div text align="center"><h2>Map Reduce</h2></div>
-        <p> El algoritmo MapReduce contiene dos tareas importantes, a saber Mapa y reducir. Mapa toma un conjunto de datos y se convierte en otro conjunto de datos,
-             en el que los elementos se dividen en tuplas (pares clave/valor). En segundo lugar, reducir tarea, que toma la salida de un mapa como entrada y combina 
-             los datos tuplas en un conjunto más pequeño de tuplas. Como la secuencia de MapReduce el nombre implica, la reducción se realiza siempre después de que el mapa.</p>
-    
-    <p>Una de las ventajas de MapReduce es facilitar el escalar de procesamiento de datos en múltiples nodos, el procesamiento de datos primitivos son llamados mapas y reductores, 
-        la descomposición de una aplicación de procesamiento de datos reductores a veces es no trivial. Pero una vez que escribir una aplicación el MapReduce forma, la escala de la 
-        aplicación que se ejecuta en cientos, miles o incluso decenas de miles de máquinas en un clúster es simplemente un cambio de configuración. Esta escalabilidad sencilla es lo 
-        que ha atraído a muchos programadores a usar el modelo MapReduce.</p>
-    
-        <h2>Que es MapReduce?</h2>
-        <p><li>Modelo de programación Corazón de Hadoop</li></p>
-        <p><li>Problemas que pueden ser paralelizados</li></p>
-        <p><li>Resolver problemas con conjuntos de datos de gran tamaño</li><p>
-        <p><li>Se programa en Java </li><p>
-        <p><li> Es un Framework </li><p>
-       
+        <div text align="center"><h2>Inversión de control </h2></div>
+        <p>En informática, una máquina virtual ( VM ) es una emulación de un sistema informático. Las máquinas virtuales se basan 
+            en arquitecturas informáticas y proporcionan la funcionalidad de una computadora física. Sus implementaciones pueden involucrar hardware,
+             software o una combinación de ellos. </p>
 
-        <p>Los componentes principales del Framework, donde se aprecia que las funciones de map son ejecutadas por los TaskTrackers mientras que las funciones de Reduce es ejecutada por el JobTracker.</p>
-        <p>El Framework MapReduce tiene una arquitectura maestro / esclavo.</p>
-        <p>Cuenta con un servidor maestro o JobTracker y varios servidores esclavos o TaskTrackers, uno por cada nodo del clúster.</p>
-        <p>El JobTracker es el punto de interacción entre los usuarios y el framework MapReduce. Los usuarios envían trabajos MapReduce al JobTracker, que los pone en una cola de trabajos pendientes y los ejecuta en el orden de llegada.</p>
-        <p> El JobTracker gestiona la asignación de tareas y delega las tareas a los TaskTrackers.
-        Los TaskTrackers ejecutan tareas bajo la orden del JobTracker y también manejan el movimiento de datos entre la fase Map y Reduce.
-        Diferencias entre JobTracker y TaskTracker vamos a ver las características de cada uno</p>
-        <p>JobTracker:</p>
-        <p>Servidor esclavo de MapReduce
-            Ejecuta las solicitudes de trabajo de JobTrackers
-            Obtiene el código que se ejecutará
-            Aplica la configuración especifica del trabajo
-            Comunicación con el JobTracker:
-            Envíos de la salida, finalizar tareas, actualización de tareas, etc.</p>
-
-         <p>Map</p>   
-         <p>La función Map recibe como parámetros un par de (clave, valor) y devuelve una lista de pares.
-            <p>*Esta función se encarga del mapeo y se aplica a cada elemento de la entrada de datos, por lo que se obtendrá una lista de pares por cada llamada a la función Map</p>
-            <p>*Después se agrupan todos los pares con la misma clave de todas las listas, creando un grupo por cada una de las diferentes claves generadas.</p>
-            <p>*No hay requisito de que el tipo de datos para la entrada coincida con la salida y no es necesario que las claves de salida sean únicas. Map (clave1, valor1) –> lista (clave2, valor2)</p>
-            -La operación de Map se paraleliza, el conjunto de archivos de entrada se divide en varias tareas llamado FileSplit, ver como se muestra la figura el tamaño típico de bloque es de 128MB. Las tareas se distribuyen a los nodos TaskTrackers, y estos se pueden realizar la misma tarea si hiciera falta.
-            Reduce
-            <p>*La función Reduce se aplica en paralelo para cada grupo creado por la función Map().</p>
-            <p>*La función Reduce se llama una vez para cada clave única de la salida de la función Map. Junto con esta clave, se pasa una lista de todos los valores asociados con la clave para que pueda realizar alguna fusión para producir un conjunto más pequeño de los valores.
-            <p>-Reduce (clave2, lista(valor2)) –> lista(valor2)</p>
-            <p>*Cuando se inicia la tarea reduce, la entrada se encuentra dispersa en varios archivos a través de los nodos en las tareas de Map.</p>
-            <p>*Los datos obteni0dos de la fase Map se ordenan para que los pares clave-valor sean contiguos ,esto hace que la operación Reduce se simplifique ya que el archivo se lee secuencialmente.
-            <p>*Si se ejecuta el modo distribuido estos necesitan ser primero copiados al filesystem local en la fase de copia.
-            <p>*Al final, la salida consistirá en un archivo de salida por tarea reduce ejecutada.</p>
-            Por lo tanto, N archivos de entrada generará M mapas de tareas para ser ejecutados y cada mapa de tareas generará tantos archivos de salida como tareas Reduce hayan configuradas en el sistema.</p>
-
-           <div align="center"><img src="img/making-sense-of-big-data-with-hadoop-26-728.jpg" alt="" class="imagen"></div> 
-
-
-
+            <p> Es un estilo de programación en el cual un framework o librería controla el flujo de un programa</p>
             
-         
-         <p> Fuente: tutorialspoint.com/java8/java8_streams.htm</p> 
+            <p> Esto es un cambio con respecto a paradigmas tradicionales donde el programador especifica todo el   flujo del programa.</p>
+            <p>Sin conocerlo, estamos usando IoC indirectamente al desarrollar aplicaciones con el framework .NET de Microsoft <strong>por ejemplo:</strong>  </p>
+                </p>
+           
+            <p> Cuando creamos una aplicación ASP.NET nosotros conocemos cuál es el ciclo de vida de una página, pero no lo controlamos ya que es ASP.NET el que lo hace, o cuando creamos aplicaciones de escritorio o móviles, los formularios también tienen su ciclo de vida que controla el framework.
+            </p>
+        <div text align="center"><img src="img/aspnet-2-728.jpg" alt="" height="350" width="350"></div>
+
+      
+        
+        
+    
+        <p> En los comienzos de la programación, los programas eran lineales y monolíticos. </p>
+        <p>El flujo de ejecución era simple y predecible, ejecutándose línea tras línea.
+            Aparecieron dos conceptos que revolucionaron la programación: la modularidad y la reutilización de los componentes
+            Se crean bibliotecas de componentes reutilizables. 
+            </p>
+            
+           <p> Se crean bibliotecas de componentes reutilizables. </p>
+           <p> El flujo se complica, saltando de componente a componente, y aparece un nuevo problema: la dependencia (acoplamiento) 
+            entre nuestros componentes. </p>
+                 <p> El problema se empieza a considerar lo suficientemente importante como para definir nuevos conceptos en el diseño como:
+                    la Inversión de Control (IoC) implementada a través de Inyección de Dependencias o de eventos. </p>
+                
+                
+           
+        <div text align="center"><img src="img/muñe.png" alt="" height="350" width="350"></div>
+        <p> En los métodos de programación tradicionales la interacción se expresa de forma imperativa haciendo llamadas a procedimientos o funciones. </p>
+        <p>Tradicionalmente el programador especifica la secuencia de decisiones y procedimientos que pueden darse durante el ciclo de vida de un programa mediante llamadas a funciones. 
+        </p>
+        <p> En su lugar, en la inversión de control se especifican respuestas deseadas a sucesos o solicitudes de datos concretas, 
+            dejando que algún tipo de entidad o arquitectura externa lleve a cabo las acciones de control que se requieran en el orden
+             necesario y para el conjunto de sucesos que tengan que ocurrir. </p>
+
+        <strong><p> Principio de Hollywood </p></strong>
+        <div text align="center"><img src="img/no-nos-llames-nosotros-te-llamamos-paulo-coelho.jpg" alt="" height="350" width="350"></div>
+        <p>El principio sobre el que se basa la Inversión de control es el llamado principio de Hollywood llamado así porque es la habitual frase empleada por los directores de casting en Hollywood para evitar 
+            estar recibiendo llamadas de aspirantes preguntando
+             si han sido aceptados o no:   <strong>No nos llames, nosotros te llamaremos  </strong> </p>
+        
+        
+             <p><strong><li>Veamos un ejemplo típico para explicar el concepto.</li> </strong></p>
+             <p>Imaginemos que estamos escribiendo un programa que tenemos el siguiente programa en pseudocódigo:    </p>
+             <p>En la interacción existente, el código es el que decide el flujo: cuándo preguntar, y cuándo leer y procesar las respuestas.
+            </p>
+        <div text align="center"><img src="img/Screenshot_3(2).png" alt="" height="350" width="350"></div>
+        <p>En la interacción existente, el código es el que decide el flujo: cuándo preguntar, y cuándo leer y procesar las respuestas.
+        </p>
+        
+       <strong><p><li>Usos de IoC</li></p></strong> 
+        <p>La inversión de control tiene numerosos casos de uso, siendo los frameworks de desarrollo el ejemplo más claro :</p>
+            <p> Otros usos destacados de IoC es el que se hace en algunos conocidos patrones de diseño:</p> 
+            <p> <li>Observer  </li> </p> 
+            <p> <li> Factory Method </li> </p> 
+            <p> <li> Strategy </li> </p> 
+            <p> <li> Template Method</li> </p> 
+                    
+            <strong><p><li>Conclusión </li></p></strong> 
+            <p>IoC es un principio de diseño de software en el que el flujo de ejecución de un programa se invierte respecto a los métodos de programación tradicionales. 
+            </p>
+            <p>La inversión de control es un término genérico que puede implementarse de diferentes maneras. Por ejemplo se puede implementar mediante eventos o mediante Inyección de Dependencias.
+            </p>
+            <p>La inversión de control ocurre cuando trabajamos con una biblioteca y la propia biblioteca es la que invoca el código del 
+                usuario. Es típico que la biblioteca </p>
+            implemente las estructuras de alto nivel y es el código del usuario el que implementa las tareas de bajo nivel</p>
+            <p>La mayoría de las bibliotecas para el desarrollo de aplicaciones con GUI, como GTK o QT usan inversión de control 
+                y están dirigidas por eventos.</p>
+             <p>La inversión de control juega un papel bastante importante en la extensibilidad del código, ya que entre otras cosas, 
+            nos permite ampliar la funcionalidad de nuestro sistema sin tener que modificar las clases existentes</p>
+       
+           
+    <div text align="center"><img src="img/InversionOfControl3.png" alt="" height="350" width="350"></div>
+      
         
       </section>
-  
+    
 
 <div class="container_busqueda">
    
