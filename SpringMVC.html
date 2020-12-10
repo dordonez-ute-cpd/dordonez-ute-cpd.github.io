@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/prism.css">
+    <link rel="stylesheet" href="css/all.css">
+    <link  rel="icon"   href="img/favicon.png" type="image/png" />
+    <title>Creación de aplicaciones web con Spring MVC</title>
+</head>
+<body>
+
+<div class="container-head">
+    <div class="logos">
+        <a href="index.html" class="logo"><img src="img/logo-utet.png" alt="logo" width="100px" height="84px" ></a>
+    </div> 
+</div>
+
+      
+
+<header>
+    <div class="container-menu logo-nav-contenedor">
+        <span class="menu-icon"><i class="fas fa-bars"></i></span>
+        <nav class="navegacion">
+            <ul class="show">
+                <strong><li><a href="index.html">Inicio</a></li></strong>
+                <strong><li><a href="Presentaciones.html">Presentaciones</a></li></strong>
+                <strong><li><a href="Videos.html">Videos</a></li></strong>
+               
+            </ul>
+        </nav>
+      </div>
+</header>
+
+
+<div class="container-general">
+<main>
+<div class="container-cuerpo">
+<div class="columna_izquierda">
+    <div class="contenido_1">
+        <strong><h3>Temas</h3></strong>
+    </div>
+    <div class="contenido_2">
+        <nav class="navegacion_2">
+            <ul class="show_2">
+             <!-- <li><a href="#"><i class="fas fa-sign-in-alt"></i>Expresiones Lambda</a></li> -->
+             <li><a href="Expresiones_Lambda.html"><i class="fas fa-sign-in-alt"></i>Expresiones Lambda</a></li> 
+             <li><a href="Hilo_Sincronizacion.html"><i class="fas fa-sign-in-alt"></i>Hilos y Sincronización</a></li>
+             <li><a href="Metodos_estaticos.html"><i class="fas fa-sign-in-alt"></i>Métodos Estáticos</a></li>
+             <li><a href="ForkJoin.html"><i class="fas fa-sign-in-alt"></i>ForkJoin</a></li>
+             <li><a href="JavaStreams.html"><i class="fas fa-sign-in-alt"></i>Java Streams</a></li>
+             <li><a href="ip.html"><i class="fas fa-sign-in-alt"></i>TCP/IP, Sockets UDP</a></li>
+             <li><a href="MapReduce.html"><i class="fas fa-sign-in-alt"></i>MapReduce</a></li>
+             <li><a href="TCP.html"><i class="fas fa-sign-in-alt"></i>Sockets TCP</a></li>
+             <li><a href="Contenedores.html"><i class="fas fa-sign-in-alt"></i>Contenedores</a></li>
+             <li><a href="MaquinaVirtual.html"><i class="fas fa-sign-in-alt"></i>Maquina virtual</a></li>
+             <li><a href="VirtualBox.html"><i class="fas fa-sign-in-alt"></i>Virtual Box</a></li>
+             <li><a href="Docker.html"><i class="fas fa-sign-in-alt"></i>Docker</a></li>
+             <li><a href="InyeccionDependencia.html"><i class="fas fa-sign-in-alt"></i>InyeccionDependencia</a></li>
+            <li><a href="Thymeleaf.html"><i class="fas fa-sign-in-alt"></i>Thymeleaf</a></li>
+            <li><a href="ConvencionSobreConfiguracion.html"><i class="fas fa-sign-in-alt"></i>Convención Sobre Configuración</a></li>
+            <li><a href="FreeMarker.html"><i class="fas fa-sign-in-alt"></i>FreeMarker</a></li> 
+            <li><a href="SpringMVC.html"><i class="fas fa-sign-in-alt"></i>Creación de aplicaciones web con Spring MVC</a></li> 
+        </ul>
+        </nav>
+    </div>
+</div>
+
+<section class="columna_derecha">
+   <div align="center"><h1>Modelo-vista-controlador</h1></div>
+    <p>Model-view-controller (normalmente conocido como MVC) es un patrón
+         de diseño de software comúnmente utilizado para 
+         desarrollar la interfaz de usuario que divide la lógica de programa 
+         relacionada en tres elementos interconectados. Esto se hace para separar
+          las representaciones internas de la información de las formas en que la
+           información se presenta y acepta del usuario. 
+
+        Este patrón se ha vuelto popular para diseñar aplicaciones web,que 
+        se utilizan tradicionalmente para interfaces gráficas de usuario de escritorio(GUI).
+          Los lenguajes de programación populares como JavaScript, 
+          Python, Object Pascal/Delphi, Ruby, PHP, Java, C,y Swift 
+          tienen frameworks MVC que se utilizan para el desarrollo de 
+          aplicaciones web o móviles directamente de la caja.</p>
+
+    <h3>Modelo</h3>
+    <p>El componente central del patrón. Es la estructura de datos dinámica de la aplicación, independientemente de la interfaz de usuario. Gestiona directamente los datos, la lógica y las reglas de la aplicación.</p>
+    <h3>Vista</h3>   
+    <p>Cualquier representación de información como un gráfico, diagrama o tabla. Varias vistas de la misma información son posibles, como un gráfico de barras para la administración y una vista tabular para los contadores.</p>
+    <h3>Controlador</h3> 
+    <p>Acepta la entrada y la convierte en comandos para el modelo o la vista.Además de dividir la aplicación en estos componentes, el diseño modelo-vista-controlador define las interacciones entre ellos</p>
+    <ul>
+        <li>El modelo es responsable de administrar los datos de la aplicación. Recibe la entrada del usuario del controlador.</li>
+        <li>La vista significa la presentación del modelo en un formato determinado.</li>
+        <li>El controlador responde a la entrada del usuario y realiza interacciones en los objetos del modelo de datos. El controlador recibe la entrada, opcionalmente la valida y, a continuación, pasa la entrada al modelo.</li>
+    </ul>   
+
+    <h2>Spring MVC Creación de aplicaciones web</h2>
+    <p>Spring Web MVC es un sub-proyecto Spring que esta dirigido a facilitar y optimizar el proceso creación de aplicaciones web utilizando el patrón MVC (Modelo-Vista-Controlador), donde el Modelo representa los datos o información que manejará la aplicación web, la Vista son todos los elementos de la UI (Interfaz de Usuario), con ellos el usuario interactúa con la aplicación, ejemplo: botones, campos de texto, etc., finalmente el Controlador será el encargado manipular los datos en base a la interacción del usuario.</p>
+    
+    <div align="center"><img srcset="img/mvc.jpg 320w,
+        img/mvc.jpg 480w,img/mvc.jpg 800w"
+        sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
+        src="img/mvc.jpg"  alt="mvc" class="imagen" ></div>
+
+    <h3>Guía para la creación de un sitio web "Hola, Mundo" con Spring </h3>    
+    <p>Se creará una aplicación que tiene una página de inicio estática y que también aceptará solicitudes HTTP GET en: <strong>http://localhost:8080/greeting</strong> <br><br>
+        Responderá con una página web que muestra HTML. El cuerpo del HTML contendrá un saludo: "¡Hola, mundo!". <br><br>
+         Puede personalizar el saludo con un parámetro opcional en la cadena de consulta. La dirección URL podría ser . <strong>name  http://localhost:8080/greeting?name=User</strong>  <br><br>
+        El valor del parámetro reemplaza el valor predeterminado de y se refleja en la respuesta del contenido que cambia a "Hello, User!" <strong>name World</strong> <br><br>
+    </p>
+
+    <strong><p>Iniciaremos con Spring Initializr</p></strong>
+    
+    <p>En  <a href="https://start.spring.io/" >Spring Initializr</a> escogemos el tipo de proyecto, lenguaje que deseemos, configuramos la Metadata, añadimos la dependencia <strong>Spring Web</strong> y generamos el proyecto .</p>
+    <div align="center"><img srcset="img/init.jpg 320w,
+        img/init.jpg 480w,img/init.jpg 800w"
+        sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
+        src="img/init.jpg"  alt="mvc" class="imagen" ></div>
+
+    <p>Initializr ofrece una forma rápida de extraer todas las dependencias que necesita para una aplicación y hace gran parte de la configuración para usted. En este ejemplo se necesitan las dependencias Spring Web, Thymeleaf y Spring Boot DevTools.</p>
+    La siguiente lista muestra el archivo que se crea al elegir Maven: <strong>pom.xml </strong>  
+    <div align="center"><img srcset="img/cod_1.jpg 320w,
+        img/cod_1.jpg 480w,img/cod_1.jpg 800w"
+        sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
+        src="img/cod_1.jpg"  alt="mvc" class="imagen" ></div>
+    
+    <p>La siguiente lista muestra el archivo que se crea al elegir Gradle: <strong>build.gradle</strong> </p>    
+        <br>
+    <div align="center"><img srcset="img/cod_2.jpg 320w,
+        img/cod_2.jpg 480w,img/cod_2.jpg 800w"
+        sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
+        src="img/cod_2.jpg"  alt="mvc" class="imagen" ></div>
+
+        <strong><p>Crear un controlador web</p></strong>
+        <p>En el enfoque de Spring para crear sitios web, las solicitudes HTTP son manejadas por un controlador. Puede identificar fácilmente el controlador por el <strong>@Controller</strong> Anotación. En el ejemplo siguiente, controla las solicitudes GET devolviendo el nombre de un <strong>GreetingController /greeting View </strong> (en este caso, ). A es responsable de representar el contenido HTML. La siguiente lista (de ) muestra el controlador: <strong>greeting View src/main/java/com/example/servingwebcontent/GreetingController.java</strong> 
+
+        </p> 
+
+        <div align="center"><img srcset="img/cod_3.jpg 320w,
+            img/cod_3.jpg 480w,img/cod_3.jpg 800w"
+            sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
+            src="img/cod_3.jpg"  alt="mvc" class="imagen" ></div>
+
+        <p> Este controlador es conciso y simple, pero hay un montón en marcha. Lo desglosamos paso a paso. <br><br>
+            La anotación garantiza que las solicitudes HTTP GET se asignan al método.<strong>@GetMapping/greeting greeting()</strong> <br><br>
+            <strong>@RequestParam </strong>enlaza el valor del parámetro de cadena de consulta en el parámetro del método. Este parámetro de cadena de consulta no es . Si está ausente en la solicitud, se utiliza el de. El valor del parámetro se agrega a un <br>
+            <strong>name name greeting() required defaultValue World name Model</strong> 
+            objeto, en última instancia, hacerlo accesible a la plantilla de vista. <br>
+                La implementación del cuerpo del método se basa en una tecnología de visión (en este caso, Thymeleaf) para realizar la representación del lado del servidor del HTML. Thymeleaf analiza la plantilla y evalúa la expresión para representar el valor del parámetro que se estableció en el controlador. La siguiente lista (de ) muestra la plantilla: <strong>greeting.html th:text ${name} src/main/resources/templates/greeting.html greeting.html</strong></p>
+            
+    
+        </p>     <br>
+
+        <div align="center"><img srcset="img/cod_4.jpg 320w,
+            img/cod_4.jpg 480w,img/cod_4.jpg 800w"
+            sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
+            src="img/cod_4.jpg"  alt="mvc" class="imagen" ></div>
+
+        <strong><p>Spring Boot DevTools</p></strong>    
+         <p>Una característica común del desarrollo de aplicaciones web es codificar un cambio, reiniciar la aplicación y actualizar el explorador para ver el cambio. Todo este proceso puede comer mucho tiempo. Para acelerar este ciclo de actualización, Spring Boot ofrece un práctico módulo conocido como spring-boot-devtools. Spring Boot Devtools:</p>
+         <ul>
+             <li>Permite intercambio en caliente.</li>
+             <li>Cambia los motores de plantilla para deshabilitar el almacenamiento en caché.</li>
+             <li>Permite que LiveReload actualice automáticamente el explorador.</li>
+             <li>Otros valores predeterminados razonables basados en el desarrollo en lugar de la producción.</li>
+         </ul>   
+
+         <strong><p>Ejecute la aplicación</p></strong>
+         <p>Spring Initializr crea una clase de aplicación para usted. En este caso, no es necesario modificar aún más la clase proporcionada por Spring Initializr. La siguiente lista (de ) muestra la clase de aplicación: <strong>src/main/java/com/example/servingwebcontent/ServingWebContentApplication.java</strong></p> <br>
+          <br>
+          <div align="center"><img srcset="img/cod_5.jpg 320w,
+            img/cod_5.jpg 480w,img/cod_5.jpg 800w"
+            sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
+            src="img/cod_5.jpg"  alt="mvc" class="imagen" ></div>
+            
+            <p><strong>@SpringBootApplication </strong>es una anotación de conveniencia que agrega todo lo siguiente:</p>
+            <ul>
+                <li><strong>@Configuration</strong>: etiqueta la clase como un origen de definiciones de bean para el contexto de la aplicación.</li>
+                <li><strong>@EnableAutoConfiguration</strong>: indica a Spring Boot que empiece a agregar beans en función de la configuración de la ruta de clase, otros beans y varios ajustes de propiedades. Por ejemplo, si está en la ruta de clase, esta anotación marca la aplicación como una aplicación web y activa los comportamientos clave, como la configuración de un archivo .<strong>spring-webmvc DispatcherServlet</strong> </li>
+                <li><strong>@ComponentScan</strong>: Le indica a Spring que busque otros componentes, configuraciones y servicios en el paquete, lo que le permite encontrar los controladores.<strong>com/example</strong> </li>
+            </ul>
+
+            <strong><p>Construir un JAR ejecutable</p></strong>
+            <p>Puede ejecutar la aplicación desde la línea de comandos con Gradle o Maven. También puede crear un único archivo JAR ejecutable que contenga todas las dependencias, clases y recursos necesarios y ejecutarlo. La creación de un jar ejecutable facilita el envío, la versión y la implementación del servicio como una aplicación a lo largo del ciclo de vida de desarrollo, en diferentes entornos, etc. <br>
+                Si utiliza Gradle, puede ejecutar la aplicación mediante . Como alternativa, puede crear el archivo JAR utilizando y, a continuación, ejecutar el archivo JAR, como se indica a continuación:.<strong>/gradlew bootRun./gradlew build</strong>  <br>
+                <strong>java -jar build/libs/gs-serving-web-content-0.1.0.jar</strong><br>
+                Si utiliza Maven, puede ejecutar la aplicación utilizando . Como alternativa, puede compilar el archivo JAR con y, a continuación, ejecutar el archivo JAR, como se indica a continuación:.<strong> /mvnw spring-boot:run./mvnw clean package</strong> <br>
+
+                <strong>java -jar target/gs-serving-web-content-0.1.0.jar</strong>
+            
+            </p>
+
+            <strong><p>Pruebe la aplicación</p></strong>
+            <p>Ahora que el sitio web se está ejecutando, visite , donde debería ver "¡Hola, mundo!"<strong> http://localhost:8080/greeting</strong> <br>
+            Proporcione un parámetro de cadena de consulta visitando . Observe cómo el mensaje cambia de "¡Hola, mundo!" a "¡Hola, usuario!":<strong>name http://localhost:8080/greeting?name=User</strong> <br>
+            Este cambio demuestra que la <strong>@RequestParam </strong> arreglo en está funcionando como se esperaba. Al parámetro se le ha dado un valor predeterminado de , pero se puede invalidar explícitamente a través de la cadena de consulta.<strong>GreetingController name World </strong> 
+        </p>
+
+        <strong><p>Añadir una página de inicio</p></strong>
+<p>Los recursos estáticos, incluidos HTML y JavaScript y CSS, se pueden servir desde la aplicación Spring Boot soltándolos en el lugar correcto en el código fuente. De forma predeterminada, Spring Boot sirve contenido estático de los recursos de la ruta de clase en (o ). El recurso es especial porque, si existe, se utiliza como una "'página de bienvenida,"). Como resultado, debe crear el siguiente archivo (que puede encontrar en ):/static/publicindex.html"serving-web-content/ which means it is served up as the root resource (that is, at `http://localhost:8080/src/main/resources/static/index.html
+
+</p>
+<div align="center"><img srcset="img/cod_6.jpg 320w,
+    img/cod_6.jpg 480w,img/cod_6.jpg 800w"
+    sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
+    src="img/cod_6.jpg"  alt="mvc" class="imagen" ></div>
+
+
+
+    <p>Cuando reinicie la aplicación, verá el código HTML en . <strong>http://localhost:8080</strong> /</p>
+</section>
+
+<div class="container_busqueda">
+   
+    <div id="search-wrapper">
+        <input type="search" id="search" placeholder="Buscar"/>
+        <i class="fa fa-search"></i>
+      </div>
+    <ul id="resultado" class="lista_busqueda">
+        
+    </ul>
+</div>
+</div>
+</div>
+</main>
+
+
+<footer>
+    <div class="container-pie">
+        <div class="copyright">
+           <p>&copy; 2020 Página realizada por estudiantes de la Universidad UTE.</p> 
+        </div>
+    </div>
+</footer>
+</div>
+
+<script src="js/jQuery.js"></script>
+<script src="js/scripts.js"></script>
+<script src="js/prism.js"></script>
+
+
+
+<script>
+    const temas = [  /*Cargar aqui enlaces para la busqueda con el mismo formato.*/
+    {titulo: '<a href="Expresiones_Lambda.html">Expresiones Lambda</a>'},   
+        {titulo: '<a href="Metodos_estaticos.html">Métodos Estáticos</a>'},   
+        {titulo: '<a href="ForkJoin.html">ForkJoin</a>'}, 
+        {titulo: '<a href="Hilo_Sincronizacion.html">Hilos y Sincronización</a>'},
+        {titulo: '<a href="JavaStreams.html">Java Streams</a>'},    
+        {titulo: '<a href="ip.html">TCP/IP, Sockets UDP</a>'}, 
+        {titulo: '<a href="MapReduce.html">MapReduce</a>'}, 
+        {titulo: '<a href="TCP.html">Sockets UTP</a>'}, 
+        {titulo: '<a href="Contenedores.html">Contenedores</a>'}, 
+		{titulo: '<a href="VirtualBox.html">VirtualBox</a>'}, 
+        {titulo: '<a href="Docker.html">Docker</a>'}, 
+        {titulo: '<a href="MaquinaVirtual.html">Máquina Virtual </a>'}, 
+        {titulo: '<a href="InyeccionDependencia.html">Inyeccion de Dependencias </a>'}, 
+        {titulo: '<a href="ConvencionSobreConfiguracion.html">Convención Sobre Configuración </a>'}, 
+        {titulo: '<a href="FreeMarker.html">FreeMarker </a>'}, 
+        {titulo: '<a href="SpringMVC.html">Creación de aplicaciones web con Spring MVC </a>'}, 
+    ]
+    const formulario= document.querySelector('#search');
+    const boton= document.querySelector('#boton');
+    const resultado=document.querySelector('#resultado');
+
+    const filtrar = ()=>{
+       resultado.innerHTML='';
+
+       const texto = formulario.value.toLowerCase();
+       for(let tema of temas ){
+           let titulo=tema.titulo.toLowerCase();
+           if(titulo.indexOf(texto) !== -1){
+               
+                resultado.innerHTML += '<li>'+tema.titulo+'</li>'
+         }
+        }
+        if(resultado.innerHTML===''){
+            resultado.innerHTML += '<li>Enlace no Encontrado...</li>'
+        }
+    }
+    //boton.addEventListener('click',filtrar)
+    formulario.addEventListener('keyup',filtrar);
+   
+    
+</script>
+</body>
+</html>
