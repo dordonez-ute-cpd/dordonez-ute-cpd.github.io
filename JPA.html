@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/prism.css">
     <link rel="stylesheet" href="css/all.css">
     <link  rel="icon"   href="img/favicon.png" type="image/png" />
-    <title>Docker</title>
+    <title>ORM</title>
 </head>
 <body>
 
@@ -79,150 +79,70 @@
             <li><a href="FreeMarker.html"><i class="fas fa-sign-in-alt"></i>FreeMarker</a></li>    
             <li><a href="Groovy.html"><i class="fas fa-sign-in-alt"></i>Groovy</a></li>
             
+            
+              
         </ul>
         </nav>
     </div>
 </div>
 
 <section class="columna_derecha">
-    <div align="center"><h1> Docker</h1></div>
+    <div text align="center"><h2>JPA</h2></div>
+    <div text align="center"> <h3>Java Persistence API (JPA)</h3></div>
 
-    <p>Docker es una plataforma para empaquetar y distribuir aplicaciones dentro de contenedores.
-       Se encuentra entre los 30 proyectos de Github con mas estrellas, 2600+ forks y 560+ contribuidores; 
-       más de 150 proyectos alrededor de Docker.
+   <p>
+    JPA es la propuesta estándar que ofrece Java para implementar un Framework Object Relational Mapping (ORM), que permite interactuar con la base de datos por medio de objetos, de esta forma, JPA es el encargado de convertir los objetos Java en instrucciones para el Manejador de Base de Datos (MDB).
+   </p>
+   
+   <p>
+    Cuando em pezamos a trabajamos con bases de datos en Java lo primero que nos enseñan es a utiliza el API de JDBC el cual nos permite realizar consultas directas a la base de datos a través de consultas SQL nativas. JDBC por mucho tiempo fue la única forma de interactuar con las bases de datos, pero representaba un gran problema y es que Java es un lenguaje orientado a objetos y se tenía que convertir los atributos de las clases en una consulta SQL como SELECT, INSERT, UPDATE, DELTE, etc. lo que ocasionaba un gran esfuerzo de trabajo y un provocaba muchos errores en tiempo de ejecución, debido principalmente a que las consultas SQL se tenían que generar frecuentemente al vuelo.
+    </p>
+    <p>
+        Una de las cosas más importantes para comprender que es JPA es entender que JPA es una especificación y no un Framework como tal, ¿pero quiere decir esto exactamente?, pues bien, una especificación no es más que un documento en el cual se plasman las reglas que debe de cumplir cualquier proveedor que dese desarrollar una implementación de JPA, de tal forma que cualquier persona puede  tomar la especificación y desarrollar su propia implementación de JPA, ¿Esto quiere decir que pueden existir muchas implementaciones de JPA? la respuesta es sí, de echo en la actualidad existen varios proveedor como lo son los siguientes:
+    </p>
+    <ol>
+        <li>Hibernate</li>
+        <li>ObjectDB</li>
+        <li>TopLink</li>
+        <li>EclipseLink</li>
+        <li>OpenJPA</li>
+    </ol>
+    <br>
+    <p>
+        Dentro de las implementaciones más utilizadas están Hibernate, EclipseLink & TopLink, las dos primeras son las más utilizadas en el mundo open source y TopLink es muy utilizada en desarrollos y productos relacionados con Oracle. Antes de preguntarnos cuál es la diferencia entre todas estas implementaciones tenemos que comprender que en teoría todas debería de ofrecer la misma funcionalidad y el mismo comportamiento, lo que nos permitiría migrar entre una implementación a otra sin afectar en nada nuestra 
+    </p>
+    <p>
+        aplicación. Desde luego esto es solo teoría, ya que en la actualidad no todas las implementaciones implementan al 100% la especificación de JPA, además en escenario muy concretos puede que se comporten ligeramente diferente, por lo que puede requerir realizar algunos ajustes antes de migrar correctamente de proveedor.
     </p>
 
-    <p>Docker es un proyecto de código abierto que automatiza el despliegue de aplicaciones dentro de contenedores de software,
-        proporcionando una capa adicional de abstracción y automatización de virtualización de aplicaciones en múltiples sistemas
-        operativos.​Docker utiliza características de aislamiento de recursos del kernel Linux, tales como grupos y espacios de nombres (namespaces) 
-        para permitir que "contenedores" independientes se ejecuten dentro de una sola instancia de Linux, evitando la sobrecarga de 
-        iniciar y mantener máquinas virtuales..<br><br>
-
-        
+    <h3>Historia:</h3>
+    <br>
+    <p>
+        La fecha del lanzamiento final de las especificaciones del JPA 1.0 fue el 11 de mayo de 2006. Esta fue parte del Proceso de comunidad Java (Java Community Process). Las especificaciones de la versión JPA 2.0 fueron lanzadas el 10 de diciembre de 2009. Mientras las de la JPA 2.1 se lanzó el 22 de abril de 2013. 
     </p>
+    <h3>Entidades</h3>
+    <br>
+    <p>
+        Una entidad de persistencia (entity) es una clase de Java ligera, cuyo estado es persistido de manera asociada a una tabla en una base de datos relacional. Las instancias de estas entidades corresponden a un registro (conjunto de datos representados en una fila) en la tabla. Normalmente las entidades están relacionadas con otras entidades, y estas relaciones son expresadas a través de metadatos objeto/relacional. Los metadatos del objeto/relacional pueden ser especificados directamente en el fichero de la clase, usando las anotaciones de Java (annotations), o en un documento descriptivo XML, el cual es distribuido junto con la aplicación.
+    </p>
+    <h3>Relaciones entre entidades y ORM</h3>
+    <br>
+    <p>
+        En JPA también es posible definir relaciones entre entidades, similares a las relaciones entre tablas en el modelo relacional. Así, una entidad puede estar relacionada con una o muchas otras entidades, definiendo relaciones uno-a-uno, uno-a-muchos o muchos-a-muchos. Estas relaciones se definen en JPA por medio de variables de instancia de las entidades y de métodos getters y setters que las actualizan. Por ejemplo, una propiedad de una entidad Reserva será el Vuelo sobre el que se ha hecho la reserva. Las instancias de Reserva tendrán asociadas instancias de Vuelo a las que podremos acceder fácilmente con un método como getVuelo. De esta forma, podremos obtener la(s) instancia(s) asociadas con una instancia dada llamando a un método de la entidad, sin tener que realizar ninguna consulta SQL. Esta es una de las ventajas fundamentales de JPA: es posible hacer de forma programativa (llamando a métodos definidos en las entidades) lo que en el modelo relacional sólo se puede hacer mediante consultas SQL.
+    </p>
+    <p>
+        Otra de las características principales de JPA frente a otros frameworks que realizan un ORM es su simplicidad. Hasta ahora otros frameworks (como Hibernate) han utilizado ficheros de configuración XML para especificar el mapeado entre clases Java y tablas de la BD relacional. Esto hacía complicado la definición y el mantenimiento de las entidades. La novedad de JPA en este sentido es la utilización de anotaciones, una importante característica de Java aportada en su release 5.0. Veremos que el uso de anotaciones simplifica bastante la definición de entidades y de sus relaciones.
+    </p>
+    <br>
+    <p>
+        En la aplicación ejemplo definimos una relación una-a-muchos bidireccional entre mensajes y autores. Un autor puede haber escrito muchos mensajes.
+    </p>
+    <p>
+        La relación es bidireccional porque podemos obtener el autor asociado a un mensaje en las instancias mensaje, y podemos obtener la colección de mensajes asociados a un autor en las instancias autor. Para ello en la entidad Mensaje definimos el método getAutor y en la entidad Autor definimos el método getMensajes que devuelve la colección de mensajes asociada al autor.
 
-       
+    </p>
+    <p>En las dos clases implicadas en la relación debemos marcar con anotaciones los atributos que intervienen en la misma. La entidad Mensaje es la propietaria de la relación y contiene la clave ajena a la entidad Autor. Esto lo indicamos con la anotación @ManyToOne que indica que muchos mensajes pueden pertenecer al mismo autor. El método setAutor asocia un mensaje con un autor. Hay que pasarle como parámetro una instancia entidad.</p>
 
-
-<div align="center"><img srcset="img/forkJoin.jpeg 320w,
-    img/forkJoin.jpeg 480w,img/docker.png 800w"
-    sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
-    src="img/docker.png"  alt="Proceso" class="imagen"></div>
-    
-<h2>Historia del Docker</h2>
-<p>
-    Se funda dotCloud el 2011 brindando el primer PaaS políglota
-    Solomon Hykes inicia Docker como proyecto interno en dotCloud
-    Se liberó el proyecto como código abierto en Marzo del 2013
-    A partir de Septiembre del 2013 colaboran con RedHat para arreglar incompatibilidades
-<br>
-
-    En Octubre del 2013 Dotcloud Inc. se transforma en Docker Inc.
-    Marzo 2014(v0.9) reemplaza LXC por Libcontainer
-    Se libera la primera versión estable (1.0) en Junio del 2014
-    En Agosto del 2014 Docker Inc vende el servicio de dotCloud
-    a Cloud Control.
-
-</p>
-
-<h2>Ventajas del Docker </h2>
-<p> 1. Las instancias se inician en segundos y son fácilmente replicables.<br>
-    2. Consume menos recursos dé hardware y estos van exclusivamente a la aplicación.<br>
-    3. Es fácil de automatizar y de integrar en ambientes de integración continua.<br>
-    4. Tanto las imágenes como las instancias suelen ocupar menos espacio que las máquinas virtuales.<br>
-    5. Existen imágenes oficiales y de la comunidad que pueden descargarse y modificarse libremente.<br>
-    
-<br><br>
-<h2>Desventajas del Docker </h2>
-<p> 1. Solo puede ejecutarse en Linux de forma nativa.<br>
-    2. Requiere kernel 3.8 mínimamente.<br>
-    3. Las imágenes solo pueden estar basadas en versiones de linux modernas.<br>
-    4. Debido al constante desarrollo, puede incluir errores de código entre versiones.<br>
-    
-</p> 
-<br>
-<h2>Beneficios para Desarrolladores </h2>
-<p> 
-    1. Entornos limpios, seguros y portables.<br>
-    2.  Despliegues reproducibles (sin perdida de dependencias).<br>
-    3. Aislamiento de aplicaciones.<br>
-    4. Tests, integración, empaquetado automatizado.<br>
-    5. Menores problemas de compatibilidad<br>
-    6. Despliegues rápidos y baratos<br>
-    7. Una Maquina Virtual sin la penalización de una MV<br>
-</p>
-<br>
-<div align="center"><img srcset="img/forkJoin.jpeg 320w,
-    img/forkJoin.jpeg 480w,img/arqdocker.png 800w"
-    sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
-    src="img/arqdocker.png"  alt="Proceso" class="imagen"></div>
-<h2>Porque los contenedores Docker son ligeros?</h2>
-<br>
-<div align="center"><img srcset="img/forkJoin.jpeg 320w,
-    img/forkJoin.jpeg 480w,img/docker2.png 800w"
-    sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
-    src="img/docker2.png"  alt="Proceso" class="imagen"></div>
-
-
-
-<h2>Cuando usarlo?</h2>
-<p>
-Manejar versiones de entornos junto al código de las aplicaciones<br>
-Ambientes de integración continua<br>
-Entornos desechables<br>
-Entornos colaborativos<br>
-Garantizar la integridad de la aplicación en todos los ambientes<br>
-
-</p>
-<br>
-<h2>Glosario Docker Imagen</h2>
-<p>
-    Fichero binario que contiene todo el sistema de ficheros de un contenedor.<br> 
-    Sistema de ficheros Union. <br>
-    Estructurado en capas (layers) por delta.<br> 
-</p>
-<br>
-<div align="center"><img srcset="img/forkJoin.jpeg 320w,
-    img/forkJoin.jpeg 480w,img/docker3.png 800w"
-    sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
-    src="img/docker3.png"  alt="Proceso" class="imagen"></div>
-
-
-<br>
-<h2>Glosario Docker Volumen </h2>
-<p>
-    Discos o directorios externos que podemos montar en el contenedor.<br>
-    Recursos externos (alojados en el host) que sobreviven al contenedor<br>
-    Configuración / Datos / Recursos<br>
-
-</p>
-<br>
-<div align="center"><img srcset="img/forkJoin.jpeg 320w,
-    img/forkJoin.jpeg 480w,img/docker4.png 800w"
-    sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
-    src="img/docker4.png"  alt="Proceso" class="imagen"></div>
-
-
-<br>
-<h2>Glosario Docker Registro </h2>
-<p>
-    Biblioteca de imágenes de contenedor: Listas para ser usadas <br>
-    Registro publico<br>
- 	Compartidas por la comunidad<br> 
-	Libre acceso <br>
-    Registro privado<br>
- 	Contenedores corporativos o privados<br> 
-
-
-</p>
-<br>
-<div align="center"><img srcset="img/forkJoin.jpeg 320w,
-    img/forkJoin.jpeg 480w,img/docker5.png 800w"
-    sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
-    src="img/docker5.png"  alt="Proceso" class="imagen"></div>
-
-
-<br>
 </section>
 
 <div class="container_busqueda">
@@ -277,7 +197,7 @@ Garantizar la integridad de la aplicación en todos los ambientes<br>
         {titulo: '<a href="Spring.html">Spring </a>'},
         {titulo: '<a href="Spring_Boot.html">Spring boot </a>'},
         {titulo: '<a href="Orm.html">ORM </a>'},
-        {titulo: '<a href="JPA.html">JPA </a>'},  
+        {titulo: '<a href="JPA.html">JPA </a>'},   
     ]
     const formulario= document.querySelector('#search');
     const boton= document.querySelector('#boton');

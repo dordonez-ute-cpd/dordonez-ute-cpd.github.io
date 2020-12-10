@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/prism.css">
     <link rel="stylesheet" href="css/all.css">
     <link  rel="icon"   href="img/favicon.png" type="image/png" />
-    <title>Docker</title>
+    <title>Spring Boot</title>
 </head>
 <body>
 
@@ -78,151 +78,69 @@
             <li><a href="Thymeleaf.html"><i class="fas fa-sign-in-alt"></i>Thymeleaf</a></li>
             <li><a href="FreeMarker.html"><i class="fas fa-sign-in-alt"></i>FreeMarker</a></li>    
             <li><a href="Groovy.html"><i class="fas fa-sign-in-alt"></i>Groovy</a></li>
-            
+              
         </ul>
         </nav>
     </div>
 </div>
 
 <section class="columna_derecha">
-    <div align="center"><h1> Docker</h1></div>
+    <div text align="center"><h2>Spring Boot</h2></div>
 
-    <p>Docker es una plataforma para empaquetar y distribuir aplicaciones dentro de contenedores.
-       Se encuentra entre los 30 proyectos de Github con mas estrellas, 2600+ forks y 560+ contribuidores; 
-       más de 150 proyectos alrededor de Docker.
+    <p>
+        Spring Boot es una de las tecnologías dentro del mundo de Spring de las que más se está hablando últimamente.
+        ¿Qué es y cómo funciona Spring Boot? . Para entender el concepto primero debemos reflexionar sobre cómo construimos
+         aplicaciones con Spring Framework
+   </p>
+   <div align="center"><img srcset="img/SpringBootUno.png 320w,
+    img/SpringBootUno.png 480w,img/SpringBootUno.png 800w"
+    sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
+    src="img/SpringBootUno.png"  alt="Proceso" class="imagen">
+    </div>
+    
+   <p>
+    Fundamentalmente existen tres pasos a realizar . El primero es crear un proyecto Maven/Gradle y descargar las dependencias necesarias.
+    En segundo lugar desarrollamos la aplicación y en tercer lugar la desplegamos en un servidor. Si nos ponemos a pensar un poco a detalle
+    en el tema , únicamente el paso dos es una tarea de desarrollo. Los otros pasos están más orientados a infraestructura. No deberíamos
+    tener que estar eligiendo continuamente las dependencias y el servidor de despliegue.
     </p>
+    <h3>String Boot Starter y simplificaciones</h3>
+    <div align="center"><img srcset="img/SpringBootDos.png 320w,
+        img/SpringBootDos.png 480w,img/SpringBootDos.png 800w"
+        sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
+        src="img/SpringBootDos.png"  alt="Proceso" class="imagen">
+    </div>
 
-    <p>Docker es un proyecto de código abierto que automatiza el despliegue de aplicaciones dentro de contenedores de software,
-        proporcionando una capa adicional de abstracción y automatización de virtualización de aplicaciones en múltiples sistemas
-        operativos.​Docker utiliza características de aislamiento de recursos del kernel Linux, tales como grupos y espacios de nombres (namespaces) 
-        para permitir que "contenedores" independientes se ejecuten dentro de una sola instancia de Linux, evitando la sobrecarga de 
-        iniciar y mantener máquinas virtuales..<br><br>
+<p>
+    Spring Boot es una infraestructura ligera que elimina la mayor parte del trabajo de configurar las aplicaciones basadas en Spring.
+     En este tutorial, aprenderá cómo utilizar los iniciadores, los criterios y la estructura de archivos ejecutable JAR de Spring Boot
+      para crear rápidamente aplicaciones basadas en Spring que implemente se ejecuta.
 
-        
-    </p>
-
-       
-
-
-<div align="center"><img srcset="img/forkJoin.jpeg 320w,
-    img/forkJoin.jpeg 480w,img/docker.png 800w"
+</p>
+<p>
+    En este caso se va a construir una aplicación Spring MVC y se elije la dependencia web o Starter Web. Se pulsa en generar proyecto
+     y se descargará un proyecto Maven en formato zip . Descomprimimos el proyecto y este es su contenido.
+</p>
+<div align="center"><img srcset="img/SpringBootTres.png 320w,
+    img/SpringBootTres.png 480w,img/SpringBootTres.png 800w"
     sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
-    src="img/docker.png"  alt="Proceso" class="imagen"></div>
+    src="img/SpringBootTres.png"  alt="Proceso" class="imagen">
+</div>
+<p>
     
-<h2>Historia del Docker</h2>
+Una aplicación de Spring con estructura Maven totalmente configurada. El siguiente paso es usar Maven y escribir en linea de comandos.
+
+</p>
+<br>
 <p>
-    Se funda dotCloud el 2011 brindando el primer PaaS políglota
-    Solomon Hykes inicia Docker como proyecto interno en dotCloud
-    Se liberó el proyecto como código abierto en Marzo del 2013
-    A partir de Septiembre del 2013 colaboran con RedHat para arreglar incompatibilidades
-<br>
-
-    En Octubre del 2013 Dotcloud Inc. se transforma en Docker Inc.
-    Marzo 2014(v0.9) reemplaza LXC por Libcontainer
-    Se libera la primera versión estable (1.0) en Junio del 2014
-    En Agosto del 2014 Docker Inc vende el servicio de dotCloud
-    a Cloud Control.
-
+    mvn eclipse:eclipse
 </p>
-
-<h2>Ventajas del Docker </h2>
-<p> 1. Las instancias se inician en segundos y son fácilmente replicables.<br>
-    2. Consume menos recursos dé hardware y estos van exclusivamente a la aplicación.<br>
-    3. Es fácil de automatizar y de integrar en ambientes de integración continua.<br>
-    4. Tanto las imágenes como las instancias suelen ocupar menos espacio que las máquinas virtuales.<br>
-    5. Existen imágenes oficiales y de la comunidad que pueden descargarse y modificarse libremente.<br>
-    
-<br><br>
-<h2>Desventajas del Docker </h2>
-<p> 1. Solo puede ejecutarse en Linux de forma nativa.<br>
-    2. Requiere kernel 3.8 mínimamente.<br>
-    3. Las imágenes solo pueden estar basadas en versiones de linux modernas.<br>
-    4. Debido al constante desarrollo, puede incluir errores de código entre versiones.<br>
-    
-</p> 
-<br>
-<h2>Beneficios para Desarrolladores </h2>
-<p> 
-    1. Entornos limpios, seguros y portables.<br>
-    2.  Despliegues reproducibles (sin perdida de dependencias).<br>
-    3. Aislamiento de aplicaciones.<br>
-    4. Tests, integración, empaquetado automatizado.<br>
-    5. Menores problemas de compatibilidad<br>
-    6. Despliegues rápidos y baratos<br>
-    7. Una Maquina Virtual sin la penalización de una MV<br>
-</p>
-<br>
-<div align="center"><img srcset="img/forkJoin.jpeg 320w,
-    img/forkJoin.jpeg 480w,img/arqdocker.png 800w"
-    sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
-    src="img/arqdocker.png"  alt="Proceso" class="imagen"></div>
-<h2>Porque los contenedores Docker son ligeros?</h2>
-<br>
-<div align="center"><img srcset="img/forkJoin.jpeg 320w,
-    img/forkJoin.jpeg 480w,img/docker2.png 800w"
-    sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
-    src="img/docker2.png"  alt="Proceso" class="imagen"></div>
-
-
-
-<h2>Cuando usarlo?</h2>
 <p>
-Manejar versiones de entornos junto al código de las aplicaciones<br>
-Ambientes de integración continua<br>
-Entornos desechables<br>
-Entornos colaborativos<br>
-Garantizar la integridad de la aplicación en todos los ambientes<br>
-
+    Esto convertirá el proyecto de Maven en un proyecto para Eclipse que podamos abrir con el editor. Si tenemos una versión moderna de Eclipse
+     in siquiera tendremos que hacer ese paso nos valdrá con importar el proyecto de forma directa como Maven Proyect .
+     Vamos a ver el contenido de la clase HolaSpringBootApplication.
 </p>
-<br>
-<h2>Glosario Docker Imagen</h2>
-<p>
-    Fichero binario que contiene todo el sistema de ficheros de un contenedor.<br> 
-    Sistema de ficheros Union. <br>
-    Estructurado en capas (layers) por delta.<br> 
-</p>
-<br>
-<div align="center"><img srcset="img/forkJoin.jpeg 320w,
-    img/forkJoin.jpeg 480w,img/docker3.png 800w"
-    sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
-    src="img/docker3.png"  alt="Proceso" class="imagen"></div>
 
-
-<br>
-<h2>Glosario Docker Volumen </h2>
-<p>
-    Discos o directorios externos que podemos montar en el contenedor.<br>
-    Recursos externos (alojados en el host) que sobreviven al contenedor<br>
-    Configuración / Datos / Recursos<br>
-
-</p>
-<br>
-<div align="center"><img srcset="img/forkJoin.jpeg 320w,
-    img/forkJoin.jpeg 480w,img/docker4.png 800w"
-    sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
-    src="img/docker4.png"  alt="Proceso" class="imagen"></div>
-
-
-<br>
-<h2>Glosario Docker Registro </h2>
-<p>
-    Biblioteca de imágenes de contenedor: Listas para ser usadas <br>
-    Registro publico<br>
- 	Compartidas por la comunidad<br> 
-	Libre acceso <br>
-    Registro privado<br>
- 	Contenedores corporativos o privados<br> 
-
-
-</p>
-<br>
-<div align="center"><img srcset="img/forkJoin.jpeg 320w,
-    img/forkJoin.jpeg 480w,img/docker5.png 800w"
-    sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
-    src="img/docker5.png"  alt="Proceso" class="imagen"></div>
-
-
-<br>
 </section>
 
 <div class="container_busqueda">
@@ -277,7 +195,7 @@ Garantizar la integridad de la aplicación en todos los ambientes<br>
         {titulo: '<a href="Spring.html">Spring </a>'},
         {titulo: '<a href="Spring_Boot.html">Spring boot </a>'},
         {titulo: '<a href="Orm.html">ORM </a>'},
-        {titulo: '<a href="JPA.html">JPA </a>'},  
+        {titulo: '<a href="JPA.html">JPA </a>'},   
     ]
     const formulario= document.querySelector('#search');
     const boton= document.querySelector('#boton');

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/prism.css">
     <link rel="stylesheet" href="css/all.css">
     <link  rel="icon"   href="img/favicon.png" type="image/png" />
-    <title>Docker</title>
+    <title>Spring</title>
 </head>
 <body>
 
@@ -85,144 +85,89 @@
 </div>
 
 <section class="columna_derecha">
-    <div align="center"><h1> Docker</h1></div>
+    <div text align="center"><h2>Spring</h2></div>
 
-    <p>Docker es una plataforma para empaquetar y distribuir aplicaciones dentro de contenedores.
-       Se encuentra entre los 30 proyectos de Github con mas estrellas, 2600+ forks y 560+ contribuidores; 
-       más de 150 proyectos alrededor de Docker.
+    <p>
+        Spring es un framework para el desarrollo de aplicaciones y contenedor de inversión de control,
+        de código abierto para la plataforma Java.2
+        La primera versión fue escrita por Rod Johnson, quien lo lanzó junto a la publicación de su libro
+        Expert One-on-One J2EE Design and Development (Wrox Press, octubre 2002). El framework fue lanzado
+        inicialmente bajo la licencia Apache 2.0 en junio de 2003. El primer gran lanzamiento fue la versión 1.0,
+        que apareció en marzo de 2004 y fue seguida por otros hitos en septiembre de 2004 y marzo de 2005.
+        La versión 1.2.6 de Spring Framework obtuvo reconocimientos Jolt Awards y Jax Innovation Awards en 2006.
+        34 Spring Framework 2.0 fue lanzada en 2006, la versión 2.5 en noviembre de 2007, Spring 3.0 en diciembre de 2009
+        y Spring 3.1 dos años más tarde.5El inicio del desarrollo de la versión 4.0 fue anunciado en enero de 2013.6
+        La versión actual es la 5.1.6.1
+   </p>
+   <p>
+    Si bien las características fundamentales de Spring Framework pueden ser usadas en cualquier aplicación desarrollada en Java,
+     existen variadas extensiones para la construcción de aplicaciones web sobre la plataforma Java EE. A pesar de que no impone
+      ningún modelo de programación en particular, este framework se ha vuelto popular en la comunidad al ser considerado una alternativa,
+       sustituto, e incluso un complemento al modelo EJB (Enterprise JavaBean).
     </p>
 
-    <p>Docker es un proyecto de código abierto que automatiza el despliegue de aplicaciones dentro de contenedores de software,
-        proporcionando una capa adicional de abstracción y automatización de virtualización de aplicaciones en múltiples sistemas
-        operativos.​Docker utiliza características de aislamiento de recursos del kernel Linux, tales como grupos y espacios de nombres (namespaces) 
-        para permitir que "contenedores" independientes se ejecuten dentro de una sola instancia de Linux, evitando la sobrecarga de 
-        iniciar y mantener máquinas virtuales..<br><br>
-
-        
-    </p>
-
-       
-
-
-<div align="center"><img srcset="img/forkJoin.jpeg 320w,
-    img/forkJoin.jpeg 480w,img/docker.png 800w"
-    sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
-    src="img/docker.png"  alt="Proceso" class="imagen"></div>
-    
-<h2>Historia del Docker</h2>
+<h3>Historia:</h3>
 <p>
-    Se funda dotCloud el 2011 brindando el primer PaaS políglota
-    Solomon Hykes inicia Docker como proyecto interno en dotCloud
-    Se liberó el proyecto como código abierto en Marzo del 2013
-    A partir de Septiembre del 2013 colaboran con RedHat para arreglar incompatibilidades
-<br>
-
-    En Octubre del 2013 Dotcloud Inc. se transforma en Docker Inc.
-    Marzo 2014(v0.9) reemplaza LXC por Libcontainer
-    Se libera la primera versión estable (1.0) en Junio del 2014
-    En Agosto del 2014 Docker Inc vende el servicio de dotCloud
-    a Cloud Control.
-
+    Los primeros componentes de lo que se ha convertido en Spring Framework fueron escritos por Rod Johnson en el año 2000,
+    mientras trabajaba como consultor independiente para sus clientes en la industria financiera en Londres.
+    Mientras escribía el libro Expert One-on-one J2EE Design And Development (Programmer to programmer),
+    Rod amplió su código para sintetizar su visión acerca de cómo las aplicaciones que trabajan con varias partes de la plataforma
+    J2EE podían llegar a ser más simples y más consistentes que aquellas que los desarrolladores y compañías estaban usando
+    por aquel entonces.
 </p>
-
-<h2>Ventajas del Docker </h2>
-<p> 1. Las instancias se inician en segundos y son fácilmente replicables.<br>
-    2. Consume menos recursos dé hardware y estos van exclusivamente a la aplicación.<br>
-    3. Es fácil de automatizar y de integrar en ambientes de integración continua.<br>
-    4. Tanto las imágenes como las instancias suelen ocupar menos espacio que las máquinas virtuales.<br>
-    5. Existen imágenes oficiales y de la comunidad que pueden descargarse y modificarse libremente.<br>
-    
-<br><br>
-<h2>Desventajas del Docker </h2>
-<p> 1. Solo puede ejecutarse en Linux de forma nativa.<br>
-    2. Requiere kernel 3.8 mínimamente.<br>
-    3. Las imágenes solo pueden estar basadas en versiones de linux modernas.<br>
-    4. Debido al constante desarrollo, puede incluir errores de código entre versiones.<br>
-    
-</p> 
-<br>
-<h2>Beneficios para Desarrolladores </h2>
-<p> 
-    1. Entornos limpios, seguros y portables.<br>
-    2.  Despliegues reproducibles (sin perdida de dependencias).<br>
-    3. Aislamiento de aplicaciones.<br>
-    4. Tests, integración, empaquetado automatizado.<br>
-    5. Menores problemas de compatibilidad<br>
-    6. Despliegues rápidos y baratos<br>
-    7. Una Maquina Virtual sin la penalización de una MV<br>
-</p>
-<br>
-<div align="center"><img srcset="img/forkJoin.jpeg 320w,
-    img/forkJoin.jpeg 480w,img/arqdocker.png 800w"
-    sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
-    src="img/arqdocker.png"  alt="Proceso" class="imagen"></div>
-<h2>Porque los contenedores Docker son ligeros?</h2>
-<br>
-<div align="center"><img srcset="img/forkJoin.jpeg 320w,
-    img/forkJoin.jpeg 480w,img/docker2.png 800w"
-    sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
-    src="img/docker2.png"  alt="Proceso" class="imagen"></div>
-
-
-
-<h2>Cuando usarlo?</h2>
 <p>
-Manejar versiones de entornos junto al código de las aplicaciones<br>
-Ambientes de integración continua<br>
-Entornos desechables<br>
-Entornos colaborativos<br>
-Garantizar la integridad de la aplicación en todos los ambientes<br>
-
+    En el año 2001 los modelos dominantes de programación para aplicaciones basadas en web eran ofrecidas por el API Java Servlet
+    y los Enterprise JavaBeans, ambas especificaciones creadas por Sun Microsystems en colaboración con otros distribuidores y partes
+    interesadas que disfrutaban de gran popularidad en la comunidad Java. Las aplicaciones que no eran basadas en web, como las
+    aplicaciones basadas en cliente o aplicaciones en batch, podían ser escritas con base en herramientas y proyectos de código
+    abierto o comerciales que proveyeran las características requeridas para aquellos desarrollos.
 </p>
-<br>
-<h2>Glosario Docker Imagen</h2>
 <p>
-    Fichero binario que contiene todo el sistema de ficheros de un contenedor.<br> 
-    Sistema de ficheros Union. <br>
-    Estructurado en capas (layers) por delta.<br> 
+    Se formó un pequeño equipo de desarrolladores que esperaba trabajar en extender el framework y un proyecto fue creado en
+    Sourceforge en febrero de 2003. Después de trabajar en su desarrollo durante más de un año lanzaron una primera versión
+    (versión 1.0) en marzo de 2004. Después de este lanzamiento, Spring ganó mucha popularidad en la comunidad Java, debido
+    en parte al uso de Javadoc y de una documentación de referencia por encima del promedio de un proyecto de código abierto.
 </p>
-<br>
-<div align="center"><img srcset="img/forkJoin.jpeg 320w,
-    img/forkJoin.jpeg 480w,img/docker3.png 800w"
-    sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
-    src="img/docker3.png"  alt="Proceso" class="imagen"></div>
-
-
-<br>
-<h2>Glosario Docker Volumen </h2>
+<h3>Contenedor de inversión de Color</h3>
 <p>
-    Discos o directorios externos que podemos montar en el contenedor.<br>
-    Recursos externos (alojados en el host) que sobreviven al contenedor<br>
-    Configuración / Datos / Recursos<br>
-
+    El corazón de Spring Framework es su contenedor de inversión de control (IoC). Su trabajo es instanciar,
+    inicializar y conectar objetos de la aplicación, además de proveer una serie de características adicionales
+    disponibles en Spring a través del tiempo de vida de los objetos.7
 </p>
-<br>
-<div align="center"><img srcset="img/forkJoin.jpeg 320w,
-    img/forkJoin.jpeg 480w,img/docker4.png 800w"
-    sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
-    src="img/docker4.png"  alt="Proceso" class="imagen"></div>
-
-
-<br>
-<h2>Glosario Docker Registro </h2>
 <p>
-    Biblioteca de imágenes de contenedor: Listas para ser usadas <br>
-    Registro publico<br>
- 	Compartidas por la comunidad<br> 
-	Libre acceso <br>
-    Registro privado<br>
- 	Contenedores corporativos o privados<br> 
-
-
+    Los objetos creados y gestionados por el contenedor se denominan objetos gestionados o beans. Estos objetos son
+    del tipo POJO. Para realizar su tarea el contenedor necesita información indicando como instanciar y conectar
+    entre sí los beans. A esta información se la llama metadatos de configuración. Hay distintas formas de proporcionar
+    esta información: basándose en XML, basándose en anotaciones o basándose en objetos Java (desde Spring 3.0).
+    El contenedor es independiente del formato de los metadatos de configuración. El usuario puede usar el formato
+    que desee e incluso mezclarlos en la misma aplicación
+</p>
+<p>
+    Los objetos pueden ser obtenidos por búsqueda de dependencias o por inyección de dependencias.8 búsqueda de dependencias
+     es un modelo donde se pide al objeto contenedor un objeto con un nombre específico o de un tipo específico. inyección
+      de dependencias es un modelo en el que el contenedor pasa objetos por nombre a otros objetos, ya sea a través de
+       métodos constructores, propiedades, o métodos de la fábrica.
+</p>
+<p>
+    En muchos casos cuando se utilizan otras partes del Spring Framework no necesita utilizar el Contenedor,
+     aunque probablemente su uso le permita hacer una aplicación más fácil de configurar y personalizar.
+      El Contenedor de Spring le proporciona un mecanismo consistente para configurar las aplicaciones,
+       y se integra con casi todos los entornos Java, desde aplicaciones de pequeñas a grandes aplicaciones empresariales.
 </p>
 <br>
-<div align="center"><img srcset="img/forkJoin.jpeg 320w,
-    img/forkJoin.jpeg 480w,img/docker5.png 800w"
-    sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
-    src="img/docker5.png"  alt="Proceso" class="imagen"></div>
-
+<p>
+    El contenedor se puede convertir en un contenedor EJB 3.0 parcialmente por medio del proyecto Pitchfork.
+    Algunos critican al Spring Framework por no cumplir los estándares.9 Sin embargo, SpringSource no ve el
+    cumplimiento EJB 3 como un objetivo importante, y afirma que el Spring Framework y el contenedor permiten
+    modelos de programación más potentes.10No creas un objeto, sino describes la forma en que deben crearse,
+    definiéndolo en el archivo de configuración de Spring. No llamas a los servicios y componentes, sino dices que servicios 
+    y componentes deben ser llamados, definiéndolos en los archivos de configuración de Spring.
+    Esto hace el código fácil de mantener y más fácil de probar mediante la Inyección de Dependencia (IoC).
+</p>
 
 <br>
+
+
 </section>
 
 <div class="container_busqueda">

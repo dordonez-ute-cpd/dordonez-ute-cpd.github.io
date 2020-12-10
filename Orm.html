@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/prism.css">
     <link rel="stylesheet" href="css/all.css">
     <link  rel="icon"   href="img/favicon.png" type="image/png" />
-    <title>Docker</title>
+    <title>ORM</title>
 </head>
 <body>
 
@@ -78,151 +78,64 @@
             <li><a href="Thymeleaf.html"><i class="fas fa-sign-in-alt"></i>Thymeleaf</a></li>
             <li><a href="FreeMarker.html"><i class="fas fa-sign-in-alt"></i>FreeMarker</a></li>    
             <li><a href="Groovy.html"><i class="fas fa-sign-in-alt"></i>Groovy</a></li>
-            
+             
         </ul>
         </nav>
     </div>
 </div>
 
 <section class="columna_derecha">
-    <div align="center"><h1> Docker</h1></div>
+    <div text align="center"><h2>ORM</h2></div>
 
-    <p>Docker es una plataforma para empaquetar y distribuir aplicaciones dentro de contenedores.
-       Se encuentra entre los 30 proyectos de Github con mas estrellas, 2600+ forks y 560+ contribuidores; 
-       más de 150 proyectos alrededor de Docker.
+    <p>
+        Object-Relational mapping, o lo que es lo mismo, mapeo de objeto-relacional, es un modelo de programación que consiste en la transformación de las tablas de una base de datos, en una serie de entidades que simplifiquen las tareas básicas de acceso a los datos para el programador.
+   </p>
+   <h3>¿Por qué usar ORM?</h3>
+   <p>
+    Aunque el lenguaje SQL se usa para acceder a muchas de las bases de datos existentes, existen múltiples varianzas en las funciones que los distintos SGBD han usado. Un ejemplo muy sencillo sería delimitar el número de registros de una consulta:
     </p>
-
-    <p>Docker es un proyecto de código abierto que automatiza el despliegue de aplicaciones dentro de contenedores de software,
-        proporcionando una capa adicional de abstracción y automatización de virtualización de aplicaciones en múltiples sistemas
-        operativos.​Docker utiliza características de aislamiento de recursos del kernel Linux, tales como grupos y espacios de nombres (namespaces) 
-        para permitir que "contenedores" independientes se ejecuten dentro de una sola instancia de Linux, evitando la sobrecarga de 
-        iniciar y mantener máquinas virtuales..<br><br>
-
-        
-    </p>
-
-       
-
-
-<div align="center"><img srcset="img/forkJoin.jpeg 320w,
-    img/forkJoin.jpeg 480w,img/docker.png 800w"
+<div align="center"><img srcset="img/OrmUno.png 320w,
+    img/OrmUno.png 480w,img/OrmUno.png 800w"
     sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
-    src="img/docker.png"  alt="Proceso" class="imagen"></div>
-    
-<h2>Historia del Docker</h2>
+    src="img/OrmUno.png"  alt="Proceso" class="imagen"></div>
+    <br>
 <p>
-    Se funda dotCloud el 2011 brindando el primer PaaS políglota
-    Solomon Hykes inicia Docker como proyecto interno en dotCloud
-    Se liberó el proyecto como código abierto en Marzo del 2013
-    A partir de Septiembre del 2013 colaboran con RedHat para arreglar incompatibilidades
-<br>
-
-    En Octubre del 2013 Dotcloud Inc. se transforma en Docker Inc.
-    Marzo 2014(v0.9) reemplaza LXC por Libcontainer
-    Se libera la primera versión estable (1.0) en Junio del 2014
-    En Agosto del 2014 Docker Inc vende el servicio de dotCloud
-    a Cloud Control.
-
+    Tres de las bases de datos más importantes, y como veis, para algo tan fácil vemos diferencias. Esto para el programador supone tener que conocer el lenguaje para cada Base de datos, y más importante aún, si en un futuro se desea migrar la aplicación, habría que reescribir gran número de las consultas.
 </p>
 
-<h2>Ventajas del Docker </h2>
-<p> 1. Las instancias se inician en segundos y son fácilmente replicables.<br>
-    2. Consume menos recursos dé hardware y estos van exclusivamente a la aplicación.<br>
-    3. Es fácil de automatizar y de integrar en ambientes de integración continua.<br>
-    4. Tanto las imágenes como las instancias suelen ocupar menos espacio que las máquinas virtuales.<br>
-    5. Existen imágenes oficiales y de la comunidad que pueden descargarse y modificarse libremente.<br>
-    
-<br><br>
-<h2>Desventajas del Docker </h2>
-<p> 1. Solo puede ejecutarse en Linux de forma nativa.<br>
-    2. Requiere kernel 3.8 mínimamente.<br>
-    3. Las imágenes solo pueden estar basadas en versiones de linux modernas.<br>
-    4. Debido al constante desarrollo, puede incluir errores de código entre versiones.<br>
-    
-</p> 
-<br>
-<h2>Beneficios para Desarrolladores </h2>
-<p> 
-    1. Entornos limpios, seguros y portables.<br>
-    2.  Despliegues reproducibles (sin perdida de dependencias).<br>
-    3. Aislamiento de aplicaciones.<br>
-    4. Tests, integración, empaquetado automatizado.<br>
-    5. Menores problemas de compatibilidad<br>
-    6. Despliegues rápidos y baratos<br>
-    7. Una Maquina Virtual sin la penalización de una MV<br>
-</p>
-<br>
-<div align="center"><img srcset="img/forkJoin.jpeg 320w,
-    img/forkJoin.jpeg 480w,img/arqdocker.png 800w"
-    sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
-    src="img/arqdocker.png"  alt="Proceso" class="imagen"></div>
-<h2>Porque los contenedores Docker son ligeros?</h2>
-<br>
-<div align="center"><img srcset="img/forkJoin.jpeg 320w,
-    img/forkJoin.jpeg 480w,img/docker2.png 800w"
-    sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
-    src="img/docker2.png"  alt="Proceso" class="imagen"></div>
-
-
-
-<h2>Cuando usarlo?</h2>
 <p>
-Manejar versiones de entornos junto al código de las aplicaciones<br>
-Ambientes de integración continua<br>
-Entornos desechables<br>
-Entornos colaborativos<br>
-Garantizar la integridad de la aplicación en todos los ambientes<br>
-
+    Esto el ORM al tener un capa intermedia, abstrae al programador de la base de datos y le centra en el desarrollo de la aplicación.
 </p>
-<br>
-<h2>Glosario Docker Imagen</h2>
 <p>
-    Fichero binario que contiene todo el sistema de ficheros de un contenedor.<br> 
-    Sistema de ficheros Union. <br>
-    Estructurado en capas (layers) por delta.<br> 
+    Otro punto importante es la facilidad de trabajo, un ORM, nos facilita las labores básicas de cualquier acceso a datos , el CRUD (Create, Read, Update y Delete). Realizando todas estas labores a través de un lenguaje de alto nivel orientado a objetos. Ahora que ya sabemos que es un ORM y porque usarlo, vamos a ver sus ventajas y desventajas.
 </p>
 <br>
-<div align="center"><img srcset="img/forkJoin.jpeg 320w,
-    img/forkJoin.jpeg 480w,img/docker3.png 800w"
-    sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
-    src="img/docker3.png"  alt="Proceso" class="imagen"></div>
+<h3>Ventajas de un ORM:</h3>
 
 
-<br>
-<h2>Glosario Docker Volumen </h2>
+<ol>
+    <li>Facilidad y velocidad de uso</li>
+    <li>Abstracción de la base de datos usada.</li>
+    <li>Seguridad de la capa de acceso a datos contra ataques.</li>
+</ol>
+
+<h3>Desventajas:</h3>
+
+<ol>
+    <li>En entornos con gran carga poner una capa más en el proceso. puede mermar el rendimiento. </li>
+    <li>Aprender el nuevo lenguaje del ORM.</li>
+</ol>
+
+<h3>ORM más utilizados:</h3>
 <p>
-    Discos o directorios externos que podemos montar en el contenedor.<br>
-    Recursos externos (alojados en el host) que sobreviven al contenedor<br>
-    Configuración / Datos / Recursos<br>
-
+    Casi todos los lenguajes de alto nivel actualmente disponen de alguna solución de este tipo, una de las más conocidas es Hibernate para JAVA, pero existen muchas más:
 </p>
-<br>
-<div align="center"><img srcset="img/forkJoin.jpeg 320w,
-    img/forkJoin.jpeg 480w,img/docker4.png 800w"
-    sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
-    src="img/docker4.png"  alt="Proceso" class="imagen"></div>
+<ol>
+    <li>Java => Hibernate, iBatis, Ebean, etc..</li>
+    <li>.NET=> Entity Framework, nHibernate, etc..</li>
+    <li>PHP=> Doctrine, Propel, ROcks, Torpor, etc..</li>
+</ol>
 
-
-<br>
-<h2>Glosario Docker Registro </h2>
-<p>
-    Biblioteca de imágenes de contenedor: Listas para ser usadas <br>
-    Registro publico<br>
- 	Compartidas por la comunidad<br> 
-	Libre acceso <br>
-    Registro privado<br>
- 	Contenedores corporativos o privados<br> 
-
-
-</p>
-<br>
-<div align="center"><img srcset="img/forkJoin.jpeg 320w,
-    img/forkJoin.jpeg 480w,img/docker5.png 800w"
-    sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
-    src="img/docker5.png"  alt="Proceso" class="imagen"></div>
-
-
-<br>
 </section>
 
 <div class="container_busqueda">
@@ -277,7 +190,7 @@ Garantizar la integridad de la aplicación en todos los ambientes<br>
         {titulo: '<a href="Spring.html">Spring </a>'},
         {titulo: '<a href="Spring_Boot.html">Spring boot </a>'},
         {titulo: '<a href="Orm.html">ORM </a>'},
-        {titulo: '<a href="JPA.html">JPA </a>'},  
+        {titulo: '<a href="JPA.html">JPA </a>'},   
     ]
     const formulario= document.querySelector('#search');
     const boton= document.querySelector('#boton');
