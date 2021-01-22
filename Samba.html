@@ -1,18 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/prism.css">
     <link rel="stylesheet" href="css/all.css">
     <link  rel="icon"   href="img/favicon.png" type="image/png" />
-    <title>Spring Boot</title>
+<title>Thymeleaf</title>
 </head>
-<body>
 
-<div class="container-head">
+<body>
+	<div class="container-head">
     <div class="logos">
         <a href="index.html" class="logo"><img src="img/logo-utet.png" alt="logo" width="100px" height="84px" ></a>
     </div> 
@@ -39,7 +39,7 @@
 <main>
 <div class="container-cuerpo">
 <div class="columna_izquierda">
-    <div class="contenido_1">
+	<div class="contenido_1">
         <strong><h3>Parcial Uno</h3></strong>
     </div>
     <div class="contenido_2">
@@ -78,69 +78,64 @@
         <li><a href="mpi.html"><i class="fas fa-sign-in-alt"></i>MPI</a></li>
         <li><a href="samba.html"><i class="fas fa-sign-in-alt"></i>Samba</a></li>
 
-              
-        </ul>
+             
+			</ul>
         </nav>
     </div>
 </div>
 
 <section class="columna_derecha">
-    <div text align="center"><h2>Spring Boot</h2></div>
-
-    <p>
-        Spring Boot es una de las tecnologías dentro del mundo de Spring de las que más se está hablando últimamente.
-        ¿Qué es y cómo funciona Spring Boot? . Para entender el concepto primero debemos reflexionar sobre cómo construimos
-         aplicaciones con Spring Framework
-   </p>
-   <div align="center"><img srcset="img/SpringBootUno.png 320w,
-    img/SpringBootUno.png 480w,img/SpringBootUno.png 800w"
-    sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
-    src="img/SpringBootUno.png"  alt="Proceso" class="imagen">
-    </div>
-    
-   <p>
-    Fundamentalmente existen tres pasos a realizar . El primero es crear un proyecto Maven/Gradle y descargar las dependencias necesarias.
-    En segundo lugar desarrollamos la aplicación y en tercer lugar la desplegamos en un servidor. Si nos ponemos a pensar un poco a detalle
-    en el tema , únicamente el paso dos es una tarea de desarrollo. Los otros pasos están más orientados a infraestructura. No deberíamos
-    tener que estar eligiendo continuamente las dependencias y el servidor de despliegue.
-    </p>
-    <h3>String Boot Starter y simplificaciones</h3>
-    <div align="center"><img srcset="img/SpringBootDos.png 320w,
-        img/SpringBootDos.png 480w,img/SpringBootDos.png 800w"
-        sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
-        src="img/SpringBootDos.png"  alt="Proceso" class="imagen">
-    </div>
-
-<p>
-    Spring Boot es una infraestructura ligera que elimina la mayor parte del trabajo de configurar las aplicaciones basadas en Spring.
-     En este tutorial, aprenderá cómo utilizar los iniciadores, los criterios y la estructura de archivos ejecutable JAR de Spring Boot
-      para crear rápidamente aplicaciones basadas en Spring que implemente se ejecuta.
-
-</p>
-<p>
-    En este caso se va a construir una aplicación Spring MVC y se elije la dependencia web o Starter Web. Se pulsa en generar proyecto
-     y se descargará un proyecto Maven en formato zip . Descomprimimos el proyecto y este es su contenido.
-</p>
-<div align="center"><img srcset="img/SpringBootTres.png 320w,
-    img/SpringBootTres.png 480w,img/SpringBootTres.png 800w"
-    sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
-    src="img/SpringBootTres.png"  alt="Proceso" class="imagen">
-</div>
-<p>
-    
-Una aplicación de Spring con estructura Maven totalmente configurada. El siguiente paso es usar Maven y escribir en linea de comandos.
-
-</p>
-<br>
-<p>
-    mvn eclipse:eclipse
-</p>
-<p>
-    Esto convertirá el proyecto de Maven en un proyecto para Eclipse que podamos abrir con el editor. Si tenemos una versión moderna de Eclipse
-     in siquiera tendremos que hacer ese paso nos valdrá con importar el proyecto de forma directa como Maven Proyect .
-     Vamos a ver el contenido de la clase HolaSpringBootApplication.
-</p>
-
+    <div text align="center"><h2>Samba</h2></div>
+	
+	
+		<h4>Concepto y Características</h4>
+		<p>Fue desarrollado por Andrew Tridgell mediante ingeniería inversa, utilizando capturadores de tráfico del estilo Wireshark (anteriormente conocido como Ethereal).Es una implementación de CIFS(Common Internet File System-Sistema de archivos de Internet común) de código abierto.El objetivo  es ofrecer compatibilidad en entornos *nix, algo que se necesitaba para no quedar aislados en entornos corporativos y educativos en los cuales suelen coexistir varias plataformas (Windows, Linux, Mac OS X). </p>
+		<p>Samba se ejecuta en plataformas Unix, pero habla a los clientes de Windows como un nativo.Permite que un sistema Unix se mueva a un "Entorno de red" de Windows sin causar revuelo. En el corazón de CIFS se encuentra la última encarnación del protocolo Server Message Block (SMB).Samba se ha adaptado a una variedad de sistemas operativos que no son Unix, incluidos VMS, AmigaOS y NetWare.</p>
+		
+		
+        <h4>¿Qué hace Samba?</h4>	
+        <p>Samba consta de dos programas clave: smbdy y nmbd.Su trabajo es implementar los cuatro servicios CIFS básicos de hoy en día, que son:</p>
+        <ul>
+        <li>Servicios de archivo e impresión.</li>
+            <li>Autenticación y autorización.</li>
+            <li>Resolución de nombres.</li>
+            <li>Anuncio de servicio (navegación).</li>
+			</ul>
+            <h4>Servicios de archivo e impresión</h4>
+            <p>Los servicios de archivo e impresión son, por supuesto, la piedra angular de la suite CIFS. Estos son proporcionados por SMB Daemon.</p>
+            <h4>Autenticación y autorización</h4>
+            <p>SMBD también maneja la autenticación y autorización de "modo compartido" y "modo de usuario“ ya que  puede proteger los servicios de impresión y archivos compartidos solicitando contraseñas.</p>
+           <p>El sistema de dominio de Windows NT proporciona un nivel adicional de refinamiento de autenticación para CIFS. La idea básica es que un usuario solo debe iniciar sesión una vez para tener acceso a todos los servicios autorizados en la red.</p>
+           <p>El sistema de dominio NT maneja esto con un servidor de autenticación, llamado controlador de dominio. Un Dominio NT (que debe no debe confundirse con un Domain Name Sistema (DNS) Domain) es básicamente un grupo de máquinas que comparten el mismo controlador de dominio.</p>
+           <p>El sistema NT Domain merece una mención especial porque, hasta el lanzamiento de la versión 2 de Samba, solo el código propiedad de Microsoft para implementar los protocolos de autenticación de NT Domain. Con la versión 2, Samba introdujo el primer código de autenticación de dominio NT no derivado de Microsoft. El objetivo final, es imitar completamente un controlador de dominio de Windows NT.</p>
+           
+           <h4>Resolución de nombres</h4>
+           <p>Resolución de nombres y navegación son manejadas por nmbd.  Estos dos servicios involucran básicamente la administración y distribución de listas de nombres NetBIOS.</p>
+		<p>La resolución de nombres tiene dos formas: difusión y punto a punto. Una máquina puede utilizar uno o ambos métodos, según su configuración. La resolución de transmisión es la más cercana al mecanismo NetBIOS original. Un cliente que busca un servicio llamado Trillian llamará y esperará a que la máquina con ese nombre responda con una dirección IP. </p>
+		<p>El otro tipo de resolución de nombres implica el uso de un NBNS ( Net BIOS Name Service).  El NBNS funciona algo así como la pared de una antigua cabina telefónica de moda. Las máquinas pueden dejar su nombre y número (dirección IP) para que otros los vean.</p>
+		<p>Los clientes envían sus nombres NetBIOS y direcciones IP al servidor NBNS, que mantiene la información en una base de datos simple. Cuando un cliente quiere hablar con otro cliente, envía el nombre del otro cliente al servidor NBNS. Si el nombre está en la lista, el NBNS devuelve una dirección IP. </p>
+        <p>Los clientes de diferentes subredes pueden compartir el mismo servidor NBNS por lo que, a diferencia de la transmisión, el mecanismo de punto a punto no se limita a la LAN local.</p>
+        <p>En muchos sentidos, el NBNS es similar al DNS, pero la lista de nombres NBNS es casi completamente dinámica y hay pocos controles para garantizar que solo los clientes autorizados puedan registrar nombres</p>
+        
+        <h4>Anuncio de servicio (navegación)</h4>
+        <p>La navegación trata de una lista navegable de servicios (archivos compartidos e impresos) que ofrecen las computadoras en una red. </p>
+       <p>En una LAN, las computadoras participantes celebran una elección para decidir cuál de ellas se convertirá en Local Master Browser (LMB). El trabajo de LMB es mantener una lista de servicios disponibles, y es esta lista la que aparece cuando hace clic en el icono "Entorno de red" de Windows.</p>
+       <p>Existen navegadores maestros de dominio (DMB). Los DMB coordinan las listas de navegación en los dominios NT, incluso en redes enrutadas. Usando el NBNS, un LMB localizará su DMB para intercambiar y combinar listas de navegación. Por lo tanto, la lista de exploración se propaga a todos los hosts del dominio NT.</p> 
+       
+       
+       <h4>Utilidades</h4>
+		<ul>
+			<li>Smbclient: Un cliente SMB simple, con una interfaz similar a la de la utilidad FTP. Se puede utilizar desde un sistema Unix para conectarse a un recurso compartido SMB remoto, transferir archivos y enviar archivos a recursos compartidos de impresión remotos (impresoras).</li>
+			<li>Nmblookup: Un cliente de servicio de nombres NetBIOS. Nmblookup se puede utilizar para encontrar nombres NetBIOS en una red, buscar sus direcciones IP y consultar en una máquina remota la lista de nombres que la máquina cree que posee. </li>
+			<li>SWAT: El Samba Web Administration Tool (Herramienta de administración web Samba).  SWAT le permite configurar Samba de forma remota, utilizando un navegador web.</li>
+			
+		</ul>
+	
+		<p>Para más información dirigirse a los sguientes links</p>
+	
+	    <p>Configurar Samba: <a href="https://ubunlog.com/como-instalar-y-configurar-samba-en/">Samba</a></p>
+        <p>Adicional: <a href="https://es.wikipedia.org/wiki/Samba_(software)">Samba</a></p>
+	
 </section>
 
 <div class="container_busqueda">
