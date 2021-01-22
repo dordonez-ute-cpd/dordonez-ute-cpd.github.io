@@ -1,18 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/prism.css">
     <link rel="stylesheet" href="css/all.css">
     <link  rel="icon"   href="img/favicon.png" type="image/png" />
-    <title>Docker</title>
+<title>Thymeleaf</title>
 </head>
-<body>
 
-<div class="container-head">
+<body>
+	<div class="container-head">
     <div class="logos">
         <a href="index.html" class="logo"><img src="img/logo-utet.png" alt="logo" width="100px" height="84px" ></a>
     </div> 
@@ -39,7 +39,7 @@
 <main>
 <div class="container-cuerpo">
 <div class="columna_izquierda">
-    <div class="contenido_1">
+	<div class="contenido_1">
         <strong><h3>Parcial Uno</h3></strong>
     </div>
     <div class="contenido_2">
@@ -73,7 +73,7 @@
                 <li><a href="Groovy.html"><i class="fas fa-sign-in-alt"></i>Groovy</a></li>
                 <li><a href="ServicioWeb.html"><i class="fas fa-sign-in-alt"></i>Servicio Web</a></li>
                 <div class="contenido_1"><strong><h3>Parcial Tres</h3></strong> </div>   
-                             <!--INICIO TERCER PARCIAL-->
+                    <!--INICIO TERCER PARCIAL-->
                 <li><a href="NFS.html"><i class="fas fa-sign-in-alt"></i>NFS</a></li>
                 <li><a href="samba.html"><i class="fas fa-sign-in-alt"></i>Samba</a></li>
                  <!--Falta subir-->
@@ -91,150 +91,64 @@
                 <li><a href="NNG.html"><i class="fas fa-sign-in-alt"></i>NNG</a></li>
                 <!---->
 
-        </ul>
+             
+			</ul>
         </nav>
     </div>
 </div>
 
 <section class="columna_derecha">
-    <div align="center"><h1> Docker</h1></div>
-
-    <p>Docker es una plataforma para empaquetar y distribuir aplicaciones dentro de contenedores.
-       Se encuentra entre los 30 proyectos de Github con mas estrellas, 2600+ forks y 560+ contribuidores; 
-       más de 150 proyectos alrededor de Docker.
-    </p>
-
-    <p>Docker es un proyecto de código abierto que automatiza el despliegue de aplicaciones dentro de contenedores de software,
-        proporcionando una capa adicional de abstracción y automatización de virtualización de aplicaciones en múltiples sistemas
-        operativos.​Docker utiliza características de aislamiento de recursos del kernel Linux, tales como grupos y espacios de nombres (namespaces) 
-        para permitir que "contenedores" independientes se ejecuten dentro de una sola instancia de Linux, evitando la sobrecarga de 
-        iniciar y mantener máquinas virtuales..<br><br>
-
+    <div text align="center"><h2>Samba</h2></div>
+	
+	
+		<h4>Concepto y Características</h4>
+		<p>Fue desarrollado por Andrew Tridgell mediante ingeniería inversa, utilizando capturadores de tráfico del estilo Wireshark (anteriormente conocido como Ethereal).Es una implementación de CIFS(Common Internet File System-Sistema de archivos de Internet común) de código abierto.El objetivo  es ofrecer compatibilidad en entornos *nix, algo que se necesitaba para no quedar aislados en entornos corporativos y educativos en los cuales suelen coexistir varias plataformas (Windows, Linux, Mac OS X). </p>
+		<p>Samba se ejecuta en plataformas Unix, pero habla a los clientes de Windows como un nativo.Permite que un sistema Unix se mueva a un "Entorno de red" de Windows sin causar revuelo. En el corazón de CIFS se encuentra la última encarnación del protocolo Server Message Block (SMB).Samba se ha adaptado a una variedad de sistemas operativos que no son Unix, incluidos VMS, AmigaOS y NetWare.</p>
+		
+		
+        <h4>¿Qué hace Samba?</h4>	
+        <p>Samba consta de dos programas clave: smbdy y nmbd.Su trabajo es implementar los cuatro servicios CIFS básicos de hoy en día, que son:</p>
+        <ul>
+        <li>Servicios de archivo e impresión.</li>
+            <li>Autenticación y autorización.</li>
+            <li>Resolución de nombres.</li>
+            <li>Anuncio de servicio (navegación).</li>
+			</ul>
+            <h4>Servicios de archivo e impresión</h4>
+            <p>Los servicios de archivo e impresión son, por supuesto, la piedra angular de la suite CIFS. Estos son proporcionados por SMB Daemon.</p>
+            <h4>Autenticación y autorización</h4>
+            <p>SMBD también maneja la autenticación y autorización de "modo compartido" y "modo de usuario“ ya que  puede proteger los servicios de impresión y archivos compartidos solicitando contraseñas.</p>
+           <p>El sistema de dominio de Windows NT proporciona un nivel adicional de refinamiento de autenticación para CIFS. La idea básica es que un usuario solo debe iniciar sesión una vez para tener acceso a todos los servicios autorizados en la red.</p>
+           <p>El sistema de dominio NT maneja esto con un servidor de autenticación, llamado controlador de dominio. Un Dominio NT (que debe no debe confundirse con un Domain Name Sistema (DNS) Domain) es básicamente un grupo de máquinas que comparten el mismo controlador de dominio.</p>
+           <p>El sistema NT Domain merece una mención especial porque, hasta el lanzamiento de la versión 2 de Samba, solo el código propiedad de Microsoft para implementar los protocolos de autenticación de NT Domain. Con la versión 2, Samba introdujo el primer código de autenticación de dominio NT no derivado de Microsoft. El objetivo final, es imitar completamente un controlador de dominio de Windows NT.</p>
+           
+           <h4>Resolución de nombres</h4>
+           <p>Resolución de nombres y navegación son manejadas por nmbd.  Estos dos servicios involucran básicamente la administración y distribución de listas de nombres NetBIOS.</p>
+		<p>La resolución de nombres tiene dos formas: difusión y punto a punto. Una máquina puede utilizar uno o ambos métodos, según su configuración. La resolución de transmisión es la más cercana al mecanismo NetBIOS original. Un cliente que busca un servicio llamado Trillian llamará y esperará a que la máquina con ese nombre responda con una dirección IP. </p>
+		<p>El otro tipo de resolución de nombres implica el uso de un NBNS ( Net BIOS Name Service).  El NBNS funciona algo así como la pared de una antigua cabina telefónica de moda. Las máquinas pueden dejar su nombre y número (dirección IP) para que otros los vean.</p>
+		<p>Los clientes envían sus nombres NetBIOS y direcciones IP al servidor NBNS, que mantiene la información en una base de datos simple. Cuando un cliente quiere hablar con otro cliente, envía el nombre del otro cliente al servidor NBNS. Si el nombre está en la lista, el NBNS devuelve una dirección IP. </p>
+        <p>Los clientes de diferentes subredes pueden compartir el mismo servidor NBNS por lo que, a diferencia de la transmisión, el mecanismo de punto a punto no se limita a la LAN local.</p>
+        <p>En muchos sentidos, el NBNS es similar al DNS, pero la lista de nombres NBNS es casi completamente dinámica y hay pocos controles para garantizar que solo los clientes autorizados puedan registrar nombres</p>
         
-    </p>
-
+        <h4>Anuncio de servicio (navegación)</h4>
+        <p>La navegación trata de una lista navegable de servicios (archivos compartidos e impresos) que ofrecen las computadoras en una red. </p>
+       <p>En una LAN, las computadoras participantes celebran una elección para decidir cuál de ellas se convertirá en Local Master Browser (LMB). El trabajo de LMB es mantener una lista de servicios disponibles, y es esta lista la que aparece cuando hace clic en el icono "Entorno de red" de Windows.</p>
+       <p>Existen navegadores maestros de dominio (DMB). Los DMB coordinan las listas de navegación en los dominios NT, incluso en redes enrutadas. Usando el NBNS, un LMB localizará su DMB para intercambiar y combinar listas de navegación. Por lo tanto, la lista de exploración se propaga a todos los hosts del dominio NT.</p> 
        
-
-
-<div align="center"><img srcset="img/forkJoin.jpeg 320w,
-    img/forkJoin.jpeg 480w,img/docker.png 800w"
-    sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
-    src="img/docker.png"  alt="Proceso" class="imagen"></div>
-    
-<h2>Historia del Docker</h2>
-<p>
-    Se funda dotCloud el 2011 brindando el primer PaaS políglota
-    Solomon Hykes inicia Docker como proyecto interno en dotCloud
-    Se liberó el proyecto como código abierto en Marzo del 2013
-    A partir de Septiembre del 2013 colaboran con RedHat para arreglar incompatibilidades
-<br>
-
-    En Octubre del 2013 Dotcloud Inc. se transforma en Docker Inc.
-    Marzo 2014(v0.9) reemplaza LXC por Libcontainer
-    Se libera la primera versión estable (1.0) en Junio del 2014
-    En Agosto del 2014 Docker Inc vende el servicio de dotCloud
-    a Cloud Control.
-
-</p>
-
-<h2>Ventajas del Docker </h2>
-<p> 1. Las instancias se inician en segundos y son fácilmente replicables.<br>
-    2. Consume menos recursos dé hardware y estos van exclusivamente a la aplicación.<br>
-    3. Es fácil de automatizar y de integrar en ambientes de integración continua.<br>
-    4. Tanto las imágenes como las instancias suelen ocupar menos espacio que las máquinas virtuales.<br>
-    5. Existen imágenes oficiales y de la comunidad que pueden descargarse y modificarse libremente.<br>
-    
-<br><br>
-<h2>Desventajas del Docker </h2>
-<p> 1. Solo puede ejecutarse en Linux de forma nativa.<br>
-    2. Requiere kernel 3.8 mínimamente.<br>
-    3. Las imágenes solo pueden estar basadas en versiones de linux modernas.<br>
-    4. Debido al constante desarrollo, puede incluir errores de código entre versiones.<br>
-    
-</p> 
-<br>
-<h2>Beneficios para Desarrolladores </h2>
-<p> 
-    1. Entornos limpios, seguros y portables.<br>
-    2.  Despliegues reproducibles (sin perdida de dependencias).<br>
-    3. Aislamiento de aplicaciones.<br>
-    4. Tests, integración, empaquetado automatizado.<br>
-    5. Menores problemas de compatibilidad<br>
-    6. Despliegues rápidos y baratos<br>
-    7. Una Maquina Virtual sin la penalización de una MV<br>
-</p>
-<br>
-<div align="center"><img srcset="img/forkJoin.jpeg 320w,
-    img/forkJoin.jpeg 480w,img/arqdocker.png 800w"
-    sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
-    src="img/arqdocker.png"  alt="Proceso" class="imagen"></div>
-<h2>Porque los contenedores Docker son ligeros?</h2>
-<br>
-<div align="center"><img srcset="img/forkJoin.jpeg 320w,
-    img/forkJoin.jpeg 480w,img/docker2.png 800w"
-    sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
-    src="img/docker2.png"  alt="Proceso" class="imagen"></div>
-
-
-
-<h2>Cuando usarlo?</h2>
-<p>
-Manejar versiones de entornos junto al código de las aplicaciones<br>
-Ambientes de integración continua<br>
-Entornos desechables<br>
-Entornos colaborativos<br>
-Garantizar la integridad de la aplicación en todos los ambientes<br>
-
-</p>
-<br>
-<h2>Glosario Docker Imagen</h2>
-<p>
-    Fichero binario que contiene todo el sistema de ficheros de un contenedor.<br> 
-    Sistema de ficheros Union. <br>
-    Estructurado en capas (layers) por delta.<br> 
-</p>
-<br>
-<div align="center"><img srcset="img/forkJoin.jpeg 320w,
-    img/forkJoin.jpeg 480w,img/docker3.png 800w"
-    sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
-    src="img/docker3.png"  alt="Proceso" class="imagen"></div>
-
-
-<br>
-<h2>Glosario Docker Volumen </h2>
-<p>
-    Discos o directorios externos que podemos montar en el contenedor.<br>
-    Recursos externos (alojados en el host) que sobreviven al contenedor<br>
-    Configuración / Datos / Recursos<br>
-
-</p>
-<br>
-<div align="center"><img srcset="img/forkJoin.jpeg 320w,
-    img/forkJoin.jpeg 480w,img/docker4.png 800w"
-    sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
-    src="img/docker4.png"  alt="Proceso" class="imagen"></div>
-
-
-<br>
-<h2>Glosario Docker Registro </h2>
-<p>
-    Biblioteca de imágenes de contenedor: Listas para ser usadas <br>
-    Registro publico<br>
- 	Compartidas por la comunidad<br> 
-	Libre acceso <br>
-    Registro privado<br>
- 	Contenedores corporativos o privados<br> 
-
-
-</p>
-<br>
-<div align="center"><img srcset="img/forkJoin.jpeg 320w,
-    img/forkJoin.jpeg 480w,img/docker5.png 800w"
-    sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
-    src="img/docker5.png"  alt="Proceso" class="imagen"></div>
-
-
-<br>
+       
+       <h4>Utilidades</h4>
+		<ul>
+			<li>Smbclient: Un cliente SMB simple, con una interfaz similar a la de la utilidad FTP. Se puede utilizar desde un sistema Unix para conectarse a un recurso compartido SMB remoto, transferir archivos y enviar archivos a recursos compartidos de impresión remotos (impresoras).</li>
+			<li>Nmblookup: Un cliente de servicio de nombres NetBIOS. Nmblookup se puede utilizar para encontrar nombres NetBIOS en una red, buscar sus direcciones IP y consultar en una máquina remota la lista de nombres que la máquina cree que posee. </li>
+			<li>SWAT: El Samba Web Administration Tool (Herramienta de administración web Samba).  SWAT le permite configurar Samba de forma remota, utilizando un navegador web.</li>
+			
+		</ul>
+	
+		<p>Para más información dirigirse a los sguientes links</p>
+	
+	    <p>Configurar Samba: <a href="https://ubunlog.com/como-instalar-y-configurar-samba-en/">Samba</a></p>
+        <p>Adicional: <a href="https://es.wikipedia.org/wiki/Samba_(software)">Samba</a></p>
+	
 </section>
 
 <div class="container_busqueda">
