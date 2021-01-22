@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/prism.css">
     <link rel="stylesheet" href="css/all.css">
     <link  rel="icon"   href="img/favicon.png" type="image/png" />
-    <title>Presentaciones</title>
+    <title>NNG</title>
 </head>
 <body>
 
@@ -72,7 +73,7 @@
                 <li><a href="Groovy.html"><i class="fas fa-sign-in-alt"></i>Groovy</a></li>
                 <li><a href="ServicioWeb.html"><i class="fas fa-sign-in-alt"></i>Servicio Web</a></li>
                 <div class="contenido_1"><strong><h3>Parcial Tres</h3></strong> </div>   
-                      <!--INICIO TERCER PARCIAL-->
+                    <!--INICIO TERCER PARCIAL-->
                 <li><a href="NFS.html"><i class="fas fa-sign-in-alt"></i>NFS</a></li>
                 <li><a href="samba.html"><i class="fas fa-sign-in-alt"></i>Samba</a></li>
                  <!--Falta subir-->
@@ -89,43 +90,75 @@
                 <li><a href="ZeroMQ.html"><i class="fas fa-sign-in-alt"></i>ZeroMQ</a></li>
                 <li><a href="NNG.html"><i class="fas fa-sign-in-alt"></i>NNG</a></li>
                 <!---->
-             
         </ul>
         </nav>
     </div>
 </div>
 
 <section class="columna_derecha">
+    <div align="center"><h1>GlusterFS</h1></div>
 
-<div class="div-presentaciones">  
-<div align="center"><iframe  src="pdf/Expresiones_lambda.pdf" width="720px" height="500px"></iframe ></div>
-<div align="center"><iframe  src="pdf/grupo3.pdf" width="720px" height="500px"></iframe ></div>
-<div align="center"><iframe  src="pdf/MapReduc.pdf" width="720px" height="500px"></iframe ></div>
-<div align="center"><iframe  src="pdf/ForkJoin.pdf" width="720px" height="500px"></iframe ></div>
-<div align="center"><iframe  src="pdf/Contenedores.pdf" width="720px" height="500px"></iframe ></div>
-<div align="center"><iframe  src="pdf/VirtualBox.pdf" width="720px" height="500px"></iframe ></div>
-<div align="center"><iframe  src="pdf/Docker.pdf" width="720px" height="500px"></iframe ></div>
-<div align="center"><iframe  src="pdf/InyeccionDependencias.pdf" width="720px" height="500px"></iframe ></div>
-<div align="center"><iframe  src="pdf/Thymeleaf.pdf" width="720px" height="500px"></iframe ></div>
-<div align="center"><iframe  src="pdf/ConvencionSobreConfiguracion.pdf" width="720px" height="500px"></iframe ></div>
-<div align="center"><iframe  src="pdf/FreeMarker.pdf" width="720px" height="500px"></iframe ></div>
-<div align="center"><iframe  src="pdf/MVC.pdf" width="720px" height="500px"></iframe ></div>
-<div align="center"><iframe  src="pdf/Groovy.pdf" width="720px" height="500px"></iframe ></div>
-<div align="center"><iframe  src="pdf/jsp.pdf" width="720px" height="500px"></iframe ></div>
-    <div align="center"><iframe  src="pdf/Gluster.pdf" width="720px" height="500px"></iframe ></div>
-    <div align="center"><iframe  src="pdf/inversioncontrol.pdf" width="720px" height="500px"></iframe ></div>   
-<div align="center"><iframe  src="pdf/HDFS.pdf" width="720px" height="500px"></iframe ></div>   
-<div align="center"><iframe  src="pdf/mpi.pdf" width="720px" height="500px"></iframe ></div> 
-<div align="center"><iframe  src="pdf/Samba.pdf" width="720px" height="500px"></iframe ></div> 
-<div align="center"><iframe  src="pdf/ZeroMQ.pdf" width="720px" height="500px"></iframe ></div> 
-    
+    <h2>¿Qué es GlusterFS?</h2>
+    <p>GlusterFS es un sistema de archivos en red escalable y distribuído,
+         definido para ser utilizado en el espacio de usuario, es decir, sin utilizar el espacio de almacenamiento crítico del sistema, y de esta forma no compromete el rendimiento. Se utiliza en multitud de entornos, como en análisis de datos, streaming y otras tareas intensivas de almacenamiento. Lo mejor de todo es que GlusterFS es un software gratuito y Open Source.
+    </p>
 
-</div>
+    <h2>Ventajas de Gluster</h2>
+<p>
+    <li><b> Simplicidad:</b> Es fácil de utilizar y al ser ejecutado en el espacio de usuario es independiente del núcleo.</li> 
+    <li><b>Elasticidad:</b> Se adapta al crecimiento y reduce el tamaño de los datos.</li> 
+    <li><b>Escalabilidad:</b>Tiene disponibilidad de Petabytes y más.</li> 
+    <li><b>Velocidad:</b>Elimina los metadatos y mejora el rendimiento considerablemente unificando los datos y objetos.</li> 
+
+</p>
+
+<p>
+    <h2>Conceptos de GlusterFS</h2>
+    <li><b> Sistema de archivos distribuido:</b> Es un sistema de archivos en el que los datos se distribuyen entre varios nodos y los usuarios pueden tener acceso a estos datos sin conocer la ubicación real de los archivos. El usuario no experimenta la sensación de acceso remoto.</li>
+    <li><b> Brick:</b> Un brick (ladrillo) es básicamente cualquier directorio o partición que será compartido y que está asignado a un volumen.</li>
+    <li><b> Volumen:</b> Un volumen es una colección lógica de Bricks. Las operaciones se basan en los diferentes tipos de volúmenes creados por el usuario.</li>
+
+    <h2>Tipos de Volúmenes</h2>
+    GlusterFS soporta diferentes tipos de volúmenes adaptándose a los requerimientos. Algunos volúmenes son buenos para escalar el tamaño de almacenamiento, otros para mejorar el rendimiento, y otros para conseguir ambas cosas.
+    Volumen distribuido: Este es el tipo de volumen por defecto en GlusterFS, si no se especifica un tipo de volumen concreto. Los archivos se distribuyen en varios bricks en el volumen, de forma que el archivo 1 sólo podrá almacenarse en el brick 1 o en el brick 2, pero no en ambos, por lo que no habrá redundancia de datos. Este tipo de volumen distribuido hace que sea más fácil y barato escalar el tamaño del volumen. No obstante, este tipo de volumen, al no proporcionar redundancia, puede sufrir la pérdida de los datos en caso de que uno de los dos bricks falle, por lo que es necesario realizar un backup de los archivos con una aplicación externa a GlusterFS.
+
+</p>
+            <p>
+                <h3> Volumen replicado:</h3> Con este tipo de volumen eliminamos el problema ante la pérdida de datos que se experimenta con el volumen distribuido. En el volumen replicado se mantiene una copia exacta de los datos en cada uno de los bricks. El número de réplicas se configura por el usuario al crear el volumen, si queremos dos réplicas necesitaremos al menos dos bricks, si queremos tres réplicas necesitaremos tres bricks, y así sucesivamente. Si un brick está dañado, todavía podremos acceder a los datos mediante otro brick. Este tipo de volumen se utiliza para obtener fiabilidad y redundancia de datos.
+            </p>
+                        
+
+            <p>
+               <h3> Volumen distribuido:</h3> Este es el tipo de volumen por defecto en GlusterFS, si no se especifica un tipo de volumen concreto. Los archivos se distribuyen en varios bricks en el volumen, de forma que el archivo 1 sólo podrá almacenarse en el brick 1 o en el brick 2, pero no en ambos, por lo que no habrá redundancia de datos. Este tipo de volumen distribuido hace que sea más fácil y barato escalar el tamaño del volumen. No obstante, este tipo de volumen, al no proporcionar redundancia, puede sufrir la pérdida de los datos en caso de que uno de los dos bricks falle, por lo que es necesario realizar un backup de los archivos con una aplicación externa a GlusterFS.
+
+            </p>
+
+            <p>
+               <h3> Volumen distribuido replicado:</h3> En este tipo de volumen los datos se distribuyen en conjuntos duplicados de bricks. El número de bricks debe ser un múltiplo del número de réplicas. También es importante el orden en que especifiquemos los bricks porque los bricks adyacentes serán réplicas entre ellos. Este tipo de volumen se utiliza cuando se necesita una alta disponibilidad de los datos debido a su redundancia a la escalabilidad del tamaño de almacenamiento. Si tenemos ocho bricks y configuramos una réplica de dos, los dos primeros bricks serán réplicas el uno del otro, y luego los dos siguientes, y así sucesivamente. Esta configuración se denomina 4×2. Si tenemos ocho bricks y configuramos una réplica de cuatro, los cuatro primeros bricks serán réplicas entre ellos y se denominará 2×4.
+
+            </p>
+
+            <p>
+               <h3> Volumen seccionado (Striped):</h3> Imagina un archivo de gran tamaño que se almacena en un brick al que se accede con frecuencia desde muchos clientes al mismo tiempo. Esto provocaría demasiada carga en un solo brick y reduciría considerablemente el rendimiento. En un volumen seccionado los archivos se almacenan en diferentes bricks después de haberse dividido en secciones, de forma que un archivo grande se divide en diferentes secciones y cada sección se almacena en un brick. De este modo se distribuye la carga y el archivo puede ser recuperado más rapidamente, pero en este tipo de volumen perderemos la redundancia de los datos.
+
+            </p>
+
+            <p>
+                <h3>Volumen seccionado distribuido:</h3> Este volumen es similar al volumen seccionado, excepto que las secciones en este caso pueden ser distribuídas en más cantidad de bricks.
 
 
 
+            </p>
 
+                <p>
+                    <h2>Instalando GlusterFS en CentOS</h2>
+                    Vamos a realizar una instalación y configuración de GlusterFS utilizando el modelo de Volumen rReplicado para conseguir una alta disponibilidad de los datos. Este será nuestro entorno de trabajo:
+                    <li>  Dos servidores con CentOS 6.8 instalado en cada uno de ellos (puedes utilizar cualquier otro sistema operativo).</li>
+                   <li> Los servidores se llamarán en nuestro ejemplo «server1» y «server2».</li>
+                    <li> Las particiones de almacenamiento en ambos servidores se llamarán «/datos/brick».</li>
+                    
 
+                </p>
 </section>
 
 <div class="container_busqueda">
@@ -154,6 +187,7 @@
 
 <script src="js/jQuery.js"></script>
 <script src="js/scripts.js"></script>
+<script src="js/prism.js"></script>
 
 
 
@@ -194,7 +228,6 @@
         {titulo: '<a href="mpi.html">Mpi</a>'},
         {titulo: '<a href="ZeroMQ.html">ZeroMQ </a>'},
         {titulo: '<a href="NNG.html">NNG </a>'},
-       
     ]
     const formulario= document.querySelector('#search');
     const boton= document.querySelector('#boton');
