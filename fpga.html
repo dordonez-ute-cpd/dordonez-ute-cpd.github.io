@@ -94,124 +94,93 @@
                         <li><a href="DPC.html"><i class="fas fa-sign-in-alt"></i>DPC++</a></li>
                         <li><a href="fpga.html"><i class="fas fa-sign-in-alt"></i>FPGA</a></li>
 
+             
                     </ul>
-            </nav>
+                </nav>
+            </div>
         </div>
-    </div>
-    
-    <section class="columna_derecha">
-        <div align="center"><h1>ZeroMQ</h1></div> 
-
-        <p>Es una biblioteca de comunicaciones de alto rendimiento orientada a mensajes, destinada a la construcción de aplicaciones distribuidas. Está basada en colas de mensajes, pero a diferencia de otros middlewares orientados a mensajes, ZeroMQ no necesita un broker intermedio.
-            La API de la biblioteca está diseñada para ser muy similar a utilizar un socket BSD clásico. Ha sido desarrollada en C++, aunque existen ports y bindings a muchos otros lenguajes (C, C#, Erlang, Go, Haskell, Java, JavaScript, Ruby, Rust). ZeroMQ es gratuita y de código abierto.
+        
+        <section class="columna_derecha">
+            <div text align="center"><h2>FPGA</h2></div>
             
-        </p>
-<h3>Tecnología</h3>
-
-<p>ZeroMQ es un middleware de comunicaciones orientado a mensajes (en inglés, Message-oriented middleware). Este tipo de sistemas utiliza una arquitectura basada en un servidor de mensajes, también llamado broker, que funciona como una aplicación intermedia situada entre los emisores y los receptores de los mensajes.</p>
-<p>Los diseñadores de ZeroMQ se propusieron construir un sistema que consiguiera un mayor rendimiento y una latencia más baja, precisamente eliminando ese broker intermedio y pasando así de una arquitectura de clientes simples (que sólo saben comunicarse con el servidor) y servidores inteligentes (con la lógica de almacenamiento y envío de los mensajes), a otra en la que todos son pares inteligentes que gestionan tanto la gestión de los mensajes como su enrutamiento.</p>
-<p>El resultado es que ZeroMQ está formado por un único elemento, una biblioteca, que se compila y enlaza con cada programa cliente o servidor, formando así un sistema rápido y eficiente de comunicación asíncrona por mensajes.</p>
-        <h2>Patrones de mensajería</h2>
-<p>La arquitectura de un sistema distribuido puede describirse utilizando patrones de mensajería. Estos patrones se encargan de especificar y detallar la topología del conjunto del sistema y el flujo de mensajes entre sus distintas partes. ZeroMQ implementa varios de estos patrones. Para ello proporciona pares de sockets pre optimizados para cada tipo de comunicación que se desee realizar. En concreto, los patrones soportados son:</p>
-<p>
-    Pair: el más parecido a un socket clásico, comunicación bidireccional entre un servidor y un cliente único.
-</p>
-
-<p>
-    Request-Replay: conecta un conjunto de clientes con un conjunto de servidores. Se utiliza para implementar distribución de tareas y llamadas a procedimientos remotos (RPC).
-</p>
-<p>
-    Publish-Subscribe: conecta un conjunto de publicadores con un conjunto de subscriptores. Se utiliza para la distribución de datos mediante mensajes categorizados (Publish-subscribe pattern).
-</p>
-<p>
-    Pipeline: conecta nodos organizados en pipelines de varias etapas o pasos secuenciales. Se utiliza para organizar flujos de procesamiento de mensajes en paralelo y por etapas.
-</p>
-
-<h4>Rendimiento :</h4>
-
-
-    <li>No tiene el overhead de otros protocolos como JMS, AMQP.</li>
-    
-    <li>Usa transportes eficientes como Multicast o IPC</li>
-    
-    <li>Usa Batching</li>
-  <p>Simplicidad: API muy simple</p>
-<p>Escalabilidad: a través de su diseño brokerless</p>
-
-<p>Además:</p>
-<li>	Actúa como framework de concurrencia.</li>
-
-	<li>Más rápido que TCP para productos en cluster</li>
-
-	<li>Capaz de intercambiar mensajes dentro de un mismo proceso, IPC, TCP y multicast.</li>
-
-	<li>Soporta mensajería Publish-Suscribe y Request-Reply.</li>
-
-	<li>Soporte I/O asíncrono
-
-	<li>Binding para más de 30 lenguajes incluidos C,C++, Java,.Net,… http://www.zeromq.org/bindings:_start</li>
-
-	<li>Soporte para la mayoría de sistemas operativos como Linux, AIX, Windows,</li>
-
-	<li>Software LGPL con soporte comercial desde iMatix</li>
-
-    <p>Los pasos para implementar una capa de mensajería sobre ZeroMQ son:</p>
-    
-    	<li>Elegir un transporte</li>
-
-        <li>Configurar la infraestructura</li>
-
-        <li>Elegir un patrón de mensajería</li>
-
-<h3>Elegir un transporte:</h3>
-<p>ZeroMQ provee 4 transportes:</p>
-
-<li>INPROC: modelo de comunicación dentro del mismo proceso</li>
-
-<li>IPC</li>
-    
-<li>MULTICAST via PGM, puede encapsularse en UDP</li>
-    
-<li>TCP</li>
-   
-<p>Normalmente el transporte TCP es la mejor opción ya que ofrece rendimiento y es robusto, aunque MULTICAST es interesante en muchos casos</p>
-<p>CONFIGURAR LA INFRAESTRUCTURA:</p>
-
-<p>ZeroMQ ofrece:</p>
-<li>QUEUE para patron de mensajería Request/Response</li>
-
-<li>FORWARDER para mensajería Publish/Suscribe</li>
-    
-<li>STREAMER para patron de mensajería Pipeline</li>
-    
-
-<h3>ZeroMQ Hello World</h3>
-<p> Ejemplo :</p>
-<p>En este ejemplo se crea un cliente y un servidor sencillos con sockets REQ-REP (solicitud-respuesta). El cliente envía "Hola" al servidor, que responde con "Mundo". El servidor abre un ZeroMQ REP-socket en el puerto 5555, lee las solicitudes en él y responde con "Mundo" a cada solicitud.</p>
-
-
- <p><b>Servidor</b></p>        
-           
-            <div align="center"><img srcset="img/zeromq1.jpg 320w,
-                img/zeromq1.jpg 480w,img/zeromq1.jpg 800w"
+                <h4>¿Qué es FPGA?</h4>
+                <ul>
+                <p>FPGA es el acrónimo de Field Programmable Gate Arrays, es una matriz de puertas programables en campo.</p>
+                <p>Es un circuito integrado diseñado para ser configurado por un cliente o un diseñador después de la fabricación, de ahí el termino "field-programmable“.</p>
+                <p>La configuración de FPGA generalmente se especifica usando un lenguaje de descripción de hardware (HDL), similar al que se usa para un circuito integrado específico de aplicación (ASIC).</p>
+                <p>Básicamente: es una serie de dispositivos basados en semiconductores a base de matrices de bloques lógicos configurables o CLB.</p>
+               <p>Además, se conectan a través de lo que en el sector se denomina como interconexiones programables.</p>
+               <div align="center"><img srcset="img/fpga1.jpg"
                 sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
-                src="img/zeromq1.jpg  alt="Proceso" class="imagen"></div> 
-
-<p><b>Cliente</b></p>
-                <div align="center"><img srcset="img/zeromq2.jpg 320w,
-                    img/zeromq2.jpg 480w,img/zeromq2.jpg 800w"
+                src="img/fpga1.jpg"  alt="Proceso" class="imagen"></div>
+              <br>
+              <p>Su principal característica y ventaja es que pueden ser reprogramados para un trabajo específico o cambiar sus requisitos después de haberse fabricado.
+                Los FPGA contienen una serie de bloques lógicos programables y una jerarquía de "interconexiones reconfigurables" que permiten que los bloques se "conecten entre sí", como muchas puertas lógicas que pueden interconectarse en diferentes configuraciones.
+              </p>
+              <p>Los bloques lógicos se pueden configurar para realizar funciones combinacionales complejas, o simplemente puertas lógicas simples como AND y XOR.
+                En la mayoría de los FPGA, los bloques lógicos también incluyen elementos de memoria, que pueden ser simples flip-flops o bloques de memoria más completos.
+                Las matrices de puertas programables en campo (FPGA) contemporáneas tienen grandes recursos de puertas lógicas y bloques RAM para implementar cálculos digitales complejos. 
+              </p>
+              <div align="center"><img srcset="img/fpga2.jpg"
+                sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
+                src="img/fpga2.jpg"  alt="Proceso" class="imagen"></div>
+                <p>Aun así, actualmente el mercado se está centrando en tres sectores muy claros y que están tomando mucha fuerza en los últimos años: centros de datos, IA y avances para mejorar los procesadores.</p>
+               <h4>Características principales</h4>
+               <ul>
+                   <li>
+                    Flexibilidad: se puede descargar un archivo para un FPGA en concreto y modificar el comportamiento del mismo mediante cambios en dicho fichero.
+                   </li>
+                   <li>
+                    Cambios físicos: implica que en muchos casos se pueden hacer esto sin hacer modificaciones costosas en la placa que lo soporta.
+                   </li>
+                   <li>
+                    Aceleración: los FPGA de alto rendimiento están ayudando a los procesadores mediante aceleraciones de carga y descarga de información, con lo que se aumenta el rendimiento del sistema.
+                   </li>
+               </ul>
+               <p>Hoy en día un FPGA puede incluir RAM, procesadores, motores DSP y un sin fin de sistemas individuales para una misma matriz.</p>
+               <p>Si un sistema tuviese algún problema o necesitase cambios importantes, con un FPGA no sería tan problemático como con un ASIC, ya que podría reprogramarse o rediseñarse para dichos cambios y nuevas tareas.</p> 
+              <p>Algunas FPGA tienen características analógicas además de funciones digitales. 
+                La característica analógica más común es una velocidad de respuesta programable en cada pin de salida.
+                Algunas "FPGA de señal mixta" tienen conversores periféricos de analógico a digital (ADC) y conversores de digital a analógico (DAC) con bloques de acondicionamiento de señal analógica que les permiten operar como un sistema en un chip (SoC).
+              </p>
+              <h4>Áreas de aplicación</h4>
+              <p>Lo interesante de este tipo de dispositivo son sus innumerables aplicaciones en la actualidad, ya que sus características técnicas pueden ser enfocadas a sectores como:</p>
+              <ul>
+                  <li>Aeroespacial.</li>
+                  <li>Audio.</li>
+                  <li>Automotriz.</li>
+                  <li>Broadcast.</li>
+                  <li>Electrónica.</li>
+                  <li>Centros de datos.</li>
+                  <li>Computación de alto rendimiento.</li>
+                  <li>Industrial y médica.</li>
+                  
+              </ul>
+        
+              <h4>¿Cómo se programa?</h4>
+              <p>Los FPGA usan un lenguaje descriptivo, dichos lenguajes se denominan HDL (Hardware Description Language) algunos ejemplos son Verilog y ABEL </p>
+             <p>Verilog se dice que es Open Source es decir de código abierto.</p> 
+             <p>El integrador es como un compilador en lenguajes de programación. </p>
+            <p>Las conexiones al FPGA se traducen en una determinada trama de comunicación específica del FPGA (bitstream), que es transmitida al FPGA durante la programación. </p>
+            <p>El FPGA interpreta el bitstream y configura las conexiones. A partir de ese momento, el FPGA está configurado con el circuito que hemos definido/descrito.</p>
+            <p>Los fabricantes proporcionan herramientas comerciales para programar sus propios FPGA. En la actualidad, configuran entornos completos con una gran cantidad de herramientas y funcionalidades.Con la evolución en el desarrollo de las FPGA también han aparecido herramientas centradas en la programación gráfica de las FPGA, como LabVIEW FPGA, o el proyecto Open Source IceStudio desarrollado por Jesús Arroyo Torrens.</p>
+            <h4>Datos Curiosos</h4>
+            <ul>
+                <li>La elección de una FPGA para aplicaciones de tratamiento de señal se debe a su alta frecuencia de trabajo, a su capacidad de procesamiento en paralelo, y a su bajo precio en comparación con los ASICs. </li>
+                <div align="center"><img srcset="img/fpga3.jpg"
                     sizes="(max-width: 320px) 280px,(max-width: 480px) 440px,800px"
-                    src="img/zeromq2.jpg  alt="Proceso" class="imagen"></div> 
-    <h3>Conclusiones</h3>
-   
-	<li>A través de la recopilación de información consolidamos nuestros conocimientos sobre el tema de Zero MQ.</li>
-    <br>
-    <li>Aprendimos que Zero MQ es una librería de mensajería que permite diseñar sistemas de comunicación de forma sencilla. Es importante advertir que no es un sistema de mensajería en sí como pueda ser AMQP, si no una librería para construirlas.</li>
-    <br>
-	<li>Con la realización de la exposición pudimos compartir la información recopilada sobre el tema de Zero MQ a nuestros compañeros de clase.</li>
-
-   
-    </section>
+                    src="img/fpga3.jpg"  alt="Proceso" class="imagen"></div>
+                <li>Los FPGA originalmente comenzaron como competidores de los CPLD para implementar la lógica de pegamento para placas de circuito impreso. </li>
+                <li>Particularmente con la introducción de multiplicadores dedicados en arquitecturas FPGA a finales de la década de 1990, las aplicaciones que tradicionalmente habían sido la reserva exclusiva del hardware de procesador de señal digital (DSP) comenzaron a incorporar FPGA en su lugar.</li>
+                <li>Aceleración de hardware , donde se puede usar la FPGA para acelerar ciertas partes de un algoritmo y compartir parte del cálculo entre la FPGA y un procesador genérico.</li>
+                <li> El motor de búsqueda Bing se destaca por adoptar la aceleración FPGA para su algoritmo de búsqueda en 2014.</li>    
+                <li>Los FPGA están experimentando un uso cada vez mayor como aceleradores de IA, incluido el denominado "Proyecto Catapulta" de Microsoft.</li>
+                <li>Se usan para acelerar las redes neuronales artificiales para aplicaciones de aprendizaje automático.</li>
+            </ul>
+            <p>Página de información: <a href="https://es.wikipedia.org/wiki/Field-programmable_gate_array#:~:text=Una%20matriz%20de%20puertas%20l%C3%B3gicas,un%20lenguaje%20de%20descripci%C3%B3n%20especializado.">FPGA</a></p>
+            
+            
+        </section>
   
 
 <div class="container_busqueda">
